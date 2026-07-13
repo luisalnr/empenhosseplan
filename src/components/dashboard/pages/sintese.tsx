@@ -21,7 +21,11 @@ export function SintesePage() {
           <ChartCard title="Por fonte de recursos" subtitle="Valor empenhado líquido" className="h-[340px]">
             <PorFonte />
           </ChartCard>
-          <ChartCard title="Top 10 credores" subtitle="Por valor empenhado líquido e liquidado" className="h-[340px]">
+          <ChartCard
+            title="Top 10 credores"
+            subtitle="Aplicações diretas — empenhado líquido e liquidado (exclui transferências a municípios)"
+            className="h-[340px]"
+          >
             <TopCredores />
           </ChartCard>
         </div>
