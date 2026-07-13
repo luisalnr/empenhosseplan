@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "Execução de Empenhos — SEPLAN/AC",
   description:
     "Painel de acompanhamento da execução dos empenhos dos contratos da Secretaria de Estado de Planejamento do Acre.",
+  icons: {
+    icon: [{ url: "/logo-brasao-acre.png", type: "image/png" }],
+    apple: [{ url: "/logo-brasao-acre.png", type: "image/png" }],
+    shortcut: ["/logo-brasao-acre.png"],
+  },
 };
 
 export default function RootLayout({
