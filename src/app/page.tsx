@@ -11,12 +11,14 @@ import { ResumoCredorPage } from "@/components/dashboard/pages/resumo-credor";
 import { EmpenhosPage } from "@/components/dashboard/pages/empenhos";
 import { RiscoPage } from "@/components/dashboard/pages/risco";
 import { ImportacaoPage } from "@/components/dashboard/pages/importacao";
+import { UsuariosPage } from "@/components/dashboard/pages/usuarios";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 function DashboardShell() {
   const { pagina, loading, error, empenhos, setPagina } = useDashboard();
-  const hideFilterBar = pagina === "resumo" || pagina === "importacao";
+  const hideFilterBar =
+    pagina === "resumo" || pagina === "importacao" || pagina === "usuarios";
 
   return (
     <div
@@ -53,6 +55,10 @@ function DashboardShell() {
         ) : pagina === "importacao" ? (
           <div key={pagina} className="animate-fade-in flex min-h-0 flex-1 flex-col">
             <ImportacaoPage />
+          </div>
+        ) : pagina === "usuarios" ? (
+          <div key={pagina} className="animate-fade-in">
+            <UsuariosPage />
           </div>
         ) : empenhos.length === 0 ? (
           <div className="flex h-[60vh] flex-col items-center justify-center gap-3 text-center">

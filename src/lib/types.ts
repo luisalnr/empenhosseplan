@@ -62,7 +62,7 @@ export interface Filtros {
   dataFim: string;
 }
 
-export type Pagina = "sintese" | "risco" | "resumo" | "empenhos" | "importacao";
+export type Pagina = "sintese" | "risco" | "resumo" | "empenhos" | "importacao" | "usuarios";
 
 /** Período de análise declarado no topo dos relatórios WW (emissão / liquidação / pagamento). */
 export interface PeriodoAnalise {

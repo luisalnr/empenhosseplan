@@ -105,31 +105,23 @@ export default function LoginPage() {
           </ul>
         </div>
 
-        <p className="relative z-10 text-xs text-white/50">
-          © {new Date().getFullYear()} Governo do Estado do Acre · SEPLAN
-        </p>
+        <div className="relative z-10 space-y-0.5 text-xs text-white/50">
+          <p>Departamento de Estudos e Planejamento Orçamentário — DEPPO/SEPLAN</p>
+          <p>© {new Date().getFullYear()} Governo do Estado do Acre · SEPLAN</p>
+        </div>
       </aside>
 
-      {/* Formulário (direita) */}
-      <main className="flex flex-col justify-center bg-background px-6 py-10 sm:px-10 lg:px-16">
+      {/* Formulário (direita) — centralizado na coluna */}
+      <main className="flex flex-col items-center justify-center bg-background px-6 py-10 sm:px-10">
         <div className="mx-auto w-full max-w-md">
-          {/* Logo no mobile / topo do form */}
-          <div className="mb-8 flex flex-col items-center text-center lg:items-start lg:text-left">
-            <div className="relative mb-5 h-10 w-[170px] lg:hidden">
+          {/* Logo / topo do form */}
+          <div className="mb-8 flex flex-col items-center text-center">
+            <div className="relative mb-5 h-14 w-[260px] sm:h-16 sm:w-[300px]">
               <Image
-                src="/logo-acre-verde.png"
+                src="/logo-governo-acre.png"
                 alt="Governo do Estado do Acre"
                 fill
                 className="object-contain object-center"
-                priority
-              />
-            </div>
-            <div className="relative mb-4 hidden h-11 w-[190px] lg:block">
-              <Image
-                src="/logo-acre-verde.png"
-                alt="Governo do Estado do Acre"
-                fill
-                className="object-contain object-left"
                 priority
               />
             </div>
@@ -229,7 +221,7 @@ export default function LoginPage() {
             </form>
           </div>
 
-          <p className="mt-6 text-center text-xs text-muted-foreground lg:text-left">
+          <p className="mt-6 text-center text-xs text-muted-foreground">
             © {new Date().getFullYear()} Governo do Estado do Acre · Uso
             institucional
           </p>

@@ -1,4 +1,14 @@
-import { pgTable, text, date, numeric, index, primaryKey } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  text,
+  date,
+  numeric,
+  index,
+  primaryKey,
+  boolean,
+  timestamp,
+  uniqueIndex,
+} from "drizzle-orm/pg-core";
 
 /**
  * Tabela `empenhos` — refs aninhadas (categoria, gnd, modalidade, elemento,
@@ -98,3 +108,53 @@ export type LiquidacaoRow = typeof liquidacoes.$inferSelect;
 export type LiquidacaoInsert = typeof liquidacoes.$inferInsert;
 export type PagamentoRow = typeof pagamentos.$inferSelect;
 export type PagamentoInsert = typeof pagamentos.$inferInsert;
+
+/**
+ * Tabela `usuarios` — autenticação do painel (login/senha no Neon).
+ * `senha_hash` = salt:hash (scrypt), nunca senha em texto puro.
+ * `papel`: admin | operador
+ */
+export const usuarios = pgTable(
+  "usuarios",
+  {
+    id: text("id").notNull(),
+    email: text("email").notNull(),
+    nome: text("nome").notNull().default(""),
+    senhaHash: text("senha_hash").notNull(),
+    papel: text("papel").notNull().default("admin"),
+    ativo: boolean("ativo").notNull().default(true),
+    criadoEm: timestamp("criado_em", { withTimezone: true }).notNull().defaultNow(),
+    atualizadoEm: timestamp("atualizado_em", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.id] }),
+    emailUq: uniqueIndex("idx_usuarios_email").on(t.email),
+  })
+);
+
+/**
+ * Tabela `login_auditoria` — registro de tentativas de login (sucesso/falha).
+ */
+export const loginAuditoria = pgTable(
+  "login_auditoria",
+  {
+    id: text("id").notNull(),
+    usuarioId: text("usuario_id"),
+    email: text("email").notNull().default(""),
+    sucesso: boolean("sucesso").notNull().default(false),
+    ip: text("ip").notNull().default(""),
+    userAgent: text("user_agent").notNull().default(""),
+    detalhe: text("detalhe").notNull().default(""),
+    criadoEm: timestamp("criado_em", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.id] }),
+    emailIdx: index("idx_login_auditoria_email").on(t.email),
+    dataIdx: index("idx_login_auditoria_data").on(t.criadoEm),
+  })
+);
+
+export type UsuarioRow = typeof usuarios.$inferSelect;
+export type UsuarioInsert = typeof usuarios.$inferInsert;
+export type LoginAuditoriaRow = typeof loginAuditoria.$inferSelect;
+export type LoginAuditoriaInsert = typeof loginAuditoria.$inferInsert;

@@ -2,11 +2,12 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useDashboard } from "@/components/providers/dashboard-provider";
+import { useAuth } from "@/components/providers/auth-provider";
 import type { Pagina } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-const PAGINAS: { id: Pagina; label: string }[] = [
+const PAGINAS_BASE: { id: Pagina; label: string }[] = [
   { id: "sintese", label: "Síntese" },
   { id: "empenhos", label: "Empenhos" },
   { id: "risco", label: "Análise de Risco" },
@@ -25,7 +26,20 @@ function isEditable(el: Element | null) {
 
 export function PageNavigator() {
   const { pagina, setPagina } = useDashboard();
+  const { isAdmin } = useAuth();
+  const PAGINAS = React.useMemo(
+    () =>
+      isAdmin
+        ? [...PAGINAS_BASE, { id: "usuarios" as Pagina, label: "Usuários" }]
+        : PAGINAS_BASE,
+    [isAdmin]
+  );
   const idx = PAGINAS.findIndex((p) => p.id === pagina);
+
+  // Se perdeu admin e estava em usuários, volta para síntese
+  React.useEffect(() => {
+    if (!isAdmin && pagina === "usuarios") setPagina("sintese");
+  }, [isAdmin, pagina, setPagina]);
 
   const ir = React.useCallback(
     (delta: number) => {
