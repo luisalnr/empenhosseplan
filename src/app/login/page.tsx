@@ -87,7 +87,7 @@ export default function LoginPage() {
           <p className="text-base leading-relaxed text-white/75">
             Acompanhe a execução dos empenhos dos contratos da Secretaria de
             Estado de Planejamento do Acre — empenhado, liquidado, pago e
-            análise de restos a pagar, com importação dos relatórios SICAF/WW.
+            análise de restos a pagar, com importação dos relatórios SICAF.
           </p>
           <ul className="grid gap-2 text-sm text-white/70">
             <li className="flex items-center gap-2">
@@ -105,8 +105,13 @@ export default function LoginPage() {
           </ul>
         </div>
 
-        <div className="relative z-10 space-y-0.5 text-xs text-white/50">
+        <div className="relative z-10 space-y-1 text-xs text-white/50">
+          <p>Secretaria de Estado de Planejamento do Acre — SEPLAN</p>
           <p>Departamento de Estudos e Planejamento Orçamentário — DEPPO/SEPLAN</p>
+          <p>
+            Coordenador: Denyscley Bandeira · Equipe técnica: Ícaro Gundim,
+            Luísa Ribeiro, Roseneide Sena e Vinícius Farias.
+          </p>
           <p>© {new Date().getFullYear()} Governo do Estado do Acre · SEPLAN</p>
         </div>
       </aside>
@@ -116,12 +121,13 @@ export default function LoginPage() {
         <div className="mx-auto w-full max-w-md">
           {/* Logo / topo do form */}
           <div className="mb-8 flex flex-col items-center text-center">
-            <div className="relative mb-5 h-14 w-[260px] sm:h-16 sm:w-[300px]">
+            <div className="relative mb-4 h-20 w-full sm:h-24">
               <Image
                 src="/logo-governo-acre.png"
                 alt="Governo do Estado do Acre"
                 fill
                 className="object-contain object-center"
+                sizes="(max-width: 448px) 100vw, 448px"
                 priority
               />
             </div>
