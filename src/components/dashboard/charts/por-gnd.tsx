@@ -1,0 +1,57 @@
+"use client";
+import * as React from "react";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
+import { useDashboard } from "@/components/providers/dashboard-provider";
+import { porGnd } from "@/lib/aggregations";
+import { formatCompactShort } from "@/lib/utils";
+import { CurrencyTooltip } from "./chart-tooltip";
+
+export function PorGnd() {
+  const { filtered } = useDashboard();
+  const data = React.useMemo(
+    () =>
+      porGnd(filtered).map((g) => ({
+        label: g.label.replace(/^(\d)\s*-\s*/, `${g.key} · `),
+        Empenhado: Math.round(g.empenhado - g.anulado),
+        Liquidado: Math.round(g.liquidado),
+      })),
+    [filtered]
+  );
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data} margin={{ top: 8, right: 12, left: 4, bottom: 28 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+        <XAxis
+          dataKey="label"
+          tick={{ fontSize: 10.5, fill: "hsl(var(--muted-foreground))" }}
+          tickLine={false}
+          axisLine={{ stroke: "hsl(var(--border))" }}
+          interval={0}
+          angle={-18}
+          textAnchor="end"
+          height={50}
+        />
+        <YAxis
+          tickFormatter={(v) => formatCompactShort(v)}
+          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+          tickLine={false}
+          axisLine={false}
+          width={52}
+        />
+        <Tooltip content={<CurrencyTooltip />} />
+        <Legend wrapperStyle={{ fontSize: 12 }} iconType="circle" />
+        <Bar dataKey="Empenhado" name="Empenhado Líquido" fill="hsl(var(--chart-4))" radius={[4, 4, 0, 0]} maxBarSize={28} />
+        <Bar dataKey="Liquidado" fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} maxBarSize={28} />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+}

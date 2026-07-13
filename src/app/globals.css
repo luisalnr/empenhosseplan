@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* base neutra e suave de cinza-claro para o fundo */
+    --background: 210 16% 96%;
+    --foreground: 160 24% 10%;
+
+    /* modulos de conteudo em branco */
+    --card: 0 0% 100%;
+    --card-foreground: 160 24% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 24% 10%;
+
+    /* identidade Governo do Acre: verde e amarelo */
+    --primary: 146 100% 29%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 100% 50%;
+    --secondary-foreground: 160 24% 10%;
+
+    --muted: 210 16% 93%;
+    --muted-foreground: 210 10% 38%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 160 24% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 38%;
+    --warning: 38 95% 45%;
+
+    --border: 210 16% 88%;
+    --input: 210 16% 90%;
+    --ring: 146 100% 29%;
+
+    /* barra escura fixa do topo */
+    --bar: 161 54% 22%;
+    --bar-foreground: 0 0% 100%;
+
+    /* paleta: #3C515D, #3D6868, #40957F, #A7C686, #FCEE8C */
+    --chart-1: 164 40% 42%;    /* #40957F verde médio — Liquidado / Processado */
+    --chart-2: 180 26% 32%;    /* #3D6868 teal escuro */
+    --chart-3: 89 36% 65%;     /* #A7C686 verde claro — Pago */
+    --chart-4: 211 65% 57%;    /* #4A90D9 azul — Empenhado Líquido / NP */
+    --chart-5: 202 22% 30%;    /* #3C515D slate escuro */
+    --chart-6: 164 30% 55%;    /* variação verde suave */
+
+    --radius: 0.85rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  /* scrollbar discreta */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-text-wrap: balance;
+  }
+  /* restringe texto a N linhas */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
