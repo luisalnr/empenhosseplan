@@ -1,6 +1,8 @@
 "use client";
+
 import { Loader2, AlertTriangle, Database } from "lucide-react";
-import { useDashboard } from "@/components/providers/dashboard-provider";
+import { DashboardProvider, useDashboard } from "@/components/providers/dashboard-provider";
+import { useAuth } from "@/components/providers/auth-provider";
 import { Header } from "@/components/layout/header";
 import { FilterBar } from "@/components/layout/filter-bar";
 import { PageNavigator } from "@/components/layout/page-navigator";
@@ -12,7 +14,7 @@ import { ImportacaoPage } from "@/components/dashboard/pages/importacao";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export default function Page() {
+function DashboardShell() {
   const { pagina, loading, error, empenhos, setPagina } = useDashboard();
   const hideFilterBar = pagina === "resumo" || pagina === "importacao";
 
@@ -75,5 +77,23 @@ export default function Page() {
 
       <PageNavigator />
     </div>
+  );
+}
+
+export default function Page() {
+  const { user, loading } = useAuth();
+
+  if (loading || !user) {
+    return (
+      <div className="flex min-h-dvh items-center justify-center bg-background">
+        <Loader2 className="h-7 w-7 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  return (
+    <DashboardProvider>
+      <DashboardShell />
+    </DashboardProvider>
   );
 }

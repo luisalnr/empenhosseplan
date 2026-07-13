@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import localFont from "next/font/local";
 import "./globals.css";
-import { DashboardProvider } from "@/components/providers/dashboard-provider";
+import { AuthProvider } from "@/components/providers/auth-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = localFont({
@@ -37,9 +37,9 @@ export default function RootLayout({
         )}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <DashboardProvider>
+        <AuthProvider>
           <TooltipProvider delayDuration={200}>{children}</TooltipProvider>
-        </DashboardProvider>
+        </AuthProvider>
       </body>
     </html>
   );

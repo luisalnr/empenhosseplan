@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
 import { useDashboard } from "@/components/providers/dashboard-provider";
+import { useAuth } from "@/components/providers/auth-provider";
 import { Badge } from "@/components/ui/badge";
-import { CalendarClock, CalendarRange } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CalendarClock, CalendarRange, LogOut } from "lucide-react";
 import { formatPeriodo } from "@/lib/periodo";
 
 export function Header() {
   const { ultimaAtualizacao, periodoAnalise, loading } = useDashboard();
+  const { user, logout } = useAuth();
   const periodoLabel = formatPeriodo(periodoAnalise);
 
   return (
@@ -30,7 +33,7 @@ export function Header() {
             Secretaria de Estado de Planejamento do Acre
           </p>
         </div>
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
           {loading ? (
             <Badge className="border-white/20 bg-white/10 text-white/80">Carregando…</Badge>
           ) : (
@@ -50,6 +53,19 @@ export function Header() {
                 )}
               </div>
             )
+          )}
+          {user && (
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              onClick={logout}
+              className="h-8 gap-1.5 border border-white/20 bg-white/10 px-2.5 text-xs text-white hover:bg-white/20 hover:text-white"
+              title={`Sair (${user.email})`}
+            >
+              <LogOut className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Sair</span>
+            </Button>
           )}
           <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
           <span className="h-2.5 w-2.5 rounded-full bg-primary" />
