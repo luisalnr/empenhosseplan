@@ -62,7 +62,7 @@ const SLOT_META: Record<
 > = {
   empenho: {
     title: "Empenhos",
-    subtitle: "Relatório SICAF/WW · compromisso da despesa",
+    subtitle: "Relatório SICAF · compromisso da despesa",
     colunas: COLUNAS_EMPENHO,
     icon: FileText,
     iconClass: "text-primary bg-primary/10",
@@ -70,7 +70,7 @@ const SLOT_META: Record<
   },
   liquidacao: {
     title: "Liquidações",
-    subtitle: "Relatório WW · reconhecimento do direito do credor",
+    subtitle: "Relatório SICAF · reconhecimento do direito do credor",
     colunas: COLUNAS_LIQUIDACAO,
     icon: FileCheck2,
     iconClass: "text-[hsl(var(--chart-1))] bg-[hsl(var(--chart-1)/0.12)]",
@@ -78,7 +78,7 @@ const SLOT_META: Record<
   },
   pagamento: {
     title: "Pagamentos",
-    subtitle: "Relatório WW · quitação financeira",
+    subtitle: "Relatório SICAF · quitação financeira",
     colunas: COLUNAS_PAGAMENTO,
     icon: Wallet,
     iconClass: "text-[hsl(var(--chart-3))] bg-[hsl(var(--chart-3)/0.18)]",
@@ -522,7 +522,7 @@ export function ImportacaoPage() {
             Importação de relatórios
           </h2>
           <p className="truncate text-xs text-muted-foreground sm:text-sm">
-            Envie os arquivos de empenho, liquidação e pagamento exportados do SICAF/WW.
+            Envie os arquivos de empenho, liquidação e pagamento exportados do SICAF.
           </p>
         </div>
         <p className="hidden shrink-0 text-[11px] text-muted-foreground sm:block">
