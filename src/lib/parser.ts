@@ -1,6 +1,7 @@
 import type { Empenho, MtoData, PeriodoAnalise, Ref } from "./types";
 import { derivarClassificacoes, lookupFonte, lookupClasse } from "./mto";
 import { extractPeriodoFromRows } from "./periodo";
+import { readXlsxRows } from "./read-xlsx-rows";
 
 const EPOCH_MS = Date.UTC(1899, 11, 30);
 
@@ -25,12 +26,13 @@ function str(value: unknown): string {
 
 function findHeader(rows: unknown[][]): { idx: number; map: Record<string, number> } | null {
   for (let i = 0; i < rows.length; i++) {
-    const cells = rows[i].map((c) => str(c).toLowerCase());
+    const row = Array.isArray(rows[i]) ? rows[i] : [];
+    const cells = row.map((c) => str(c).toLowerCase());
     const hasCredor = cells.some((c) => c.includes("credor"));
     const hasValor = cells.some((c) => c.includes("valor"));
     if (hasCredor && hasValor) {
       const map: Record<string, number> = {};
-      rows[i].forEach((c, j) => {
+      row.forEach((c, j) => {
         const key = str(c).toLowerCase();
         if (key) map[key] = j;
       });
@@ -82,8 +84,7 @@ export interface ParseResult {
 }
 
 export async function parseSicafXlsx(file: Blob, mto: MtoData): Promise<ParseResult> {
-  const readXlsxFile = (await import("read-excel-file/browser")).default;
-  const rows = (await readXlsxFile(file)) as unknown as unknown[][];
+  const rows = await readXlsxRows(file);
   const periodo = extractPeriodoFromRows(rows);
 
   const header = findHeader(rows);

@@ -1,5 +1,6 @@
 import type { FaseDespesa, PeriodoAnalise } from "./types";
 import { extractPeriodoFromRows } from "./periodo";
+import { readXlsxRows } from "./read-xlsx-rows";
 
 const EPOCH_MS = Date.UTC(1899, 11, 30);
 
@@ -24,12 +25,13 @@ function str(value: unknown): string {
 
 function findHeader(rows: unknown[][]): { idx: number; map: Record<string, number> } | null {
   for (let i = 0; i < rows.length; i++) {
-    const cells = rows[i].map((c) => str(c).toLowerCase());
+    const row = Array.isArray(rows[i]) ? rows[i] : [];
+    const cells = row.map((c) => str(c).toLowerCase());
     const hasEmpenho = cells.some((c) => c.includes("empenho"));
     const hasValor = cells.some((c) => c.includes("valor"));
     if (hasEmpenho && hasValor) {
       const map: Record<string, number> = {};
-      rows[i].forEach((c, j) => {
+      row.forEach((c, j) => {
         const key = str(c).toLowerCase();
         if (key) map[key] = j;
       });
@@ -77,8 +79,7 @@ export interface ParseFaseResult {
 
 /** Parser de liquidações (layout WW: Nº Liquidação, Data, Nº Empenho, Status, Valor). */
 export async function parseLiquidacoesXlsx(file: Blob): Promise<ParseFaseResult> {
-  const readXlsxFile = (await import("read-excel-file/browser")).default;
-  const rows = (await readXlsxFile(file)) as unknown as unknown[][];
+  const rows = await readXlsxRows(file);
   const periodo = extractPeriodoFromRows(rows);
   const header = findHeader(rows);
   if (!header) {
@@ -119,8 +120,7 @@ export async function parseLiquidacoesXlsx(file: Blob): Promise<ParseFaseResult>
 
 /** Parser de pagamentos (layout WW: Nº Pagamento, Pagamento [data], Situação, Valor, Nº Empenho). */
 export async function parsePagamentosXlsx(file: Blob): Promise<ParseFaseResult> {
-  const readXlsxFile = (await import("read-excel-file/browser")).default;
-  const rows = (await readXlsxFile(file)) as unknown as unknown[][];
+  const rows = await readXlsxRows(file);
   const periodo = extractPeriodoFromRows(rows);
   const header = findHeader(rows);
   if (!header) {

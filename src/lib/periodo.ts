@@ -38,9 +38,10 @@ function toIsoDate(value: unknown): string {
  * Layout típico (linha 2): [rótulo com "Período"] [data início] ["até"] [data fim]
  */
 export function extractPeriodoFromRows(rows: unknown[][]): PeriodoAnalise | null {
+  if (!Array.isArray(rows)) return null;
   const limit = Math.min(rows.length, 20);
   for (let i = 0; i < limit; i++) {
-    const row = rows[i] || [];
+    const row = Array.isArray(rows[i]) ? rows[i] : [];
     for (let j = 0; j < row.length; j++) {
       const cell = str(row[j]).toLowerCase();
       if (cell !== "até" && cell !== "ate") continue;
@@ -49,7 +50,11 @@ export function extractPeriodoFromRows(rows: unknown[][]): PeriodoAnalise | null
       if (inicio && fim) return { inicio, fim };
     }
     // fallback: linha com "período" e duas datas na mesma linha
-    const hasPeriodo = row.some((c) => str(c).toLowerCase().includes("período") || str(c).toLowerCase().includes("periodo"));
+    const hasPeriodo = row.some(
+      (c) =>
+        str(c).toLowerCase().includes("período") ||
+        str(c).toLowerCase().includes("periodo")
+    );
     if (!hasPeriodo) continue;
     const datas: string[] = [];
     for (const c of row) {
