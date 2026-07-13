@@ -40,15 +40,20 @@ const COLS: { key: SortKey; label: string; numeric?: boolean; class?: string }[]
   { key: "aPagar", label: "A Pagar (P)", numeric: true },
 ];
 
+type FiltroTipoRisco = "todos" | "np" | "p";
+
 export function RiscoPage() {
   const { filtered } = useDashboard();
   const riscos = React.useMemo(() => calcularRiscos(filtered), [filtered]);
   const agg = React.useMemo(() => agregarRisco(riscos), [riscos]);
 
-  const emRisco = React.useMemo(
-    () => riscos.filter((r) => r.tipoRisco !== null),
-    [riscos]
-  );
+  const [filtroTipo, setFiltroTipo] = React.useState<FiltroTipoRisco>("todos");
+
+  const emRisco = React.useMemo(() => {
+    const base = riscos.filter((r) => r.tipoRisco !== null);
+    if (filtroTipo === "todos") return base;
+    return base.filter((r) => r.tipoRisco === filtroTipo);
+  }, [riscos, filtroTipo]);
 
   // Tabela: ordenável, ordenação padrão por A Liquidar desc
   const [sortKey, setSortKey] = React.useState<SortKey>("aLiquidar");
@@ -75,7 +80,7 @@ export function RiscoPage() {
   const curPage = Math.min(page, totalPages - 1);
   const pageRows = ordenados.slice(curPage * PAGE_SIZE, curPage * PAGE_SIZE + PAGE_SIZE);
 
-  React.useEffect(() => setPage(0), [filtered]);
+  React.useEffect(() => setPage(0), [filtered, filtroTipo]);
 
   const toggleSort = (key: SortKey) => {
     if (key === sortKey) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -115,22 +120,69 @@ export function RiscoPage() {
         />
       </div>
 
-      {/* Bar chart: top credores por valor em risco */}
+      {/* Bar chart: top credores por valor em risco (respeita filtro de tipo) */}
       <ChartCard
         title="Top 10 credores por valor em risco"
-        subtitle="Empilhado: A Liquidar (NP) + A Pagar (P)"
+        subtitle={
+          filtroTipo === "np"
+            ? "Filtrado: Não Processado (A Liquidar)"
+            : filtroTipo === "p"
+              ? "Filtrado: Processado (A Pagar)"
+              : "Empilhado: A Liquidar (NP) + A Pagar (P)"
+        }
         className="h-[360px]"
       >
-        <RiscoCredores riscos={riscos} />
+        <RiscoCredores riscos={emRisco} />
       </ChartCard>
 
       {/* Tabela de empenhos em risco */}
       <Card className="flex flex-col">
-        <div className="border-b border-border p-3">
-          <h3 className="text-sm font-semibold text-foreground">Empenhos em risco de restos a pagar</h3>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            {emRisco.length.toLocaleString("pt-BR")} empenhos com saldo a liquidar e/ou a pagar
-          </p>
+        <div className="flex flex-col gap-2 border-b border-border p-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <h3 className="text-sm font-semibold text-foreground">
+              Empenhos em risco de restos a pagar
+            </h3>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              {emRisco.length.toLocaleString("pt-BR")} empenho
+              {emRisco.length === 1 ? "" : "s"}
+              {filtroTipo === "todos"
+                ? " com saldo a liquidar e/ou a pagar"
+                : filtroTipo === "np"
+                  ? " não processado(s) (a liquidar)"
+                  : " processado(s) (a pagar)"}
+            </p>
+          </div>
+          <div
+            className="flex shrink-0 rounded-lg border border-border p-0.5"
+            role="group"
+            aria-label="Filtrar por tipo de risco"
+          >
+            {(
+              [
+                { id: "todos", label: "Todos" },
+                { id: "np", label: "Não processado" },
+                { id: "p", label: "Processado" },
+              ] as const
+            ).map((opt) => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => setFiltroTipo(opt.id)}
+                className={cn(
+                  "rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors",
+                  filtroTipo === opt.id
+                    ? opt.id === "np"
+                      ? "bg-orange-300/30 text-orange-700 dark:text-orange-300"
+                      : opt.id === "p"
+                        ? "bg-yellow-300/30 text-yellow-800 dark:text-yellow-300"
+                        : "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="overflow-x-auto">
           <div className="min-w-[900px]">

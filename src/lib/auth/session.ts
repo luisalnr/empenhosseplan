@@ -2,7 +2,10 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 
 export const SESSION_COOKIE = "seplan_session";
-const MAX_AGE_SEC = 60 * 60 * 12; // 12h
+/** Sessão padrão (aba/sessão do navegador, cookie 12h). */
+export const MAX_AGE_SEC = 60 * 60 * 12; // 12h
+/** Acesso rápido autorizado pelo usuário: 7 dias. */
+export const MAX_AGE_REMEMBER_SEC = 60 * 60 * 24 * 7; // 7 dias
 
 export type SessionPayload = {
   id: string;
@@ -93,4 +96,4 @@ export function requireAdminSession(): SessionPayload | null {
   return s;
 }
 
-export { MAX_AGE_SEC };
+

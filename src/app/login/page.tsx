@@ -2,20 +2,29 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Eye, EyeOff, Loader2, Lock, Mail, BarChart3 } from "lucide-react";
-import { useAuth } from "@/components/providers/auth-provider";
+import { Eye, EyeOff, Loader2, Lock, Mail, ShieldCheck } from "lucide-react";
+import { getRememberedEmail, useAuth } from "@/components/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
 export default function LoginPage() {
-  const { login, loading: authLoading, user } = useAuth();
+  const { login, loading: authLoading, user, rememberPref } = useAuth();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [showPass, setShowPass] = React.useState(false);
+  const [remember, setRemember] = React.useState(false);
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+
+  // Pré-preenche e-mail e preferência de 7 dias (acesso rápido)
+  React.useEffect(() => {
+    if (authLoading) return;
+    setRemember(rememberPref);
+    const saved = getRememberedEmail();
+    if (saved) setEmail(saved);
+  }, [authLoading, rememberPref]);
 
   // Evita flash do formulário enquanto redireciona usuário já autenticado
   if (authLoading || user) {
@@ -31,7 +40,7 @@ export default function LoginPage() {
     setError(null);
     setSubmitting(true);
     try {
-      await login(email, password);
+      await login(email, password, remember);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Não foi possível entrar");
     } finally {
@@ -63,22 +72,18 @@ export default function LoginPage() {
         />
 
         <div className="relative z-10">
-          <div className="relative h-12 w-[200px]">
-            <Image
-              src="/logo-acre-branco.png"
+          <div className="relative h-14 w-[280px]">
+            {/* SVG estático — logo branca horizontal do Governo do Acre */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-acre-branco.svg"
               alt="Governo do Estado do Acre"
-              fill
-              className="object-contain object-left"
-              priority
+              className="h-14 w-auto max-w-[280px] object-contain object-left"
             />
           </div>
         </div>
 
         <div className="relative z-10 max-w-lg space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur">
-            <BarChart3 className="h-3.5 w-3.5" />
-            Painel de execução orçamentária
-          </div>
           <h1 className="text-4xl font-semibold leading-tight tracking-tight xl:text-5xl">
             Execução de
             <br />
@@ -89,20 +94,6 @@ export default function LoginPage() {
             Estado de Planejamento do Acre — empenhado, liquidado, pago e
             análise de restos a pagar, com importação dos relatórios SICAF.
           </p>
-          <ul className="grid gap-2 text-sm text-white/70">
-            <li className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-              Síntese com KPIs e gráficos orçamentários
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-              Análise de risco (RNP / RP)
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-              Importação de empenho, liquidação e pagamento
-            </li>
-          </ul>
         </div>
 
         <div className="relative z-10 space-y-1 text-xs text-white/50">
@@ -200,6 +191,27 @@ export default function LoginPage() {
                   </button>
                 </div>
               </div>
+
+              <label className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-border/80 bg-muted/30 px-3 py-2.5 transition-colors hover:bg-muted/50">
+                <input
+                  type="checkbox"
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-input text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                  checked={remember}
+                  onChange={(e) => setRemember(e.target.checked)}
+                  disabled={submitting}
+                />
+                <span className="min-w-0 text-left">
+                  <span className="flex items-center gap-1.5 text-sm font-medium text-foreground">
+                    <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+                    Acesso rápido por 7 dias
+                  </span>
+                  <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
+                    Autorizo este site a manter minha sessão e o e-mail neste
+                    dispositivo por 7 dias. A senha não é armazenada no
+                    navegador.
+                  </span>
+                </span>
+              </label>
 
               {error && (
                 <div
