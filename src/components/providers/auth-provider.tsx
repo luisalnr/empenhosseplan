@@ -2,11 +2,16 @@
 
 import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
+import {
+  clearQuickAccess,
+  getCachedEmail,
+  getCachedPassword,
+  loadQuickAccess,
+  saveQuickAccess,
+  updateQuickAccessUser,
+} from "@/lib/auth/quick-access";
 
-const STORAGE_KEY = "seplan_auth_session";
-const PERSIST_KEY = "seplan_auth_session_persist";
-const REMEMBER_PREF_KEY = "seplan_remember_7d_pref";
-const REMEMBER_EMAIL_KEY = "seplan_remember_email";
+const SESSION_KEY = "seplan_auth_session";
 
 export interface AuthUser {
   id: string;
@@ -19,7 +24,7 @@ interface AuthContextValue {
   user: AuthUser | null;
   loading: boolean;
   isAdmin: boolean;
-  /** Preferência de “manter acesso 7 dias” (para pré-marcar o checkbox). */
+  /** Usuário autorizou acesso rápido (cache 7 dias) nesta máquina. */
   rememberPref: boolean;
   login: (email: string, password: string, remember?: boolean) => Promise<void>;
   logout: () => Promise<void>;
@@ -34,11 +39,20 @@ export function useAuth() {
   return ctx;
 }
 
-function readSession(): AuthUser | null {
+/** E-mail salvo no cache de acesso rápido. */
+export function getRememberedEmail(): string {
+  return getCachedEmail();
+}
+
+/** Senha salva no cache de acesso rápido (se autorizada). */
+export function getRememberedPassword(): string {
+  return getCachedPassword();
+}
+
+function readEphemeralSession(): AuthUser | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw =
-      localStorage.getItem(PERSIST_KEY) || sessionStorage.getItem(STORAGE_KEY);
+    const raw = sessionStorage.getItem(SESSION_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as AuthUser;
     if (parsed?.email) return parsed;
@@ -48,35 +62,23 @@ function readSession(): AuthUser | null {
   return null;
 }
 
-function writeSession(user: AuthUser | null, persist: boolean) {
+function writeEphemeralSession(user: AuthUser | null) {
   if (typeof window === "undefined") return;
-  if (!user) {
-    sessionStorage.removeItem(STORAGE_KEY);
-    localStorage.removeItem(PERSIST_KEY);
-    return;
-  }
-  const raw = JSON.stringify(user);
-  if (persist) {
-    localStorage.setItem(PERSIST_KEY, raw);
-    sessionStorage.removeItem(STORAGE_KEY);
-    localStorage.setItem(REMEMBER_PREF_KEY, "1");
-    localStorage.setItem(REMEMBER_EMAIL_KEY, user.email);
-  } else {
-    sessionStorage.setItem(STORAGE_KEY, raw);
-    localStorage.removeItem(PERSIST_KEY);
-    localStorage.removeItem(REMEMBER_PREF_KEY);
-    // mantém e-mail opcional só se já havia preferência — senão limpa
-  }
+  if (!user) sessionStorage.removeItem(SESSION_KEY);
+  else sessionStorage.setItem(SESSION_KEY, JSON.stringify(user));
 }
 
-export function getRememberPref(): boolean {
-  if (typeof window === "undefined") return false;
-  return localStorage.getItem(REMEMBER_PREF_KEY) === "1";
-}
-
-export function getRememberedEmail(): string {
-  if (typeof window === "undefined") return "";
-  return localStorage.getItem(REMEMBER_EMAIL_KEY) || "";
+function readAnyLocalUser(): AuthUser | null {
+  const qa = loadQuickAccess();
+  if (qa?.user?.id) {
+    return {
+      id: qa.user.id,
+      name: qa.user.name,
+      email: qa.user.email,
+      papel: qa.user.papel,
+    };
+  }
+  return readEphemeralSession();
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -90,8 +92,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       const res = await fetch("/api/auth/me", { cache: "no-store" });
       if (!res.ok) {
-        writeSession(null, false);
+        const keepCreds = Boolean(loadQuickAccess()?.authorized);
+        writeEphemeralSession(null);
+        clearQuickAccess({ keepCredentials: keepCreds });
         setUser(null);
+        setRememberPref(Boolean(getCachedEmail()));
         return;
       }
       const data = await res.json();
@@ -101,19 +106,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         email: data.email || "",
         papel: data.papel || "operador",
       };
-      const persist = getRememberPref();
-      writeSession(session, persist);
+
+      const qa = loadQuickAccess();
+      if (qa?.authorized) {
+        // Mantém senha e prazo; atualiza perfil. Se não havia user id, regrava com senha salva.
+        const updated = updateQuickAccessUser(session);
+        if (!updated) {
+          const pwd = getCachedPassword();
+          if (pwd) saveQuickAccess(session, pwd);
+        }
+        writeEphemeralSession(null);
+        setRememberPref(true);
+      } else {
+        writeEphemeralSession(session);
+        setRememberPref(false);
+      }
       setUser(session);
-      setRememberPref(persist);
     } catch {
-      setUser(readSession());
+      setUser(readAnyLocalUser());
+      setRememberPref(Boolean(loadQuickAccess()?.authorized));
     }
   }, []);
 
   React.useEffect(() => {
     (async () => {
-      setRememberPref(getRememberPref());
-      setUser(readSession());
+      const qa = loadQuickAccess();
+      setRememberPref(Boolean(qa?.authorized));
+      setUser(readAnyLocalUser());
       await refresh();
       setLoading(false);
     })();
@@ -145,11 +164,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         email: data.email || email,
         papel: data.papel || "operador",
       };
-      writeSession(session, remember);
-      setRememberPref(remember);
+
       if (remember) {
-        localStorage.setItem(REMEMBER_EMAIL_KEY, session.email);
+        saveQuickAccess(session, password);
+        writeEphemeralSession(null);
+        setRememberPref(true);
+      } else {
+        clearQuickAccess();
+        writeEphemeralSession(session);
+        setRememberPref(false);
       }
+
       setUser(session);
       router.replace("/");
     },
@@ -162,15 +187,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch {
       /* ignore */
     }
-    // Mantém preferência de e-mail se havia remember; limpa sessão
-    const emailKeep = getRememberedEmail();
-    const hadPref = getRememberPref();
-    writeSession(null, false);
-    if (hadPref && emailKeep) {
-      localStorage.setItem(REMEMBER_PREF_KEY, "1");
-      localStorage.setItem(REMEMBER_EMAIL_KEY, emailKeep);
-    }
+    writeEphemeralSession(null);
+    // Mantém e-mail e senha no cache se havia acesso rápido
+    clearQuickAccess({ keepCredentials: true });
     setUser(null);
+    setRememberPref(Boolean(getCachedEmail()));
     router.replace("/login");
   }, [router]);
 

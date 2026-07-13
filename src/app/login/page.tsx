@@ -3,7 +3,11 @@
 import * as React from "react";
 import Image from "next/image";
 import { Eye, EyeOff, Loader2, Lock, Mail, ShieldCheck } from "lucide-react";
-import { getRememberedEmail, useAuth } from "@/components/providers/auth-provider";
+import {
+  getRememberedEmail,
+  getRememberedPassword,
+  useAuth,
+} from "@/components/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,12 +22,14 @@ export default function LoginPage() {
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
 
-  // Pré-preenche e-mail e preferência de 7 dias (acesso rápido)
+  // Pré-preenche e-mail, senha e preferência de 7 dias (acesso rápido)
   React.useEffect(() => {
     if (authLoading) return;
     setRemember(rememberPref);
-    const saved = getRememberedEmail();
-    if (saved) setEmail(saved);
+    const savedEmail = getRememberedEmail();
+    const savedPass = getRememberedPassword();
+    if (savedEmail) setEmail(savedEmail);
+    if (savedPass) setPassword(savedPass);
   }, [authLoading, rememberPref]);
 
   // Evita flash do formulário enquanto redireciona usuário já autenticado
@@ -206,9 +212,9 @@ export default function LoginPage() {
                     Acesso rápido por 7 dias
                   </span>
                   <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
-                    Autorizo este site a manter minha sessão e o e-mail neste
-                    dispositivo por 7 dias. A senha não é armazenada no
-                    navegador.
+                    Autorizo o armazenamento no cache deste navegador (e-mail,
+                    senha e dados da sessão) por 7 dias para acesso rápido.
+                    Desmarque se o dispositivo for compartilhado.
                   </span>
                 </span>
               </label>
