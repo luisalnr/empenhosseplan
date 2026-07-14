@@ -1,9 +1,11 @@
 import type { Empenho, Filtros, Totais } from "./types";
+import { exerciciosDe } from "./exercicio";
 
 export function filtrarEmpenhos(empenhos: Empenho[], f: Filtros): Empenho[] {
   const inicio = f.dataInicio || "";
   const fim = f.dataFim || "";
   return empenhos.filter((e) => {
+    if (f.exercicio.length && !f.exercicio.includes(e.exercicio)) return false;
     if (f.credor.length && !f.credor.includes(e.credor)) return false;
     if (f.elemento.length && !f.elemento.includes(e.elemento.codigo)) return false;
     if (f.fonte.length && !f.fonte.includes(e.fonte.codigo)) return false;
@@ -158,6 +160,7 @@ export function opcoesDeFiltro(empenhos: Empenho[]) {
   const tipos = [...new Set(empenhos.map((e) => e.tipo).filter(Boolean))].sort();
   const datas = empenhos.map((e) => e.dataEmissao).filter(Boolean).sort();
   return {
+    exercicios: exerciciosDe(empenhos),
     credores,
     elementos,
     fontes,

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { inArray, sql } from "drizzle-orm";
 import { getDb } from "@/lib/db/neon";
 import { empenhos } from "@/lib/db/schema";
 import { rowToEmpenho, empenhosToInserts } from "@/lib/db/mappers";
@@ -43,8 +44,12 @@ export async function POST(req: Request) {
     const inserts = empenhosToInserts(records);
 
     if (mode === "replace") {
-      // Substitui tudo: delete + insert em batches
-      await db.delete(empenhos);
+      // Replace é escopado aos exercícios presentes no arquivo: reimportar 2026
+      // não pode apagar 2025. Sem escopo, a base inteira seria perdida.
+      const exercicios = [...new Set(inserts.map((i) => i.exercicio).filter(Boolean))] as string[];
+      if (exercicios.length) {
+        await db.delete(empenhos).where(inArray(empenhos.exercicio, exercicios));
+      }
       await batchInsert(db, inserts);
     } else {
       // Merge: upsert (on conflict do update)
@@ -90,34 +95,37 @@ async function batchUpsert(db: ReturnType<typeof getDb>, inserts: ReturnType<typ
     await db
       .insert(empenhos)
       .values(chunk)
+      // `excluded.*` = a linha que estava sendo inserida. Referenciar a coluna
+      // (empenhos.x) reescreveria o valor antigo sobre ele mesmo — o merge viraria no-op.
       .onConflictDoUpdate({
         target: empenhos.numero,
         set: {
-          dataEmissao: empenhos.dataEmissao,
-          motivo: empenhos.motivo,
-          tipo: empenhos.tipo,
-          descricao: empenhos.descricao,
-          reduzido: empenhos.reduzido,
-          despesa: empenhos.despesa,
-          credor: empenhos.credor,
-          categoriaCodigo: empenhos.categoriaCodigo,
-          categoriaDescricao: empenhos.categoriaDescricao,
-          gndCodigo: empenhos.gndCodigo,
-          gndDescricao: empenhos.gndDescricao,
-          modalidadeCodigo: empenhos.modalidadeCodigo,
-          modalidadeDescricao: empenhos.modalidadeDescricao,
-          elementoCodigo: empenhos.elementoCodigo,
-          elementoDescricao: empenhos.elementoDescricao,
-          fonteCodigo: empenhos.fonteCodigo,
-          fonteDescricao: empenhos.fonteDescricao,
-          classeCodigo: empenhos.classeCodigo,
-          classeDescricao: empenhos.classeDescricao,
-          valor: empenhos.valor,
-          anulado: empenhos.anulado,
-          complemento: empenhos.complemento,
-          liquidado: empenhos.liquidado,
-          pago: empenhos.pago,
-          aLiquidar: empenhos.aLiquidar,
+          exercicio: sql`excluded.exercicio`,
+          dataEmissao: sql`excluded.data_emissao`,
+          motivo: sql`excluded.motivo`,
+          tipo: sql`excluded.tipo`,
+          descricao: sql`excluded.descricao`,
+          reduzido: sql`excluded.reduzido`,
+          despesa: sql`excluded.despesa`,
+          credor: sql`excluded.credor`,
+          categoriaCodigo: sql`excluded.categoria_codigo`,
+          categoriaDescricao: sql`excluded.categoria_descricao`,
+          gndCodigo: sql`excluded.gnd_codigo`,
+          gndDescricao: sql`excluded.gnd_descricao`,
+          modalidadeCodigo: sql`excluded.modalidade_codigo`,
+          modalidadeDescricao: sql`excluded.modalidade_descricao`,
+          elementoCodigo: sql`excluded.elemento_codigo`,
+          elementoDescricao: sql`excluded.elemento_descricao`,
+          fonteCodigo: sql`excluded.fonte_codigo`,
+          fonteDescricao: sql`excluded.fonte_descricao`,
+          classeCodigo: sql`excluded.classe_codigo`,
+          classeDescricao: sql`excluded.classe_descricao`,
+          valor: sql`excluded.valor`,
+          anulado: sql`excluded.anulado`,
+          complemento: sql`excluded.complemento`,
+          liquidado: sql`excluded.liquidado`,
+          pago: sql`excluded.pago`,
+          aLiquidar: sql`excluded.a_liquidar`,
         },
       });
   }

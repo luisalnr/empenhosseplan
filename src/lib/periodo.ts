@@ -1,6 +1,9 @@
 import type { Empenho, PeriodoAnalise } from "./types";
 import { formatDate } from "./utils";
 
+/** exercício ("2026") → período declarado no relatório daquele exercício. */
+export type PeriodosPorExercicio = Record<string, PeriodoAnalise>;
+
 const EPOCH_MS = Date.UTC(1899, 11, 30);
 const STORAGE_KEY = "seplan_periodo_analise";
 
@@ -89,30 +92,72 @@ export function periodoFromEmpenhos(empenhos: Empenho[]): PeriodoAnalise | null 
   return { inicio: datas[0], fim: datas[datas.length - 1] };
 }
 
+/** Um período por exercício, derivado das emissões (fallback de quem não declarou). */
+export function periodosFromEmpenhos(empenhos: Empenho[]): PeriodosPorExercicio {
+  const out: PeriodosPorExercicio = {};
+  for (const ex of new Set(empenhos.map((e) => e.exercicio).filter(Boolean))) {
+    const p = periodoFromEmpenhos(empenhos.filter((e) => e.exercicio === ex));
+    if (p) out[ex] = p;
+  }
+  return out;
+}
+
+/** Intervalo que cobre os exercícios pedidos (ou todos, se a lista vier vazia). */
+export function periodoDosExercicios(
+  mapa: PeriodosPorExercicio,
+  exercicios: string[]
+): PeriodoAnalise | null {
+  const alvos = exercicios.length ? exercicios : Object.keys(mapa);
+  const ps = alvos.map((ex) => mapa[ex]).filter(Boolean);
+  if (!ps.length) return null;
+  return {
+    inicio: ps.map((p) => p.inicio).sort()[0],
+    fim: ps.map((p) => p.fim).sort().reverse()[0],
+  };
+}
+
 export function formatPeriodo(p: PeriodoAnalise | null | undefined): string {
   if (!p?.inicio || !p?.fim) return "";
   return `${formatDate(p.inicio)} a ${formatDate(p.fim)}`;
 }
 
-export function loadPeriodoStored(): PeriodoAnalise | null {
-  if (typeof window === "undefined") return null;
+/**
+ * Mapa exercício → período, persistido no localStorage. O formato antigo era um
+ * único período (pré-multiexercício); se for o que estiver salvo, migra atribuindo-o
+ * ao exercício da data de início.
+ */
+export function loadPeriodosStored(): PeriodosPorExercicio {
+  if (typeof window === "undefined") return {};
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const p = JSON.parse(raw) as PeriodoAnalise;
-    if (p?.inicio && p?.fim) return p;
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as PeriodoAnalise | PeriodosPorExercicio;
+    if (isPeriodo(parsed)) {
+      const ex = parsed.inicio.slice(0, 4);
+      return ex ? { [ex]: parsed } : {};
+    }
+    return Object.fromEntries(
+      Object.entries(parsed ?? {}).filter(([, p]) => isPeriodo(p))
+    );
   } catch {
-    /* ignore */
+    return {};
   }
-  return null;
 }
 
-export function savePeriodoStored(p: PeriodoAnalise | null): void {
-  if (typeof window === "undefined") return;
+/** Grava o período de um exercício, preservando os demais. */
+export function savePeriodoStored(exercicio: string, p: PeriodoAnalise | null): void {
+  if (typeof window === "undefined" || !exercicio) return;
   try {
-    if (!p) window.localStorage.removeItem(STORAGE_KEY);
-    else window.localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+    const mapa = loadPeriodosStored();
+    if (p) mapa[exercicio] = p;
+    else delete mapa[exercicio];
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(mapa));
   } catch {
     /* ignore */
   }
+}
+
+function isPeriodo(v: unknown): v is PeriodoAnalise {
+  const p = v as PeriodoAnalise | null;
+  return !!p && typeof p.inicio === "string" && typeof p.fim === "string" && !!p.inicio && !!p.fim;
 }

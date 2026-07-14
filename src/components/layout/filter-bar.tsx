@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, ChevronsUpDown, RotateCcw, Users, FileText } from "lucide-react";
 import { useDashboard } from "@/components/providers/dashboard-provider";
-import { filtrosSchema, type FiltrosForm, filtrosVazios } from "@/lib/filters";
+import { filtrosSchema, type FiltrosForm } from "@/lib/filters";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,15 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Separator } from "@/components/ui/separator";
 
-const CAMPOS_ATIVOS = ["credor", "elemento", "fonte", "tipo", "dataInicio", "dataFim"] as const;
+const CAMPOS_ATIVOS = [
+  "exercicio",
+  "credor",
+  "elemento",
+  "fonte",
+  "tipo",
+  "dataInicio",
+  "dataFim",
+] as const;
 
 function FiltrosAtivosBadge({ valores }: { valores: FiltrosForm }) {
   const n = CAMPOS_ATIVOS.filter((k) => {
@@ -129,11 +137,12 @@ function MultiSelect({
 }
 
 export function FilterBar() {
-  const { opcoes, setFiltros, limparFiltros, totais, risco, pagina } = useDashboard();
+  const { opcoes, filtrosPadrao, setFiltros, limparFiltros, totais, risco, pagina } =
+    useDashboard();
 
   const form = useForm<FiltrosForm>({
     resolver: zodResolver(filtrosSchema),
-    defaultValues: filtrosVazios,
+    defaultValues: filtrosPadrao,
     mode: "onChange",
   });
 
@@ -143,6 +152,7 @@ export function FilterBar() {
   React.useEffect(() => {
     const sub = form.watch((data) => {
       setFiltros({
+        exercicio: (data.exercicio ?? []).filter((v): v is string => !!v),
         credor: (data.credor ?? []).filter((v): v is string => !!v),
         elemento: (data.elemento ?? []).filter((v): v is string => !!v),
         fonte: (data.fonte ?? []).filter((v): v is string => !!v),
@@ -154,117 +164,168 @@ export function FilterBar() {
     return () => sub.unsubscribe();
   }, [form, setFiltros]);
 
+  // Os empenhos chegam depois da 1ª renderização; quando o exercício padrão for
+  // conhecido, o formulário passa a refleti-lo.
+  React.useEffect(() => {
+    if (!filtrosPadrao.exercicio.length) return;
+    form.reset({ ...filtrosPadrao });
+    setResetKey((k) => k + 1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtrosPadrao]);
+
   const limpar = () => {
-    form.reset({ ...filtrosVazios });
+    form.reset({ ...filtrosPadrao });
     limparFiltros();
     setResetKey((k) => k + 1);
   };
 
+  // min-w cabe "dd/mm/aaaa" + o ícone do date picker sem truncar em nenhum navegador.
+  const dateInputCls =
+    "h-9 w-full min-w-[8.5rem] rounded-md border border-input bg-card px-2 py-1 text-sm shadow-sm focus-visible:ring-2 focus-visible:ring-ring";
+
   return (
-    <form key={resetKey} className="flex flex-wrap items-end gap-2 px-4 py-3 sm:px-6">
-      <Field label="Credor" className="w-full sm:w-72">
-        <MultiSelect
-          value={form.watch("credor")}
-          onChange={(v) => form.setValue("credor", v, { shouldDirty: true })}
-          opcoes={opcoes.credores.map((c) => ({ value: c, label: c }))}
-          placeholder="Todos os credores"
-          buscaPlaceholder="Buscar credor…"
-          vazio="Nenhum credor encontrado."
-        />
-      </Field>
+    <form
+      key={resetKey}
+      className="flex flex-col gap-3 px-4 py-3 sm:px-6 xl:flex-row xl:items-end xl:gap-4"
+    >
+      {/* Zona 1: filtros. Grid fluido — as colunas se reacomodam sem deixar buracos. */}
+      <div className="grid flex-1 grid-cols-2 items-end gap-x-3 gap-y-2 md:grid-cols-4 xl:grid-cols-[7rem_minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)_8rem_20.5rem]">
+        <Field label="Exercício">
+          <MultiSelect
+            value={form.watch("exercicio")}
+            onChange={(v) => form.setValue("exercicio", v, { shouldDirty: true })}
+            opcoes={opcoes.exercicios.map((ex) => ({ value: ex, label: ex }))}
+            placeholder="Todos"
+            buscaPlaceholder="Buscar exercício…"
+            vazio="Nenhum exercício encontrado."
+            larguraPopover="w-[200px]"
+          />
+        </Field>
 
-      <Field label="Elemento de despesa" className="w-full sm:w-64">
-        <MultiSelect
-          value={form.watch("elemento")}
-          onChange={(v) => form.setValue("elemento", v, { shouldDirty: true })}
-          opcoes={opcoes.elementos.map((e) => ({
-            value: e.codigo,
-            label: e.descricao,
-            hint: e.codigo,
-          }))}
-          placeholder="Todos os elementos"
-          buscaPlaceholder="Buscar elemento…"
-          vazio="Nenhum elemento encontrado."
-        />
-      </Field>
+        <Field label="Credor">
+          <MultiSelect
+            value={form.watch("credor")}
+            onChange={(v) => form.setValue("credor", v, { shouldDirty: true })}
+            opcoes={opcoes.credores.map((c) => ({ value: c, label: c }))}
+            placeholder="Todos os credores"
+            buscaPlaceholder="Buscar credor…"
+            vazio="Nenhum credor encontrado."
+          />
+        </Field>
 
-      <Field label="Fonte de recursos" className="w-full sm:w-64">
-        <MultiSelect
-          value={form.watch("fonte")}
-          onChange={(v) => form.setValue("fonte", v, { shouldDirty: true })}
-          opcoes={opcoes.fontes.map((f) => ({
-            value: f.codigo,
-            label: f.descricao,
-            hint: f.codigo,
-          }))}
-          placeholder="Todas as fontes"
-          buscaPlaceholder="Buscar fonte…"
-          vazio="Nenhuma fonte encontrada."
-        />
-      </Field>
+        <Field label="Elemento de despesa">
+          <MultiSelect
+            value={form.watch("elemento")}
+            onChange={(v) => form.setValue("elemento", v, { shouldDirty: true })}
+            opcoes={opcoes.elementos.map((e) => ({
+              value: e.codigo,
+              label: e.descricao,
+              hint: e.codigo,
+            }))}
+            placeholder="Todos os elementos"
+            buscaPlaceholder="Buscar elemento…"
+            vazio="Nenhum elemento encontrado."
+          />
+        </Field>
 
-      <Field label="Tipo" className="w-44">
-        <MultiSelect
-          value={form.watch("tipo")}
-          onChange={(v) => form.setValue("tipo", v, { shouldDirty: true })}
-          opcoes={opcoes.tipos.map((t) => ({ value: t, label: t }))}
-          placeholder="Todos"
-          buscaPlaceholder="Buscar tipo…"
-          vazio="Nenhum tipo encontrado."
-          larguraPopover="w-[220px]"
-        />
-      </Field>
+        <Field label="Fonte de recursos">
+          <MultiSelect
+            value={form.watch("fonte")}
+            onChange={(v) => form.setValue("fonte", v, { shouldDirty: true })}
+            opcoes={opcoes.fontes.map((f) => ({
+              value: f.codigo,
+              label: f.descricao,
+              hint: f.codigo,
+            }))}
+            placeholder="Todas as fontes"
+            buscaPlaceholder="Buscar fonte…"
+            vazio="Nenhuma fonte encontrada."
+          />
+        </Field>
 
-      <Field label="De" className="w-40">
-        <input
-          type="date"
-          className="flex h-9 w-full rounded-md border border-input bg-card px-3 py-1 text-sm shadow-sm focus-visible:ring-2 focus-visible:ring-ring"
-          value={form.watch("dataInicio")}
-          min={opcoes.dataMin}
-          max={opcoes.dataMax}
-          onChange={(e) => form.setValue("dataInicio", e.target.value, { shouldDirty: true })}
-        />
-      </Field>
+        <Field label="Tipo">
+          <MultiSelect
+            value={form.watch("tipo")}
+            onChange={(v) => form.setValue("tipo", v, { shouldDirty: true })}
+            opcoes={opcoes.tipos.map((t) => ({ value: t, label: t }))}
+            placeholder="Todos"
+            buscaPlaceholder="Buscar tipo…"
+            vazio="Nenhum tipo encontrado."
+            larguraPopover="w-[220px]"
+          />
+        </Field>
 
-      <Field label="Até" className="w-40">
-        <input
-          type="date"
-          className="flex h-9 w-full rounded-md border border-input bg-card px-3 py-1 text-sm shadow-sm focus-visible:ring-2 focus-visible:ring-ring"
-          value={form.watch("dataFim")}
-          min={opcoes.dataMin}
-          max={opcoes.dataMax}
-          onChange={(e) => form.setValue("dataFim", e.target.value, { shouldDirty: true })}
-        />
-      </Field>
-
-      <div className="flex items-end gap-3">
-        <div className="flex flex-col gap-1">
-          <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-            {pagina === "risco" ? "Credores em Risco" : "Credores"}
-          </span>
-          <span className="flex h-9 items-center gap-1.5 text-sm font-semibold text-foreground">
-            <Users className="h-4 w-4 text-muted-foreground" />
-            {(pagina === "risco" ? risco.qtdCredoresRisco : totais.qtdCredores).toLocaleString("pt-BR")}
-          </span>
-        </div>
-        <div className="flex flex-col gap-1">
-          <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-            {pagina === "risco" ? "Empenhos em Risco" : "Empenhos"}
-          </span>
-          <span className="flex h-9 items-center gap-1.5 text-sm font-semibold text-foreground">
-            <FileText className="h-4 w-4 text-muted-foreground" />
-            {(pagina === "risco" ? risco.qtdEmRisco : totais.qtdEmpenhos).toLocaleString("pt-BR")}
-          </span>
-        </div>
+        {/* De/Até formam um intervalo só — ficam sob um rótulo único. */}
+        <Field label="Emissão" className="col-span-2 md:col-span-2 xl:col-span-1">
+          <div className="flex items-center gap-1.5">
+            <input
+              type="date"
+              aria-label="Emissão — data inicial"
+              className={dateInputCls}
+              value={form.watch("dataInicio")}
+              min={opcoes.dataMin}
+              max={opcoes.dataMax}
+              onChange={(e) => form.setValue("dataInicio", e.target.value, { shouldDirty: true })}
+            />
+            <span className="shrink-0 text-xs text-muted-foreground">até</span>
+            <input
+              type="date"
+              aria-label="Emissão — data final"
+              className={dateInputCls}
+              value={form.watch("dataFim")}
+              min={opcoes.dataMin}
+              max={opcoes.dataMax}
+              onChange={(e) => form.setValue("dataFim", e.target.value, { shouldDirty: true })}
+            />
+          </div>
+        </Field>
       </div>
 
-      <div className="flex items-center gap-2 pb-0.5 ml-auto">
-        <FiltrosAtivosBadge valores={valores} />
-        <Button type="button" variant="outline" size="sm" onClick={limpar}>
-          <RotateCcw className="h-4 w-4" /> Limpar
-        </Button>
+      {/* Zona 2: resultado da filtragem + ações. Separada da zona de entrada. */}
+      <div className="flex items-end justify-between gap-4 border-t pt-3 xl:shrink-0 xl:justify-start xl:border-l xl:border-t-0 xl:pl-4 xl:pt-0">
+        <div className="flex items-end gap-4">
+          <Kpi
+            icon={Users}
+            label={pagina === "risco" ? "Credores em Risco" : "Credores"}
+            value={pagina === "risco" ? risco.qtdCredoresRisco : totais.qtdCredores}
+          />
+          <Kpi
+            icon={FileText}
+            label={pagina === "risco" ? "Empenhos em Risco" : "Empenhos"}
+            value={pagina === "risco" ? risco.qtdEmRisco : totais.qtdEmpenhos}
+          />
+        </div>
+
+        <div className="flex items-center gap-2 pb-0.5">
+          <FiltrosAtivosBadge valores={valores} />
+          <Button type="button" variant="outline" size="sm" onClick={limpar}>
+            <RotateCcw className="h-4 w-4" /> Limpar
+          </Button>
+        </div>
       </div>
     </form>
+  );
+}
+
+function Kpi({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: number;
+}) {
+  return (
+    <div className="flex flex-col gap-1">
+      <span className="whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+        {label}
+      </span>
+      <span className="flex h-9 items-center gap-1.5 text-sm font-semibold text-foreground">
+        <Icon className="h-4 w-4 text-muted-foreground" />
+        {value.toLocaleString("pt-BR")}
+      </span>
+    </div>
   );
 }
 
@@ -277,12 +338,14 @@ function Field({
   className?: string;
   children: React.ReactNode;
 }) {
+  // <div>, não <label>: os controles são um botão (combobox) ou um par de inputs —
+  // em nenhum dos casos um label envolvente aponta para um alvo único.
   return (
-    <label className={cn("flex flex-col gap-1", className)}>
-      <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+    <div className={cn("flex min-w-0 flex-col gap-1", className)}>
+      <span className="truncate text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
         {label}
       </span>
       {children}
-    </label>
+    </div>
   );
 }

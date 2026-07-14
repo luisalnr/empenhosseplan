@@ -19,6 +19,7 @@ export const empenhos = pgTable(
   "empenhos",
   {
     numero: text("numero").notNull(),
+    exercicio: text("exercicio").notNull().default(""),
     dataEmissao: date("data_emissao").notNull(),
     motivo: text("motivo").notNull().default(""),
     tipo: text("tipo").notNull().default(""),
@@ -56,6 +57,7 @@ export const empenhos = pgTable(
   },
   (t) => ({
     pk: primaryKey({ columns: [t.numero] }),
+    exercicioIdx: index("idx_empenhos_exercicio").on(t.exercicio),
     credorIdx: index("idx_empenhos_credor").on(t.credor),
     dataIdx: index("idx_empenhos_data").on(t.dataEmissao),
     tipoIdx: index("idx_empenhos_tipo").on(t.tipo),

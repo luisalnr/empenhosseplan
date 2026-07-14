@@ -9,10 +9,10 @@ class SeplanDB extends Dexie {
   constructor() {
     // Nome versionado: trocas da planilha-base (seed) exigem um DB novo para
     // recarregar os dados atualizados em navegadores já com o seed anterior.
-    super("seplan_empenhos_v7");
+    super("seplan_empenhos_v8");
     this.version(1).stores({
       // PK = numero; índices nos campos de filtro/agrupamento mais usados
-      empenhos: "numero, dataEmissao, credor, tipo, elemento.codigo, fonte.codigo, classe.codigo, gnd.codigo, categoria.codigo",
+      empenhos: "numero, exercicio, dataEmissao, credor, tipo, elemento.codigo, fonte.codigo, classe.codigo, gnd.codigo, categoria.codigo",
       liquidacoes: "numero, numeroEmpenho, data",
       pagamentos: "numero, numeroEmpenho, data",
     });

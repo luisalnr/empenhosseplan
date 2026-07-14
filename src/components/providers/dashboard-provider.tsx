@@ -35,15 +35,20 @@ import {
   opcoesDeFiltro,
 } from "@/lib/aggregations";
 import { calcularRiscos, agregarRisco } from "@/lib/risco";
+import { exercicioMaisRecente, exerciciosDe } from "@/lib/exercicio";
 import {
   loadPeriodoSeed,
-  loadPeriodoStored,
+  loadPeriodosStored,
+  periodoDosExercicios,
   periodoFromEmpenhos,
+  periodosFromEmpenhos,
   savePeriodoStored,
+  type PeriodosPorExercicio,
 } from "@/lib/periodo";
 import type { FiltrosForm } from "@/lib/filters";
 
 interface Opcoes {
+  exercicios: string[];
   credores: string[];
   elementos: { codigo: string; descricao: string }[];
   fontes: { codigo: string; descricao: string }[];
@@ -67,6 +72,8 @@ interface DashboardContextValue {
   risco: RiscoAgregado;
   opcoes: Opcoes;
   filtros: Filtros;
+  /** Estado inicial dos filtros: exercício mais recente selecionado. */
+  filtrosPadrao: Filtros;
   setFiltros: (f: Partial<FiltrosForm>) => void;
   limparFiltros: () => void;
   mto: MtoData | null;
@@ -102,7 +109,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = React.useState<string | null>(null);
   const [pagina, setPagina] = React.useState<Pagina>("sintese");
   const [ultimaAtualizacao, setUltima] = React.useState<string | null>(null);
-  const [periodoAnalise, setPeriodoAnalise] = React.useState<PeriodoAnalise | null>(null);
+  const [periodos, setPeriodos] = React.useState<PeriodosPorExercicio>({});
 
   const carregar = React.useCallback(async () => {
     setLoading(true);
@@ -121,11 +128,12 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       setLiquidacoes(liq);
       setPagamentos(pag);
       setUltima(new Date().toLocaleString("pt-BR"));
-      // Período de emissão declarado no relatório: o da última importação, senão o do
-      // relatório que gerou o seed; só então cai para o intervalo de emissão dos empenhos.
-      setPeriodoAnalise(
-        loadPeriodoStored() ?? (await loadPeriodoSeed()) ?? periodoFromEmpenhos(dados)
-      );
+      // Período de emissão por exercício, do menos para o mais confiável: emissões dos
+      // empenhos → relatório que gerou o seed → relatórios já importados neste navegador.
+      const mapa = periodosFromEmpenhos(dados);
+      const seed = await loadPeriodoSeed();
+      if (seed) mapa[seed.inicio.slice(0, 4)] = seed;
+      setPeriodos({ ...mapa, ...loadPeriodosStored() });
     } catch (e) {
       setError(e instanceof Error ? e.message : "Erro ao carregar dados");
     } finally {
@@ -137,13 +145,47 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     carregar();
   }, [carregar]);
 
+  // Com vários exercícios na base, o padrão é o mais recente: somar exercícios
+  // distintos nos KPIs e no painel de Risco (restos a pagar) não tem sentido contábil.
+  const filtrosPadrao = React.useMemo<Filtros>(() => {
+    const recente = exercicioMaisRecente(empenhos);
+    return { ...filtrosVazios, exercicio: recente ? [recente] : [] };
+  }, [empenhos]);
+
+  const padraoAplicado = React.useRef(false);
+  React.useEffect(() => {
+    if (padraoAplicado.current || !filtrosPadrao.exercicio.length) return;
+    padraoAplicado.current = true;
+    setFiltrosState(filtrosPadrao);
+  }, [filtrosPadrao]);
+
   const setFiltros = React.useCallback((f: Partial<FiltrosForm>) => {
     setFiltrosState((prev) => ({ ...prev, ...f }));
   }, []);
 
   const limparFiltros = React.useCallback(() => {
-    setFiltrosState({ ...filtrosVazios });
-  }, []);
+    setFiltrosState({ ...filtrosPadrao });
+  }, [filtrosPadrao]);
+
+  /**
+   * Registra o período dos exercícios que acabaram de ser importados, sem tocar nos
+   * demais. O período declarado no relatório vale para todos os exercícios do arquivo;
+   * na falta dele, cada exercício cai no intervalo de emissão dos próprios registros.
+   */
+  const registrarPeriodo = React.useCallback(
+    (records: Empenho[], declarado: PeriodoAnalise | null) => {
+      const novos: PeriodosPorExercicio = {};
+      for (const ex of exerciciosDe(records)) {
+        const p =
+          declarado ?? periodoFromEmpenhos(records.filter((r) => r.exercicio === ex));
+        if (!p) continue;
+        novos[ex] = p;
+        savePeriodoStored(ex, p);
+      }
+      setPeriodos((prev) => ({ ...prev, ...novos }));
+    },
+    []
+  );
 
   const importar = React.useCallback(
     async (file: Blob, mode: "merge" | "replace") => {
@@ -155,12 +197,10 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       const dados = await getAllEmpenhos();
       setEmpenhos(dados);
       setUltima(new Date().toLocaleString("pt-BR"));
-      const periodoFinal = periodo ?? periodoFromEmpenhos(dados);
-      setPeriodoAnalise(periodoFinal);
-      savePeriodoStored(periodoFinal);
+      registrarPeriodo(records, periodo);
       return records.length;
     },
-    [mto]
+    [mto, registrarPeriodo]
   );
 
   const importarTudo = React.useCallback(
@@ -174,11 +214,13 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
 
       const resultados: ResultadoImportacao[] = [];
       let periodoDetectado: PeriodoAnalise | null = null;
+      let empenhosImportados: Empenho[] = [];
 
       if (empenho) {
         try {
           const { records, periodo } = await parseSicafXlsx(empenho, mto!);
           if (periodo) periodoDetectado = periodo;
+          empenhosImportados = records;
           if (records.length === 0) {
             resultados.push({
               tipo: "empenho",
@@ -286,13 +328,18 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       setPagamentos(pag);
       setUltima(new Date().toLocaleString("pt-BR"));
 
-      const periodoFinal = periodoDetectado ?? periodoFromEmpenhos(dados);
-      setPeriodoAnalise(periodoFinal);
-      savePeriodoStored(periodoFinal);
+      // Só os exercícios efetivamente importados têm o período reescrito.
+      registrarPeriodo(empenhosImportados, periodoDetectado);
 
       return resultados;
     },
-    [mto]
+    [mto, registrarPeriodo]
+  );
+
+  // O cabeçalho mostra o período dos exercícios selecionados, não um valor global.
+  const periodoAnalise = React.useMemo(
+    () => periodoDosExercicios(periodos, filtros.exercicio),
+    [periodos, filtros.exercicio]
   );
 
   const filtered = React.useMemo(() => filtrarEmpenhos(empenhos, filtros), [empenhos, filtros]);
@@ -307,6 +354,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     risco,
     opcoes,
     filtros,
+    filtrosPadrao,
     setFiltros,
     limparFiltros,
     mto,

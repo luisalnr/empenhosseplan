@@ -5,6 +5,7 @@ export interface Ref {
 
 export interface Empenho {
   numero: string;
+  exercicio: string; // ano do sufixo do número (7130010001/2026 → "2026")
   dataEmissao: string; // ISO yyyy-mm-dd
   motivo: string;
   tipo: string; // Ordinário | Estimativo | Global
@@ -53,6 +54,7 @@ export interface Totais {
 }
 
 export interface Filtros {
+  exercicio: string[];
   credor: string[];
   elemento: string[];
   fonte: string[];

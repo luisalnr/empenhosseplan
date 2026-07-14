@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { sql } from "drizzle-orm";
+import { inArray, sql } from "drizzle-orm";
 import { getDb } from "@/lib/db/neon";
 import { pagamentos } from "@/lib/db/schema";
 import { rowToFase, fasesToInserts } from "@/lib/db/mappers";
+import { exerciciosDosVinculos } from "@/lib/exercicio";
 import type { FaseDespesa } from "@/lib/types";
 
 export const runtime = "nodejs";
@@ -38,7 +39,14 @@ export async function POST(req: Request) {
     const inserts = fasesToInserts(records);
 
     if (mode === "replace") {
-      await db.delete(pagamentos);
+      // Escopado ao exercício do empenho vinculado (sufixo de numero_empenho),
+      // para que reimportar um ano não apague as fases dos demais.
+      const exercicios = exerciciosDosVinculos(inserts);
+      if (exercicios.length) {
+        await db
+          .delete(pagamentos)
+          .where(inArray(sql`split_part(${pagamentos.numeroEmpenho}, '/', 2)`, exercicios));
+      }
       await batchInsert(db, inserts);
     } else if (inserts.length) {
       await batchUpsert(db, inserts);

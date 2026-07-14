@@ -101,8 +101,12 @@ const dexieRepo = {
   },
   async replaceAll(records: Empenho[]): Promise<number> {
     const db = await getDexie();
+    // Replace escopado aos exercícios do arquivo: reimportar 2026 não pode apagar 2025.
+    const exercicios = [...new Set(records.map((r) => r.exercicio).filter(Boolean))];
     await db.transaction("rw", db.empenhos, async () => {
-      await db.empenhos.clear();
+      if (exercicios.length) {
+        await db.empenhos.where("exercicio").anyOf(exercicios).delete();
+      }
       if (records.length) await db.empenhos.bulkPut(records);
     });
     return records.length;

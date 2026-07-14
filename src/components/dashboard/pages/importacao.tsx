@@ -12,9 +12,11 @@ import {
   Clock,
   Trash2,
   ListChecks,
+  Info,
   type LucideIcon,
 } from "lucide-react";
 import { useDashboard } from "@/components/providers/dashboard-provider";
+import { exerciciosDe } from "@/lib/exercicio";
 import { parseSicafXlsx, COLUNAS_EMPENHO } from "@/lib/parser";
 import {
   parseLiquidacoesXlsx,
@@ -363,6 +365,12 @@ export function ImportacaoPage() {
     pagamento: emptySlot(),
   });
   const [mode, setMode] = React.useState<"merge" | "replace">("replace");
+
+  // Exercícios detectados na planilha de empenhos: é o escopo exato do "Substituir".
+  const exerciciosDoArquivo = React.useMemo(
+    () => exerciciosDe(slots.empenho.records as Empenho[]),
+    [slots.empenho.records]
+  );
   const [importing, setImporting] = React.useState(false);
   const [resultados, setResultados] = React.useState<ResultadoImportacao[] | null>(null);
   const [importError, setImportError] = React.useState<string | null>(null);
@@ -595,54 +603,86 @@ export function ImportacaoPage() {
 
           {/* Barra de ações compacta — base alinhada ao painel de checagens */}
           <Card className="z-10 shrink-0 border-border shadow-md">
-            <CardContent className="flex flex-row flex-wrap items-center justify-between gap-2 px-3 py-2">
-              <div className="flex min-w-0 flex-wrap items-center gap-2">
-                <span className="text-xs font-medium text-foreground sm:text-sm">
-                  Modo de importação
-                </span>
-                <div className="flex rounded-md border border-border p-0.5">
-                  <button
-                    type="button"
-                    className={cn(
-                      "rounded px-2.5 py-1 text-xs font-medium transition-colors sm:text-sm",
-                      mode === "replace"
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                    onClick={() => setMode("replace")}
-                  >
-                    Substituir tudo
-                  </button>
-                  <button
-                    type="button"
-                    className={cn(
-                      "rounded px-2.5 py-1 text-xs font-medium transition-colors sm:text-sm",
-                      mode === "merge"
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                    onClick={() => setMode("merge")}
-                  >
-                    Mesclar
-                  </button>
+            <CardContent className="flex flex-col gap-2 px-3 py-2">
+              <div className="flex flex-row flex-wrap items-center justify-between gap-2">
+                <div className="flex min-w-0 flex-wrap items-center gap-2">
+                  <span className="text-xs font-medium text-foreground sm:text-sm">
+                    Modo de importação
+                  </span>
+                  <div className="flex rounded-md border border-border p-0.5">
+                    <button
+                      type="button"
+                      className={cn(
+                        "rounded px-2.5 py-1 text-xs font-medium transition-colors sm:text-sm",
+                        mode === "replace"
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      )}
+                      onClick={() => setMode("replace")}
+                    >
+                      Substituir exercício
+                    </button>
+                    <button
+                      type="button"
+                      className={cn(
+                        "rounded px-2.5 py-1 text-xs font-medium transition-colors sm:text-sm",
+                        mode === "merge"
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      )}
+                      onClick={() => setMode("merge")}
+                    >
+                      Mesclar
+                    </button>
+                  </div>
                 </div>
+                <Button
+                  disabled={!canImport}
+                  onClick={processar}
+                  size="sm"
+                  className="h-8 gap-1.5 px-3 text-xs sm:min-w-[9rem]"
+                >
+                  {importing ? (
+                    <>
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" /> Importando…
+                    </>
+                  ) : (
+                    <>
+                      <Upload className="h-3.5 w-3.5" /> Importar tudo
+                    </>
+                  )}
+                </Button>
               </div>
-              <Button
-                disabled={!canImport}
-                onClick={processar}
-                size="sm"
-                className="h-8 gap-1.5 px-3 text-xs sm:min-w-[9rem]"
-              >
-                {importing ? (
-                  <>
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" /> Importando…
-                  </>
+
+              <p className="flex items-start gap-1.5 text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
+                <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                {mode === "replace" ? (
+                  <span>
+                    <strong className="font-medium text-foreground">Substituir exercício:</strong>{" "}
+                    apaga os registros{" "}
+                    {exerciciosDoArquivo.length ? (
+                      <>
+                        do exercício{" "}
+                        <strong className="font-medium text-foreground">
+                          {exerciciosDoArquivo.join(", ")}
+                        </strong>
+                      </>
+                    ) : (
+                      "do exercício contido na planilha"
+                    )}{" "}
+                    e regrava tudo a partir do arquivo. Use quando o relatório é a versão
+                    definitiva do ano. Os <strong className="font-medium text-foreground">demais
+                    exercícios não são afetados</strong>.
+                  </span>
                 ) : (
-                  <>
-                    <Upload className="h-3.5 w-3.5" /> Importar tudo
-                  </>
+                  <span>
+                    <strong className="font-medium text-foreground">Mesclar:</strong> não apaga
+                    nada. Empenhos já existentes (mesmo número) são atualizados com os valores do
+                    arquivo, e os que não existem são acrescentados. Use para importar um relatório
+                    parcial ou complementar um exercício já carregado.
+                  </span>
                 )}
-              </Button>
+              </p>
             </CardContent>
           </Card>
         </div>

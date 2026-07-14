@@ -1,4 +1,5 @@
 import type { Empenho, FaseDespesa } from "../types";
+import { exercicioDe } from "../exercicio";
 import type {
   EmpenhoRow,
   EmpenhoInsert,
@@ -9,9 +10,11 @@ import type {
 
 /** Converte linha do Postgres (Drizzle) em objeto Empenho (refs reconstituídas). */
 export function rowToEmpenho(r: EmpenhoRow): Empenho {
+  const dataEmissao = r.dataEmissao ? String(r.dataEmissao).slice(0, 10) : "";
   return {
     numero: r.numero,
-    dataEmissao: r.dataEmissao ? String(r.dataEmissao).slice(0, 10) : "",
+    exercicio: r.exercicio || exercicioDe(r.numero, dataEmissao),
+    dataEmissao,
     motivo: r.motivo,
     tipo: r.tipo,
     descricao: r.descricao,
@@ -37,6 +40,7 @@ export function rowToEmpenho(r: EmpenhoRow): Empenho {
 export function empenhoToInsert(e: Empenho): EmpenhoInsert {
   return {
     numero: e.numero,
+    exercicio: e.exercicio || exercicioDe(e.numero, e.dataEmissao),
     dataEmissao: e.dataEmissao,
     motivo: e.motivo ?? "",
     tipo: e.tipo ?? "",

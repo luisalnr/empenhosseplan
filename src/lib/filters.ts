@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { Filtros } from "./types";
 
 export const filtrosSchema = z.object({
+  exercicio: z.array(z.string()),
   credor: z.array(z.string()),
   elemento: z.array(z.string()),
   fonte: z.array(z.string()),
@@ -14,6 +15,7 @@ export const filtrosSchema = z.object({
 export type FiltrosForm = z.infer<typeof filtrosSchema>;
 
 export const filtrosVazios: Filtros = {
+  exercicio: [],
   credor: [],
   elemento: [],
   fonte: [],

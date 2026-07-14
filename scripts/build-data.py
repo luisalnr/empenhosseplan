@@ -252,9 +252,12 @@ def main():
         cat_code = desp[0:1] if desp else ""
         gnd_code = desp[1:2] if desp else ""
         mod_code = desp[2:4] if len(desp) >= 4 else ""
+        data_emissao = serial_to_iso(row.get(c_data, ""))
+        m_ex = re.search(r"/(\d{4})\s*$", num)
         rec = {
             "numero": num,
-            "dataEmissao": serial_to_iso(row.get(c_data, "")),
+            "exercicio": m_ex.group(1) if m_ex else data_emissao[:4],
+            "dataEmissao": data_emissao,
             "motivo": (row.get(c_motivo, "") or "").strip(),
             "tipo": (row.get(c_tipo, "") or "").strip(),
             "descricao": (row.get(c_desc, "") or "").strip(),

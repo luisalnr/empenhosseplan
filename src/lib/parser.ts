@@ -1,6 +1,7 @@
 import type { Empenho, MtoData, PeriodoAnalise, Ref } from "./types";
 import { derivarClassificacoes, lookupFonte, lookupClasse } from "./mto";
 import { extractPeriodoFromRows } from "./periodo";
+import { exercicioDe } from "./exercicio";
 import { readXlsxRows } from "./read-xlsx-rows";
 
 const EPOCH_MS = Date.UTC(1899, 11, 30);
@@ -149,9 +150,11 @@ export async function parseSicafXlsx(file: Blob, mto: MtoData): Promise<ParseRes
     const pago = toNum(row[c.pago]);
     const aLiquidar =
       c.aliq >= 0 ? toNum(row[c.aliq]) : Math.max(0, valor - anulado - liquidado);
+    const dataEmissao = serialToIso(row[c.data]);
     records.push({
       numero: num,
-      dataEmissao: serialToIso(row[c.data]),
+      exercicio: exercicioDe(num, dataEmissao),
+      dataEmissao,
       motivo: str(row[c.motivo]),
       tipo: str(row[c.tipo]),
       descricao: str(row[c.desc]),

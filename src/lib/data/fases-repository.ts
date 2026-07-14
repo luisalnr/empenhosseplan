@@ -1,4 +1,5 @@
 import type { FaseDespesa } from "../types";
+import { exercicioDe, exerciciosDosVinculos } from "../exercicio";
 
 /**
  * Repositório de fases (liquidações/pagamentos) — dual-mode, igual ao repository.ts.
@@ -90,8 +91,14 @@ const dexieFasesRepo = {
     if (!records.length && mode !== "replace") return 0;
     const db = await getDexie();
     if (mode === "replace") {
+      const exercicios = exerciciosDosVinculos(records);
       await db.transaction("rw", db.liquidacoes, async () => {
-        await db.liquidacoes.clear();
+        if (exercicios.length) {
+          await db.liquidacoes
+            .toCollection()
+            .filter((f) => exercicios.includes(exercicioDe(f.numeroEmpenho)))
+            .delete();
+        }
         if (records.length) await db.liquidacoes.bulkPut(records);
       });
     } else if (records.length) {
@@ -103,8 +110,14 @@ const dexieFasesRepo = {
     if (!records.length && mode !== "replace") return 0;
     const db = await getDexie();
     if (mode === "replace") {
+      const exercicios = exerciciosDosVinculos(records);
       await db.transaction("rw", db.pagamentos, async () => {
-        await db.pagamentos.clear();
+        if (exercicios.length) {
+          await db.pagamentos
+            .toCollection()
+            .filter((f) => exercicios.includes(exercicioDe(f.numeroEmpenho)))
+            .delete();
+        }
         if (records.length) await db.pagamentos.bulkPut(records);
       });
     } else if (records.length) {
