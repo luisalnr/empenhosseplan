@@ -11,9 +11,16 @@ import { Badge } from "@/components/ui/badge";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Separator } from "@/components/ui/separator";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
+// O exercício fica de fora: está sempre preenchido, então não é um filtro "ativo".
 const CAMPOS_ATIVOS = [
-  "exercicio",
   "credor",
   "elemento",
   "fonte",
@@ -152,7 +159,7 @@ export function FilterBar() {
   React.useEffect(() => {
     const sub = form.watch((data) => {
       setFiltros({
-        exercicio: (data.exercicio ?? []).filter((v): v is string => !!v),
+        exercicio: data.exercicio ?? "",
         credor: (data.credor ?? []).filter((v): v is string => !!v),
         elemento: (data.elemento ?? []).filter((v): v is string => !!v),
         fonte: (data.fonte ?? []).filter((v): v is string => !!v),
@@ -167,7 +174,7 @@ export function FilterBar() {
   // Os empenhos chegam depois da 1ª renderização; quando o exercício padrão for
   // conhecido, o formulário passa a refleti-lo.
   React.useEffect(() => {
-    if (!filtrosPadrao.exercicio.length) return;
+    if (!filtrosPadrao.exercicio) return;
     form.reset({ ...filtrosPadrao });
     setResetKey((k) => k + 1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -190,16 +197,23 @@ export function FilterBar() {
     >
       {/* Zona 1: filtros. Grid fluido — as colunas se reacomodam sem deixar buracos. */}
       <div className="grid flex-1 grid-cols-2 items-end gap-x-3 gap-y-2 md:grid-cols-4 xl:grid-cols-[7rem_minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)_8rem_20.5rem]">
+        {/* Seleção única e sempre preenchida: o painel analisa um exercício por vez. */}
         <Field label="Exercício">
-          <MultiSelect
+          <Select
             value={form.watch("exercicio")}
-            onChange={(v) => form.setValue("exercicio", v, { shouldDirty: true })}
-            opcoes={opcoes.exercicios.map((ex) => ({ value: ex, label: ex }))}
-            placeholder="Todos"
-            buscaPlaceholder="Buscar exercício…"
-            vazio="Nenhum exercício encontrado."
-            larguraPopover="w-[200px]"
-          />
+            onValueChange={(v) => form.setValue("exercicio", v, { shouldDirty: true })}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="—" />
+            </SelectTrigger>
+            <SelectContent>
+              {opcoes.exercicios.map((ex) => (
+                <SelectItem key={ex} value={ex}>
+                  {ex}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </Field>
 
         <Field label="Credor">

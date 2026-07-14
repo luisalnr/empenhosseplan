@@ -54,7 +54,8 @@ export interface Totais {
 }
 
 export interface Filtros {
-  exercicio: string[];
+  /** Seleção única: o painel sempre analisa um exercício por vez. */
+  exercicio: string;
   credor: string[];
   elemento: string[];
   fonte: string[];
@@ -98,6 +99,8 @@ export interface Checagem {
   status: StatusChecagem;
   detalhe?: string;
   count?: number;
+  /** Amostra dos registros envolvidos (nºs de empenho), para o drill-down da UI. */
+  itens?: string[];
 }
 
 export interface RiscoEmpenho {

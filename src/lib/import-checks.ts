@@ -2,9 +2,39 @@ import type { Checagem, Empenho, FaseDespesa } from "./types";
 import { calcularRiscos, agregarRisco } from "./risco";
 import { COLUNAS_EMPENHO } from "./parser";
 import { COLUNAS_LIQUIDACAO, COLUNAS_PAGAMENTO } from "./parser-fases";
+import { exercicioDe } from "./exercicio";
 
 const EPS = 0.005;
 const TOL_REL = 0.05; // 5%
+const MAX_ITENS = 50; // amostra exibida no drill-down
+
+/**
+ * Fases sem empenho correspondente, separadas por causa:
+ *
+ * - `restos`: o empenho é de um exercício que não está carregado. É o caso normal de
+ *   restos a pagar — empenho inscrito num ano e liquidado/pago no seguinte. Esperado.
+ * - `reais`: o exercício está carregado, mas aquele número não existe nele. Aí sim há
+ *   um problema de dados (número divergente, planilha incompleta).
+ */
+function classificarOrfas(
+  fases: FaseDespesa[],
+  empSet: Set<string>,
+  exerciciosCarregados: Set<string>
+): { restos: FaseDespesa[]; reais: FaseDespesa[] } {
+  const restos: FaseDespesa[] = [];
+  const reais: FaseDespesa[] = [];
+  for (const f of fases) {
+    if (empSet.has(f.numeroEmpenho)) continue;
+    if (exerciciosCarregados.has(exercicioDe(f.numeroEmpenho))) reais.push(f);
+    else restos.push(f);
+  }
+  return { restos, reais };
+}
+
+/** Amostra de números de empenho citados pelas fases, sem repetição. */
+function amostraEmpenhos(fases: FaseDespesa[]): string[] {
+  return [...new Set(fases.map((f) => f.numeroEmpenho))].slice(0, MAX_ITENS);
+}
 
 export interface DadosChecagem {
   empenhos: Empenho[];
@@ -153,6 +183,9 @@ export function executarChecagens(d: DadosChecagem): Checagem[] {
   }
 
   const empSet = new Set(empenhos.map((e) => e.numero));
+  const exerciciosCarregados = new Set(empenhos.map((e) => e.exercicio).filter(Boolean));
+  const orfasLiq = classificarOrfas(liquidacoes, empSet, exerciciosCarregados);
+  const orfasPag = classificarOrfas(pagamentos, empSet, exerciciosCarregados);
 
   // 5. Liquidações sem empenho
   if (liquidacoes.length === 0) {
@@ -174,16 +207,18 @@ export function executarChecagens(d: DadosChecagem): Checagem[] {
       count: liquidacoes.length,
     });
   } else {
-    const orfas = liquidacoes.filter((l) => !empSet.has(l.numeroEmpenho));
+    // Restos a pagar ficam fora desta conta — são reportados na checagem própria.
+    const reais = orfasLiq.reais;
     checks.push({
       id: "liq-sem-emp",
       label: "Liquidações vinculadas a empenho",
-      status: orfas.length === 0 ? "ok" : orfas.length / liquidacoes.length > 0.1 ? "erro" : "aviso",
+      status: reais.length === 0 ? "ok" : reais.length / liquidacoes.length > 0.1 ? "erro" : "aviso",
       detalhe:
-        orfas.length === 0
+        reais.length === 0
           ? `Todas as ${liquidacoes.length.toLocaleString("pt-BR")} liquidações têm empenho correspondente`
-          : `${orfas.length.toLocaleString("pt-BR")} liquidações sem empenho correspondente`,
-      count: orfas.length,
+          : `${reais.length.toLocaleString("pt-BR")} liquidações apontam para empenhos inexistentes no exercício carregado`,
+      count: reais.length,
+      itens: amostraEmpenhos(reais),
     });
   }
 
@@ -207,16 +242,42 @@ export function executarChecagens(d: DadosChecagem): Checagem[] {
       count: pagamentos.length,
     });
   } else {
-    const orfas = pagamentos.filter((p) => !empSet.has(p.numeroEmpenho));
+    const reais = orfasPag.reais;
     checks.push({
       id: "pag-sem-emp",
       label: "Pagamentos vinculados a empenho",
-      status: orfas.length === 0 ? "ok" : orfas.length / pagamentos.length > 0.1 ? "erro" : "aviso",
+      status: reais.length === 0 ? "ok" : reais.length / pagamentos.length > 0.1 ? "erro" : "aviso",
       detalhe:
-        orfas.length === 0
+        reais.length === 0
           ? `Todos os ${pagamentos.length.toLocaleString("pt-BR")} pagamentos têm empenho correspondente`
-          : `${orfas.length.toLocaleString("pt-BR")} pagamentos sem empenho correspondente`,
-      count: orfas.length,
+          : `${reais.length.toLocaleString("pt-BR")} pagamentos apontam para empenhos inexistentes no exercício carregado`,
+      count: reais.length,
+      itens: amostraEmpenhos(reais),
+    });
+  }
+
+  // Restos a pagar: fases de exercícios anteriores não carregados. Informativo — é o
+  // fluxo normal de um empenho inscrito em RAP e liquidado/pago no exercício seguinte.
+  const restos = [...orfasLiq.restos, ...orfasPag.restos];
+  if (restos.length) {
+    const anos = [...new Set(restos.map((f) => exercicioDe(f.numeroEmpenho)).filter(Boolean))].sort();
+    const partes: string[] = [];
+    if (orfasLiq.restos.length) {
+      partes.push(`${orfasLiq.restos.length.toLocaleString("pt-BR")} liquidações`);
+    }
+    if (orfasPag.restos.length) {
+      partes.push(`${orfasPag.restos.length.toLocaleString("pt-BR")} pagamentos`);
+    }
+    checks.push({
+      id: "restos-a-pagar",
+      label: "Restos a pagar (exercícios anteriores)",
+      status: "ok",
+      detalhe:
+        `${partes.join(" e ")} referem-se a empenhos de ${anos.join(", ")}, não carregados. ` +
+        `Esperado: empenhos inscritos em restos a pagar são liquidados/pagos no exercício seguinte. ` +
+        `Importe o${anos.length > 1 ? "s" : ""} exercício${anos.length > 1 ? "s" : ""} ${anos.join(", ")} para cruzá-los.`,
+      count: restos.length,
+      itens: amostraEmpenhos(restos),
     });
   }
 

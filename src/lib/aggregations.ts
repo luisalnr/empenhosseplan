@@ -5,7 +5,7 @@ export function filtrarEmpenhos(empenhos: Empenho[], f: Filtros): Empenho[] {
   const inicio = f.dataInicio || "";
   const fim = f.dataFim || "";
   return empenhos.filter((e) => {
-    if (f.exercicio.length && !f.exercicio.includes(e.exercicio)) return false;
+    if (f.exercicio && e.exercicio !== f.exercicio) return false;
     if (f.credor.length && !f.credor.includes(e.credor)) return false;
     if (f.elemento.length && !f.elemento.includes(e.elemento.codigo)) return false;
     if (f.fonte.length && !f.fonte.includes(e.fonte.codigo)) return false;

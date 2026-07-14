@@ -145,16 +145,16 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     carregar();
   }, [carregar]);
 
-  // Com vários exercícios na base, o padrão é o mais recente: somar exercícios
-  // distintos nos KPIs e no painel de Risco (restos a pagar) não tem sentido contábil.
-  const filtrosPadrao = React.useMemo<Filtros>(() => {
-    const recente = exercicioMaisRecente(empenhos);
-    return { ...filtrosVazios, exercicio: recente ? [recente] : [] };
-  }, [empenhos]);
+  // O exercício é seleção única e sempre tem um valor: somar exercícios distintos
+  // nos KPIs e no painel de Risco (restos a pagar) não tem sentido contábil.
+  const filtrosPadrao = React.useMemo<Filtros>(
+    () => ({ ...filtrosVazios, exercicio: exercicioMaisRecente(empenhos) ?? "" }),
+    [empenhos]
+  );
 
   const padraoAplicado = React.useRef(false);
   React.useEffect(() => {
-    if (padraoAplicado.current || !filtrosPadrao.exercicio.length) return;
+    if (padraoAplicado.current || !filtrosPadrao.exercicio) return;
     padraoAplicado.current = true;
     setFiltrosState(filtrosPadrao);
   }, [filtrosPadrao]);
@@ -336,9 +336,9 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     [mto, registrarPeriodo]
   );
 
-  // O cabeçalho mostra o período dos exercícios selecionados, não um valor global.
+  // O cabeçalho mostra o período do exercício selecionado, não um valor global.
   const periodoAnalise = React.useMemo(
-    () => periodoDosExercicios(periodos, filtros.exercicio),
+    () => periodoDosExercicios(periodos, filtros.exercicio ? [filtros.exercicio] : []),
     [periodos, filtros.exercicio]
   );
 

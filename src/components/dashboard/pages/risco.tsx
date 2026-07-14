@@ -1,8 +1,7 @@
 "use client";
 import * as React from "react";
-import { AlertTriangle, Clock, FileWarning } from "lucide-react";
+import { Clock, FileWarning } from "lucide-react";
 import { useDashboard } from "@/components/providers/dashboard-provider";
-import { exerciciosDe } from "@/lib/exercicio";
 import { ChartCard } from "../chart-card";
 import { KpiCard } from "../kpi-card";
 import { RiscoCredores } from "../charts/risco-credores";
@@ -47,8 +46,6 @@ export function RiscoPage() {
   const { filtered } = useDashboard();
   const riscos = React.useMemo(() => calcularRiscos(filtered), [filtered]);
   const agg = React.useMemo(() => agregarRisco(riscos), [riscos]);
-  // Lido do resultado filtrado, não do filtro: "nenhum exercício marcado" = todos.
-  const exerciciosSelecionados = React.useMemo(() => exerciciosDe(filtered), [filtered]);
 
   const [filtroTipo, setFiltroTipo] = React.useState<FiltroTipoRisco>("todos");
 
@@ -95,17 +92,6 @@ export function RiscoPage() {
 
   return (
     <div className="space-y-3">
-      {exerciciosSelecionados.length > 1 && (
-        <Card className="flex items-start gap-2 border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-700 dark:text-amber-300">
-          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-          <span>
-            Indicadores somando os exercícios {exerciciosSelecionados.join(", ")}. O saldo do
-            exercício corrente e os restos a pagar de anos anteriores estão no mesmo número —
-            selecione um único exercício para uma leitura contábil válida.
-          </span>
-        </Card>
-      )}
-
       {/* KPIs de risco — RNP e RP separados */}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         <KpiCard

@@ -29,6 +29,7 @@ import type { Checagem, Empenho, FaseDespesa, ResultadoImportacao, StatusChecage
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
 type Slot = "empenho" | "liquidacao" | "pagamento";
@@ -40,6 +41,14 @@ interface SlotState {
   records: Empenho[] | FaseDespesa[];
   colunas: Record<string, boolean> | null;
   count: number;
+}
+
+/** Base ∪ arquivo, deduplicado por `numero` — o registro do arquivo prevalece. */
+function unirPorNumero<T extends { numero: string }>(base: T[], doArquivo: T[]): T[] {
+  if (!doArquivo.length) return base;
+  const porNumero = new Map(base.map((r) => [r.numero, r]));
+  for (const r of doArquivo) porNumero.set(r.numero, r);
+  return [...porNumero.values()];
 }
 
 const emptySlot = (): SlotState => ({
@@ -294,6 +303,50 @@ function FileSlotCard({
   );
 }
 
+/** Lista os nºs de empenho por trás de uma checagem — antes só havia a contagem. */
+function ItensPopover({
+  label,
+  itens,
+  total,
+}: {
+  label: string;
+  itens: string[];
+  total: number;
+}) {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          className="h-6 shrink-0 self-center px-1.5 text-[10px] font-medium"
+        >
+          ver
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent align="end" className="w-64 p-0">
+        <div className="border-b border-border px-3 py-2">
+          <p className="text-xs font-medium text-foreground">{label}</p>
+          <p className="text-[10px] text-muted-foreground">
+            {total.toLocaleString("pt-BR")} registro{total > 1 ? "s" : ""}
+            {total > itens.length && ` — mostrando os ${itens.length} primeiros`}
+          </p>
+        </div>
+        <div className="max-h-56 overflow-y-auto p-2">
+          <ul className="space-y-0.5">
+            {itens.map((n) => (
+              <li key={n} className="font-mono text-[11px] text-muted-foreground">
+                {n}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
 function ChecagensPanel({ checagens }: { checagens: Checagem[] }) {
   const resumo = React.useMemo(() => {
     const r = { ok: 0, aviso: 0, erro: 0, pendente: 0 };
@@ -344,11 +397,12 @@ function ChecagensPanel({ checagens }: { checagens: Checagem[] }) {
             <div className="min-w-0 flex-1">
               <p className="text-xs font-medium leading-snug text-foreground">{c.label}</p>
               {c.detalhe && (
-                <p className="line-clamp-1 text-[10px] leading-snug text-muted-foreground">
-                  {c.detalhe}
-                </p>
+                <p className="text-[10px] leading-snug text-muted-foreground">{c.detalhe}</p>
               )}
             </div>
+            {c.itens && c.itens.length > 0 && (
+              <ItensPopover label={c.label} itens={c.itens} total={c.count ?? c.itens.length} />
+            )}
           </div>
         ))}
       </div>
@@ -453,16 +507,20 @@ export function ImportacaoPage() {
     setSlots((prev) => ({ ...prev, [slot]: emptySlot() }));
   };
 
-  const previewEmpenhos =
-    slots.empenho.records.length > 0 ? (slots.empenho.records as Empenho[]) : empenhos;
-  const previewLiq =
-    slots.liquidacao.records.length > 0
-      ? (slots.liquidacao.records as FaseDespesa[])
-      : liquidacoes;
-  const previewPag =
-    slots.pagamento.records.length > 0
-      ? (slots.pagamento.records as FaseDespesa[])
-      : pagamentos;
+  // O cruzamento roda sobre base ∪ arquivo. Antes o arquivo SUBSTITUÍA a base, e toda
+  // fase cujo empenho já estava persistido virava "órfã" — falso positivo garantido.
+  const previewEmpenhos = React.useMemo(
+    () => unirPorNumero(empenhos, slots.empenho.records as Empenho[]),
+    [empenhos, slots.empenho.records]
+  );
+  const previewLiq = React.useMemo(
+    () => unirPorNumero(liquidacoes, slots.liquidacao.records as FaseDespesa[]),
+    [liquidacoes, slots.liquidacao.records]
+  );
+  const previewPag = React.useMemo(
+    () => unirPorNumero(pagamentos, slots.pagamento.records as FaseDespesa[]),
+    [pagamentos, slots.pagamento.records]
+  );
 
   const checagens = React.useMemo(
     () =>
