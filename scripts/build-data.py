@@ -180,6 +180,27 @@ def main():
     if header_row is None:
         raise RuntimeError("Cabecalho nao encontrado")
 
+    # Periodo de emissao declarado acima do cabecalho: [data inicio] "ate" [data fim]
+    periodo = None
+    for r in sorted(erows):
+        if r >= header_row:
+            break
+        row = erows[r]
+        for col, val in row.items():
+            if str(val or "").strip().lower() not in ("até", "ate"):
+                continue
+            ini = serial_to_iso(row.get(col - 1, ""))
+            fim = serial_to_iso(row.get(col + 1, ""))
+            if ini and fim:
+                periodo = {"inicio": ini, "fim": fim}
+                break
+        if periodo:
+            break
+
+    with open(os.path.join(DATA, "seed-periodo.json"), "w", encoding="utf-8") as f:
+        json.dump(periodo, f, ensure_ascii=False)
+    print("  seed-periodo.json -> %s" % (periodo or "nao declarado"))
+
     def h(*keys):
         for k in keys:
             # match exato primeiro (evita pegar "motivo da despesa" ao buscar "despesa")

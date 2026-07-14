@@ -36,6 +36,7 @@ import {
 } from "@/lib/aggregations";
 import { calcularRiscos, agregarRisco } from "@/lib/risco";
 import {
+  loadPeriodoSeed,
   loadPeriodoStored,
   periodoFromEmpenhos,
   savePeriodoStored,
@@ -120,8 +121,11 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       setLiquidacoes(liq);
       setPagamentos(pag);
       setUltima(new Date().toLocaleString("pt-BR"));
-      // Período dos relatórios (localStorage) ou fallback min/max dos empenhos
-      setPeriodoAnalise(loadPeriodoStored() ?? periodoFromEmpenhos(dados));
+      // Período de emissão declarado no relatório: o da última importação, senão o do
+      // relatório que gerou o seed; só então cai para o intervalo de emissão dos empenhos.
+      setPeriodoAnalise(
+        loadPeriodoStored() ?? (await loadPeriodoSeed()) ?? periodoFromEmpenhos(dados)
+      );
     } catch (e) {
       setError(e instanceof Error ? e.message : "Erro ao carregar dados");
     } finally {
@@ -151,14 +155,9 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       const dados = await getAllEmpenhos();
       setEmpenhos(dados);
       setUltima(new Date().toLocaleString("pt-BR"));
-      if (periodo) {
-        setPeriodoAnalise(periodo);
-        savePeriodoStored(periodo);
-      } else {
-        const fallback = periodoFromEmpenhos(dados);
-        setPeriodoAnalise(fallback);
-        savePeriodoStored(fallback);
-      }
+      const periodoFinal = periodo ?? periodoFromEmpenhos(dados);
+      setPeriodoAnalise(periodoFinal);
+      savePeriodoStored(periodoFinal);
       return records.length;
     },
     [mto]

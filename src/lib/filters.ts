@@ -2,11 +2,11 @@ import { z } from "zod";
 import type { Filtros } from "./types";
 
 export const filtrosSchema = z.object({
-  credor: z.string(),
-  elemento: z.string(),
-  fonte: z.string(),
-  classe: z.string(),
-  tipo: z.string(),
+  credor: z.array(z.string()),
+  elemento: z.array(z.string()),
+  fonte: z.array(z.string()),
+  classe: z.array(z.string()),
+  tipo: z.array(z.string()),
   dataInicio: z.string(),
   dataFim: z.string(),
 });
@@ -14,11 +14,11 @@ export const filtrosSchema = z.object({
 export type FiltrosForm = z.infer<typeof filtrosSchema>;
 
 export const filtrosVazios: Filtros = {
-  credor: "",
-  elemento: "",
-  fonte: "",
-  classe: "",
-  tipo: "",
+  credor: [],
+  elemento: [],
+  fonte: [],
+  classe: [],
+  tipo: [],
   dataInicio: "",
   dataFim: "",
 };

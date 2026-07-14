@@ -53,11 +53,11 @@ export interface Totais {
 }
 
 export interface Filtros {
-  credor: string;
-  elemento: string;
-  fonte: string;
-  classe: string;
-  tipo: string;
+  credor: string[];
+  elemento: string[];
+  fonte: string[];
+  classe: string[];
+  tipo: string[];
   dataInicio: string;
   dataFim: string;
 }

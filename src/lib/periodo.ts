@@ -66,7 +66,23 @@ export function extractPeriodoFromRows(rows: unknown[][]): PeriodoAnalise | null
   return null;
 }
 
-/** Fallback: min/max das datas de emissão dos empenhos carregados. */
+/**
+ * Período declarado no relatório que originou o seed (public/data/seed-periodo.json,
+ * gerado por scripts/build-data.py). Usado quando os dados vieram do seed e não de
+ * uma importação — nesse caso não há planilha em mãos para extrair o cabeçalho.
+ */
+export async function loadPeriodoSeed(): Promise<PeriodoAnalise | null> {
+  try {
+    const res = await fetch("/data/seed-periodo.json");
+    if (!res.ok) return null;
+    const p = (await res.json()) as PeriodoAnalise | null;
+    return p?.inicio && p?.fim ? p : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Último recurso: min/max das datas de emissão dos empenhos carregados. */
 export function periodoFromEmpenhos(empenhos: Empenho[]): PeriodoAnalise | null {
   const datas = empenhos.map((e) => e.dataEmissao).filter(Boolean).sort();
   if (!datas.length) return null;

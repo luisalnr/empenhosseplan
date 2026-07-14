@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Check, Filter, RotateCcw, Users, FileText } from "lucide-react";
+import { Check, ChevronsUpDown, RotateCcw, Users, FileText } from "lucide-react";
 import { useDashboard } from "@/components/providers/dashboard-provider";
 import { filtrosSchema, type FiltrosForm, filtrosVazios } from "@/lib/filters";
 import { cn } from "@/lib/utils";
@@ -10,32 +10,50 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+
+const CAMPOS_ATIVOS = ["credor", "elemento", "fonte", "tipo", "dataInicio", "dataFim"] as const;
 
 function FiltrosAtivosBadge({ valores }: { valores: FiltrosForm }) {
-  const n = (["credor", "elemento", "fonte", "tipo", "dataInicio", "dataFim"] as const).filter(
-    (k) => valores[k]
-  ).length;
+  const n = CAMPOS_ATIVOS.filter((k) => {
+    const v = valores[k];
+    return Array.isArray(v) ? v.length > 0 : Boolean(v);
+  }).length;
   if (!n) return null;
   return <Badge variant="secondary" className="ml-1">{n} ativo{n > 1 ? "s" : ""}</Badge>;
 }
 
-function CredorCombobox({
+type Opcao = { value: string; label: string; hint?: string };
+
+function MultiSelect({
   value,
   onChange,
-  credores,
+  opcoes,
+  placeholder,
+  buscaPlaceholder = "Buscar…",
+  vazio = "Nenhuma opção encontrada.",
+  larguraPopover = "w-[320px]",
 }: {
-  value: string;
-  onChange: (v: string) => void;
-  credores: string[];
+  value: string[];
+  onChange: (v: string[]) => void;
+  opcoes: Opcao[];
+  placeholder: string;
+  buscaPlaceholder?: string;
+  vazio?: string;
+  larguraPopover?: string;
 }) {
   const [open, setOpen] = React.useState(false);
+
+  const toggle = (v: string) =>
+    onChange(value.includes(v) ? value.filter((x) => x !== v) : [...value, v]);
+
+  const rotulo =
+    value.length === 0
+      ? placeholder
+      : value.length === 1
+        ? (opcoes.find((o) => o.value === value[0])?.label ?? value[0])
+        : `${value.length} selecionados`;
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -45,42 +63,65 @@ function CredorCombobox({
           aria-expanded={open}
           className="w-full justify-between font-normal"
         >
-          <span className={cn("truncate", !value && "text-muted-foreground")}>
-            {value || "Todos os credores"}
+          <span className={cn("truncate", value.length === 0 && "text-muted-foreground")}>
+            {rotulo}
           </span>
-          <Filter className="h-4 w-4 opacity-50" />
+          <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[320px] p-0" align="start">
+      <PopoverContent className={cn(larguraPopover, "p-0")} align="start">
         <Command>
-          <CommandInput placeholder="Buscar credor…" />
+          <CommandInput placeholder={buscaPlaceholder} />
           <CommandList>
-            <CommandEmpty>Nenhum credor encontrado.</CommandEmpty>
+            <CommandEmpty>{vazio}</CommandEmpty>
             <CommandGroup>
-              <CommandItem
-                onSelect={() => {
-                  onChange("");
-                  setOpen(false);
-                }}
-                className="text-muted-foreground"
-              >
-                <Check className={cn("mr-2 h-4 w-4", !value && "opacity-100", value && "opacity-0")} />
-                Todos os credores
-              </CommandItem>
-              {credores.map((c) => (
-                <CommandItem
-                  key={c}
-                  onSelect={() => {
-                    onChange(c === value ? "" : c);
-                    setOpen(false);
-                  }}
-                >
-                  <Check className={cn("mr-2 h-4 w-4", value === c ? "opacity-100" : "opacity-0")} />
-                  <span className="truncate">{c}</span>
-                </CommandItem>
-              ))}
+              {opcoes.map((o) => {
+                const marcado = value.includes(o.value);
+                return (
+                  <CommandItem
+                    key={o.value}
+                    value={`${o.hint ?? ""} ${o.label}`}
+                    onSelect={() => toggle(o.value)}
+                  >
+                    <span
+                      className={cn(
+                        "mr-2 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary",
+                        marcado ? "bg-primary text-primary-foreground" : "opacity-60"
+                      )}
+                    >
+                      {marcado && <Check className="h-3 w-3" />}
+                    </span>
+                    <span className="truncate">
+                      {o.hint && <span className="text-muted-foreground">{o.hint} — </span>}
+                      {o.label}
+                    </span>
+                  </CommandItem>
+                );
+              })}
             </CommandGroup>
           </CommandList>
+          <Separator />
+          <div className="flex items-center justify-between p-1">
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="h-7 text-xs font-normal"
+              onClick={() => onChange(opcoes.map((o) => o.value))}
+            >
+              Selecionar tudo
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="h-7 text-xs font-normal"
+              disabled={value.length === 0}
+              onClick={() => onChange([])}
+            >
+              Limpar
+            </Button>
+          </div>
         </Command>
       </PopoverContent>
     </Popover>
@@ -102,10 +143,10 @@ export function FilterBar() {
   React.useEffect(() => {
     const sub = form.watch((data) => {
       setFiltros({
-        credor: data.credor ?? "",
-        elemento: data.elemento ?? "",
-        fonte: data.fonte ?? "",
-        tipo: data.tipo ?? "",
+        credor: (data.credor ?? []).filter((v): v is string => !!v),
+        elemento: (data.elemento ?? []).filter((v): v is string => !!v),
+        fonte: (data.fonte ?? []).filter((v): v is string => !!v),
+        tipo: (data.tipo ?? []).filter((v): v is string => !!v),
         dataInicio: data.dataInicio ?? "",
         dataFim: data.dataFim ?? "",
       });
@@ -122,68 +163,56 @@ export function FilterBar() {
   return (
     <form key={resetKey} className="flex flex-wrap items-end gap-2 px-4 py-3 sm:px-6">
       <Field label="Credor" className="w-full sm:w-72">
-        <CredorCombobox
+        <MultiSelect
           value={form.watch("credor")}
           onChange={(v) => form.setValue("credor", v, { shouldDirty: true })}
-          credores={opcoes.credores}
+          opcoes={opcoes.credores.map((c) => ({ value: c, label: c }))}
+          placeholder="Todos os credores"
+          buscaPlaceholder="Buscar credor…"
+          vazio="Nenhum credor encontrado."
         />
       </Field>
 
       <Field label="Elemento de despesa" className="w-full sm:w-64">
-        <Select
+        <MultiSelect
           value={form.watch("elemento")}
-          onValueChange={(v) => form.setValue("elemento", v === "__all" ? "" : v, { shouldDirty: true })}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Todos os elementos" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="__all">Todos os elementos</SelectItem>
-            {opcoes.elementos.map((e) => (
-              <SelectItem key={e.codigo} value={e.codigo}>
-                <span className="text-muted-foreground">{e.codigo}</span> — {e.descricao}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          onChange={(v) => form.setValue("elemento", v, { shouldDirty: true })}
+          opcoes={opcoes.elementos.map((e) => ({
+            value: e.codigo,
+            label: e.descricao,
+            hint: e.codigo,
+          }))}
+          placeholder="Todos os elementos"
+          buscaPlaceholder="Buscar elemento…"
+          vazio="Nenhum elemento encontrado."
+        />
       </Field>
 
       <Field label="Fonte de recursos" className="w-full sm:w-64">
-        <Select
+        <MultiSelect
           value={form.watch("fonte")}
-          onValueChange={(v) => form.setValue("fonte", v === "__all" ? "" : v, { shouldDirty: true })}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Todas as fontes" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="__all">Todas as fontes</SelectItem>
-            {opcoes.fontes.map((f) => (
-              <SelectItem key={f.codigo} value={f.codigo}>
-                <span className="text-muted-foreground">{f.codigo}</span> — {f.descricao}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          onChange={(v) => form.setValue("fonte", v, { shouldDirty: true })}
+          opcoes={opcoes.fontes.map((f) => ({
+            value: f.codigo,
+            label: f.descricao,
+            hint: f.codigo,
+          }))}
+          placeholder="Todas as fontes"
+          buscaPlaceholder="Buscar fonte…"
+          vazio="Nenhuma fonte encontrada."
+        />
       </Field>
 
-      <Field label="Tipo" className="w-36">
-        <Select
+      <Field label="Tipo" className="w-44">
+        <MultiSelect
           value={form.watch("tipo")}
-          onValueChange={(v) => form.setValue("tipo", v === "__all" ? "" : v, { shouldDirty: true })}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Todos" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="__all">Todos</SelectItem>
-            {opcoes.tipos.map((t) => (
-              <SelectItem key={t} value={t}>
-                {t}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          onChange={(v) => form.setValue("tipo", v, { shouldDirty: true })}
+          opcoes={opcoes.tipos.map((t) => ({ value: t, label: t }))}
+          placeholder="Todos"
+          buscaPlaceholder="Buscar tipo…"
+          vazio="Nenhum tipo encontrado."
+          larguraPopover="w-[220px]"
+        />
       </Field>
 
       <Field label="De" className="w-40">

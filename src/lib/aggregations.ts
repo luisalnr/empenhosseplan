@@ -4,11 +4,11 @@ export function filtrarEmpenhos(empenhos: Empenho[], f: Filtros): Empenho[] {
   const inicio = f.dataInicio || "";
   const fim = f.dataFim || "";
   return empenhos.filter((e) => {
-    if (f.credor && e.credor !== f.credor) return false;
-    if (f.elemento && e.elemento.codigo !== f.elemento) return false;
-    if (f.fonte && e.fonte.codigo !== f.fonte) return false;
-    if (f.classe && e.classe.codigo !== f.classe) return false;
-    if (f.tipo && e.tipo !== f.tipo) return false;
+    if (f.credor.length && !f.credor.includes(e.credor)) return false;
+    if (f.elemento.length && !f.elemento.includes(e.elemento.codigo)) return false;
+    if (f.fonte.length && !f.fonte.includes(e.fonte.codigo)) return false;
+    if (f.classe.length && !f.classe.includes(e.classe.codigo)) return false;
+    if (f.tipo.length && !f.tipo.includes(e.tipo)) return false;
     if (inicio && e.dataEmissao < inicio) return false;
     if (fim && e.dataEmissao > fim) return false;
     return true;
