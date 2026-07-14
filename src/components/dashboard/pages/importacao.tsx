@@ -411,7 +411,8 @@ function ChecagensPanel({ checagens }: { checagens: Checagem[] }) {
 }
 
 export function ImportacaoPage() {
-  const { mto, empenhos, liquidacoes, pagamentos, importarTudo } = useDashboard();
+  const { mto, empenhos, liquidacoes, pagamentos, importarTudo, persistindoNoBanco } =
+    useDashboard();
 
   const [slots, setSlots] = React.useState<Record<Slot, SlotState>>({
     empenho: emptySlot(),
@@ -711,6 +712,19 @@ export function ImportacaoPage() {
                   )}
                 </Button>
               </div>
+
+              {!persistindoNoBanco && (
+                <p className="flex items-start gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-2 py-1.5 text-[11px] leading-relaxed text-destructive sm:text-xs">
+                  <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  <span>
+                    <strong className="font-semibold">Modo demonstração:</strong> o servidor não tem
+                    banco de dados configurado. A importação será salva{" "}
+                    <strong className="font-semibold">apenas neste navegador</strong> e não ficará
+                    disponível para outros usuários. Configure a variável{" "}
+                    <code className="font-mono">DATABASE_URL</code> no ambiente e recarregue.
+                  </span>
+                </p>
+              )}
 
               <p className="flex items-start gap-1.5 text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
                 <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />

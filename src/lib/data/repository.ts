@@ -129,14 +129,43 @@ const dexieRepo = {
 
 // ───────────────────────── Interface pública ─────────────────────────
 
-const backend = USE_NEON ? neonRepo : dexieRepo;
+/**
+ * Escolha do backend, resolvida em RUNTIME.
+ *
+ * `NEXT_PUBLIC_USE_NEON` é embutida no bundle durante o build. Um deploy sem ela
+ * (ex.: variável não configurada no Vercel) fazia o app cair no IndexedDB sem aviso:
+ * a importação "funcionava" na tela, mas nada chegava ao Postgres. Por isso, quando a
+ * flag não está ligada, perguntamos ao servidor se ele tem banco (`/api/health`) antes
+ * de assumir o modo demo.
+ */
+let backendPromise: Promise<typeof neonRepo | typeof dexieRepo> | null = null;
 
-export const getAllEmpenhos = () => backend.getAll();
-export const countEmpenhos = () => backend.count();
-export const upsertEmpenhos = (r: Empenho[]) => backend.upsert(r);
-export const replaceAllEmpenhos = (r: Empenho[]) => backend.replaceAll(r);
-export const clearEmpenhos = () => backend.clear();
-export const seedIfEmpty = () => backend.seedIfEmpty();
+async function servidorTemBanco(): Promise<boolean> {
+  try {
+    const res = await fetch("/api/health", { cache: "no-store" });
+    if (!res.ok) return false;
+    const { neon } = (await res.json()) as { neon?: boolean };
+    return Boolean(neon);
+  } catch {
+    return false;
+  }
+}
 
-/** Indica se o backend Neon está ativo (útil para debug/UI). */
-export const isNeonBackend = USE_NEON;
+function getBackend() {
+  if (!backendPromise) {
+    backendPromise = USE_NEON
+      ? Promise.resolve(neonRepo)
+      : servidorTemBanco().then((temBanco) => (temBanco ? neonRepo : dexieRepo));
+  }
+  return backendPromise;
+}
+
+/** True quando as gravações vão para o Postgres; false = modo demo (só neste navegador). */
+export const usandoNeon = async (): Promise<boolean> => (await getBackend()) === neonRepo;
+
+export const getAllEmpenhos = async () => (await getBackend()).getAll();
+export const countEmpenhos = async () => (await getBackend()).count();
+export const upsertEmpenhos = async (r: Empenho[]) => (await getBackend()).upsert(r);
+export const replaceAllEmpenhos = async (r: Empenho[]) => (await getBackend()).replaceAll(r);
+export const clearEmpenhos = async () => (await getBackend()).clear();
+export const seedIfEmpty = async () => (await getBackend()).seedIfEmpty();

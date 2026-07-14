@@ -18,6 +18,7 @@ import {
   seedIfEmpty,
   upsertEmpenhos,
   replaceAllEmpenhos,
+  usandoNeon,
 } from "@/lib/data/repository";
 import {
   saveLiquidacoes,
@@ -89,6 +90,8 @@ interface DashboardContextValue {
   ultimaAtualizacao: string | null;
   /** Período declarado nos relatórios WW (topo da planilha). */
   periodoAnalise: PeriodoAnalise | null;
+  /** false = modo demo: as importações ficam só neste navegador (IndexedDB). */
+  persistindoNoBanco: boolean;
 }
 
 const DashboardContext = React.createContext<DashboardContextValue | null>(null);
@@ -110,6 +113,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
   const [pagina, setPagina] = React.useState<Pagina>("sintese");
   const [ultimaAtualizacao, setUltima] = React.useState<string | null>(null);
   const [periodos, setPeriodos] = React.useState<PeriodosPorExercicio>({});
+  const [persistindoNoBanco, setPersistindoNoBanco] = React.useState(true);
 
   const carregar = React.useCallback(async () => {
     setLoading(true);
@@ -117,6 +121,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     try {
       const m = await loadMto();
       setMto(m);
+      setPersistindoNoBanco(await usandoNeon());
       await seedIfEmpty();
       await seedFasesIfEmpty();
       const [dados, liq, pag] = await Promise.all([
@@ -368,6 +373,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     pagamentos,
     ultimaAtualizacao,
     periodoAnalise,
+    persistindoNoBanco,
   };
 
   return <DashboardContext.Provider value={value}>{children}</DashboardContext.Provider>;

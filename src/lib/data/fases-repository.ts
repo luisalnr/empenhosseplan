@@ -1,5 +1,6 @@
 import type { FaseDespesa } from "../types";
 import { exercicioDe, exerciciosDosVinculos } from "../exercicio";
+import { usandoNeon } from "./repository";
 
 /**
  * Repositório de fases (liquidações/pagamentos) — dual-mode, igual ao repository.ts.
@@ -7,7 +8,6 @@ import { exercicioDe, exerciciosDosVinculos } from "../exercicio";
  * - ausente → Dexie/IndexedDB (modo demo)
  * JSONs estáticos em /public/data continuam como fallback via seedFasesIfEmpty().
  */
-const USE_NEON = process.env.NEXT_PUBLIC_USE_NEON === "true";
 
 // ───────────────────────── Backend: Neon (via API routes) ─────────────────────────
 
@@ -145,18 +145,28 @@ const dexieFasesRepo = {
 
 // ───────────────────────── Interface pública ─────────────────────────
 
-const backend = USE_NEON ? neonFasesRepo : dexieFasesRepo;
+// Mesma resolução em runtime do repository.ts: `usandoNeon()` pergunta ao servidor
+// (/api/health) quando a flag de build não está ligada, evitando cair no IndexedDB
+// sem aviso num deploy mal configurado.
+let backendPromise: Promise<typeof neonFasesRepo | typeof dexieFasesRepo> | null = null;
 
-export const getLiquidacoes = () => backend.getLiquidacoes();
-export const getPagamentos = () => backend.getPagamentos();
-export const saveLiquidacoes = (r: FaseDespesa[], mode: "merge" | "replace" = "replace") =>
-  backend.saveLiquidacoes(r, mode);
-export const savePagamentos = (r: FaseDespesa[], mode: "merge" | "replace" = "replace") =>
-  backend.savePagamentos(r, mode);
-export const clearLiquidacoes = () => backend.clearLiquidacoes();
-export const clearPagamentos = () => backend.clearPagamentos();
-export const countLiquidacoes = () => backend.countLiquidacoes();
-export const countPagamentos = () => backend.countPagamentos();
+function getBackend() {
+  if (!backendPromise) {
+    backendPromise = usandoNeon().then((neon) => (neon ? neonFasesRepo : dexieFasesRepo));
+  }
+  return backendPromise;
+}
+
+export const getLiquidacoes = async () => (await getBackend()).getLiquidacoes();
+export const getPagamentos = async () => (await getBackend()).getPagamentos();
+export const saveLiquidacoes = async (r: FaseDespesa[], mode: "merge" | "replace" = "replace") =>
+  (await getBackend()).saveLiquidacoes(r, mode);
+export const savePagamentos = async (r: FaseDespesa[], mode: "merge" | "replace" = "replace") =>
+  (await getBackend()).savePagamentos(r, mode);
+export const clearLiquidacoes = async () => (await getBackend()).clearLiquidacoes();
+export const clearPagamentos = async () => (await getBackend()).clearPagamentos();
+export const countLiquidacoes = async () => (await getBackend()).countLiquidacoes();
+export const countPagamentos = async () => (await getBackend()).countPagamentos();
 
 /**
  * Carrega JSON estático de fallback se o repositório estiver vazio.
