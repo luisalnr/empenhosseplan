@@ -1,1 +1,3488 @@
-[{"numero":"7130010542/2026","data":"2026-07-07","numeroEmpenho":"7130010094/2026","status":"Efetuado","valor":65342.32},{"numero":"7130010541/2026","data":"2026-07-07","numeroEmpenho":"7130010070/2026","status":"Aguardando Liberação","valor":30153.35},{"numero":"7130010540/2026","data":"2026-07-07","numeroEmpenho":"7130010069/2026","status":"Aguardando Liberação","valor":48468.03},{"numero":"7130010539/2026","data":"2026-07-07","numeroEmpenho":"7130010131/2026","status":"Efetuado","valor":953.87},{"numero":"7130010538/2026","data":"2026-07-07","numeroEmpenho":"7130010088/2026","status":"Efetuado","valor":38095.62},{"numero":"7130010537/2026","data":"2026-07-07","numeroEmpenho":"7130010072/2026","status":"Aguardando Liberação","valor":7940.27},{"numero":"7130010536/2026","data":"2026-07-07","numeroEmpenho":"7130010066/2026","status":"Efetuado","valor":13820.0},{"numero":"7130010535/2026","data":"2026-07-07","numeroEmpenho":"7130010065/2026","status":"Efetuado","valor":69100.0},{"numero":"7130010534/2026","data":"2026-07-06","numeroEmpenho":"7130010289/2026","status":"Aguardando Liberação","valor":3379.18},{"numero":"7130010533/2026","data":"2026-07-06","numeroEmpenho":"7130010067/2026","status":"Efetuado","valor":11875.0},{"numero":"7130010532/2026","data":"2026-07-06","numeroEmpenho":"7130010080/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010531/2026","data":"2026-07-06","numeroEmpenho":"7130010079/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010530/2026","data":"2026-07-06","numeroEmpenho":"7130010099/2026","status":"Efetuado","valor":2400.0},{"numero":"7130010529/2026","data":"2026-07-06","numeroEmpenho":"7130010098/2026","status":"Efetuado","valor":12000.0},{"numero":"7130010528/2026","data":"2026-07-06","numeroEmpenho":"7130010074/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010527/2026","data":"2026-07-06","numeroEmpenho":"7130010073/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010526/2026","data":"2026-07-06","numeroEmpenho":"7130010077/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010525/2026","data":"2026-07-06","numeroEmpenho":"7130010076/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010524/2026","data":"2026-07-06","numeroEmpenho":"7130010063/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010523/2026","data":"2026-07-06","numeroEmpenho":"7130010062/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010522/2026","data":"2026-07-03","numeroEmpenho":"7130010406/2026","status":"Efetuado","valor":1430.0},{"numero":"7130010521/2026","data":"2026-07-03","numeroEmpenho":"7130010405/2026","status":"Efetuado","valor":143.12},{"numero":"7130010520/2026","data":"2026-07-02","numeroEmpenho":"7130010168/2026","status":"Aguardando Liberação","valor":1169.8},{"numero":"7130010519/2026","data":"2026-07-02","numeroEmpenho":"7130010262/2026","status":"Aguardando Liberação","valor":1175.0},{"numero":"7130010518/2026","data":"2026-07-02","numeroEmpenho":"7130010288/2026","status":"Aguardando Liberação","valor":775.5},{"numero":"7130010517/2026","data":"2026-07-02","numeroEmpenho":"7130010176/2026","status":"Efetuado","valor":377.15},{"numero":"7130010516/2026","data":"2026-07-01","numeroEmpenho":"7130010404/2026","status":"Efetuado","valor":250000.0},{"numero":"7130010515/2026","data":"2026-07-01","numeroEmpenho":"7130010403/2026","status":"Efetuado","valor":478000.0},{"numero":"7130010514/2026","data":"2026-07-01","numeroEmpenho":"7130010402/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010513/2026","data":"2026-07-01","numeroEmpenho":"7130010401/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010512/2026","data":"2026-07-01","numeroEmpenho":"7130010400/2026","status":"Efetuado","valor":113963.7},{"numero":"7130010511/2026","data":"2026-07-01","numeroEmpenho":"7130010394/2026","status":"Efetuado","valor":2000000.0},{"numero":"7130010510/2026","data":"2026-06-30","numeroEmpenho":"7130010395/2026","status":"Efetuado","valor":540000.0},{"numero":"7130010509/2026","data":"2026-06-29","numeroEmpenho":"7130010399/2026","status":"Efetuado","valor":1145.0},{"numero":"7130010508/2026","data":"2026-06-26","numeroEmpenho":"7130010398/2026","status":"Efetuado","valor":2505.12},{"numero":"7130010507/2026","data":"2026-06-26","numeroEmpenho":"7130010397/2026","status":"Efetuado","valor":2505.12},{"numero":"7130010506/2026","data":"2026-06-26","numeroEmpenho":"7130010396/2026","status":"Efetuado","valor":2505.12},{"numero":"7130010505/2026","data":"2026-06-26","numeroEmpenho":"7130010086/2026","status":"Efetuado","valor":1577.74},{"numero":"7130010504/2026","data":"2026-06-26","numeroEmpenho":"7130010085/2026","status":"Efetuado","valor":48478.19},{"numero":"7130010503/2026","data":"2026-06-26","numeroEmpenho":"7130010084/2026","status":"Efetuado","valor":221804.89},{"numero":"7130010502/2026","data":"2026-06-26","numeroEmpenho":"7130010393/2026","status":"Efetuado","valor":9662.62},{"numero":"7130010501/2026","data":"2026-06-26","numeroEmpenho":"7130010392/2026","status":"Efetuado","valor":858.75},{"numero":"7130010500/2026","data":"2026-06-26","numeroEmpenho":"7130010391/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010499/2026","data":"2026-06-25","numeroEmpenho":"7130010071/2026","status":"Aguardando Liberação","valor":675.0},{"numero":"7130010498/2026","data":"2026-06-25","numeroEmpenho":"7130010011/2026","status":"Aguardando Liberação","valor":5592.49},{"numero":"7130010497/2026","data":"2026-06-25","numeroEmpenho":"7130010014/2026","status":"Aguardando Liberação","valor":20198.16},{"numero":"7130010496/2026","data":"2026-06-25","numeroEmpenho":"7130010015/2026","status":"Aguardando Liberação","valor":7108.06},{"numero":"7130010495/2026","data":"2026-06-25","numeroEmpenho":"7130010011/2026","status":"Cancelado","valor":0.0},{"numero":"7130010494/2026","data":"2026-06-25","numeroEmpenho":"7130010016/2026","status":"Aguardando Liberação","valor":4994.54},{"numero":"7130010493/2026","data":"2026-06-24","numeroEmpenho":"7130010390/2026","status":"Efetuado","valor":3020.0},{"numero":"7130010492/2026","data":"2026-06-23","numeroEmpenho":"7130010056/2026","status":"Aguardando Liberação","valor":1120.61},{"numero":"7130010491/2026","data":"2026-06-22","numeroEmpenho":"7130010368/2026","status":"Efetuado","valor":170000.0},{"numero":"7130010490/2026","data":"2026-06-22","numeroEmpenho":"7130010367/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010489/2026","data":"2026-06-22","numeroEmpenho":"7130010366/2026","status":"Efetuado","valor":395981.85},{"numero":"7130010488/2026","data":"2026-06-22","numeroEmpenho":"7130010365/2026","status":"Efetuado","valor":70000.0},{"numero":"7130010487/2026","data":"2026-06-22","numeroEmpenho":"7130010364/2026","status":"Efetuado","valor":75000.0},{"numero":"7130010486/2026","data":"2026-06-22","numeroEmpenho":"7130010363/2026","status":"Efetuado","valor":25000.0},{"numero":"7130010485/2026","data":"2026-06-22","numeroEmpenho":"7130010362/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010484/2026","data":"2026-06-22","numeroEmpenho":"7130010361/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010483/2026","data":"2026-06-22","numeroEmpenho":"7130010386/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010482/2026","data":"2026-06-22","numeroEmpenho":"7130010385/2026","status":"Efetuado","valor":3020.0},{"numero":"7130010481/2026","data":"2026-06-22","numeroEmpenho":"7130010384/2026","status":"Efetuado","valor":1510.0},{"numero":"7130010480/2026","data":"2026-06-19","numeroEmpenho":"7130010383/2026","status":"Efetuado","valor":1431.5},{"numero":"7130010479/2026","data":"2026-06-19","numeroEmpenho":"7130010382/2026","status":"Efetuado","valor":1717.75},{"numero":"7130010478/2026","data":"2026-06-19","numeroEmpenho":"7130010381/2026","status":"Efetuado","valor":572.5},{"numero":"7130010477/2026","data":"2026-06-19","numeroEmpenho":"7130010380/2026","status":"Efetuado","valor":1431.5},{"numero":"7130010476/2026","data":"2026-06-19","numeroEmpenho":"7130010379/2026","status":"Efetuado","valor":1431.5},{"numero":"7130010475/2026","data":"2026-06-19","numeroEmpenho":"7130010378/2026","status":"Efetuado","valor":572.5},{"numero":"7130010474/2026","data":"2026-06-19","numeroEmpenho":"7130010377/2026","status":"Efetuado","valor":288.62},{"numero":"7130010473/2026","data":"2026-06-19","numeroEmpenho":"7130010288/2026","status":"Efetuado","valor":3138.64},{"numero":"7130010472/2026","data":"2026-06-19","numeroEmpenho":"7130010371/2026","status":"Efetuado","valor":286.25},{"numero":"7130010471/2026","data":"2026-06-19","numeroEmpenho":"7130010370/2026","status":"Efetuado","valor":286.25},{"numero":"7130010470/2026","data":"2026-06-19","numeroEmpenho":"7130010369/2026","status":"Efetuado","valor":286.25},{"numero":"7130010469/2026","data":"2026-06-19","numeroEmpenho":"7130010071/2026","status":"Efetuado","valor":750.0},{"numero":"7130010468/2026","data":"2026-06-18","numeroEmpenho":"7130010360/2026","status":"Efetuado","valor":572.5},{"numero":"7130010467/2026","data":"2026-06-18","numeroEmpenho":"7130010359/2026","status":"Efetuado","valor":572.5},{"numero":"7130010466/2026","data":"2026-06-18","numeroEmpenho":"7130010131/2026","status":"Efetuado","valor":6106.41},{"numero":"7130010465/2026","data":"2026-06-18","numeroEmpenho":"7130010237/2026","status":"Efetuado","valor":2740.0},{"numero":"7130010464/2026","data":"2026-06-18","numeroEmpenho":"7130010009/2026","status":"Efetuado","valor":11896.97},{"numero":"7130010463/2026","data":"2026-06-18","numeroEmpenho":"7130010210/2026","status":"Efetuado","valor":5920.0},{"numero":"7130010462/2026","data":"2026-06-18","numeroEmpenho":"7130010135/2026","status":"Efetuado","valor":1372.0},{"numero":"7130010461/2026","data":"2026-06-17","numeroEmpenho":"7130010358/2026","status":"Efetuado","valor":2290.0},{"numero":"7130010460/2026","data":"2026-06-17","numeroEmpenho":"7130010357/2026","status":"Efetuado","valor":144.31},{"numero":"7130010459/2026","data":"2026-06-16","numeroEmpenho":"7130010162/2026","status":"Efetuado","valor":1598.0},{"numero":"7130010458/2026","data":"2026-06-16","numeroEmpenho":"7130010164/2026","status":"Efetuado","valor":3196.0},{"numero":"7130010457/2026","data":"2026-06-16","numeroEmpenho":"7130010057/2026","status":"Efetuado","valor":230.4},{"numero":"7130010456/2026","data":"2026-06-16","numeroEmpenho":"7130010176/2026","status":"Efetuado","valor":943.87},{"numero":"7130010455/2026","data":"2026-06-16","numeroEmpenho":"7130010238/2026","status":"Efetuado","valor":3371.49},{"numero":"7130010454/2026","data":"2026-06-16","numeroEmpenho":"7130010238/2026","status":"Efetuado","valor":125.0},{"numero":"7130010453/2026","data":"2026-06-16","numeroEmpenho":"7130010238/2026","status":"Efetuado","valor":254.0},{"numero":"7130010452/2026","data":"2026-06-16","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":472.0},{"numero":"7130010451/2026","data":"2026-06-16","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":3900.0},{"numero":"7130010450/2026","data":"2026-06-16","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":442.0},{"numero":"7130010449/2026","data":"2026-06-16","numeroEmpenho":"7130010035/2026","status":"Efetuado","valor":336.59},{"numero":"7130010448/2026","data":"2026-06-16","numeroEmpenho":"7130010035/2026","status":"Efetuado","valor":3831.24},{"numero":"7130010447/2026","data":"2026-06-12","numeroEmpenho":"7130010058/2026","status":"Efetuado","valor":30972.35},{"numero":"7130010446/2026","data":"2026-06-12","numeroEmpenho":"7130010241/2026","status":"Efetuado","valor":7340.36},{"numero":"7130010445/2026","data":"2026-06-12","numeroEmpenho":"7130010240/2026","status":"Efetuado","valor":227.0},{"numero":"7130010444/2026","data":"2026-06-12","numeroEmpenho":"7130010351/2026","status":"Efetuado","valor":320000.0},{"numero":"7130010443/2026","data":"2026-06-12","numeroEmpenho":"7130010067/2026","status":"Efetuado","valor":11875.0},{"numero":"7130010442/2026","data":"2026-06-12","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":1214.58},{"numero":"7130010441/2026","data":"2026-06-12","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":162.15},{"numero":"7130010440/2026","data":"2026-06-12","numeroEmpenho":"7130010242/2026","status":"Efetuado","valor":1165.0},{"numero":"7130010439/2026","data":"2026-06-11","numeroEmpenho":"7130010352/2026","status":"Efetuado","valor":2265.0},{"numero":"7130010438/2026","data":"2026-06-11","numeroEmpenho":"7130010072/2026","status":"Efetuado","valor":6616.89},{"numero":"7130010437/2026","data":"2026-06-11","numeroEmpenho":"7130010343/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010436/2026","data":"2026-06-11","numeroEmpenho":"7130010350/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010435/2026","data":"2026-06-11","numeroEmpenho":"7130010349/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010434/2026","data":"2026-06-11","numeroEmpenho":"7130010341/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010433/2026","data":"2026-06-10","numeroEmpenho":"7130010088/2026","status":"Efetuado","valor":38095.62},{"numero":"7130010432/2026","data":"2026-06-09","numeroEmpenho":"7130010342/2026","status":"Efetuado","valor":865.86},{"numero":"7130010431/2026","data":"2026-06-09","numeroEmpenho":"7130010340/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010430/2026","data":"2026-06-09","numeroEmpenho":"7130010339/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010429/2026","data":"2026-06-09","numeroEmpenho":"7130010002/2026","status":"Efetuado","valor":237.3},{"numero":"7130010428/2026","data":"2026-06-09","numeroEmpenho":"7130010040/2026","status":"Efetuado","valor":59831.0},{"numero":"7130010427/2026","data":"2026-06-08","numeroEmpenho":"7130010337/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010426/2026","data":"2026-06-08","numeroEmpenho":"7130010336/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010425/2026","data":"2026-06-08","numeroEmpenho":"7130010335/2026","status":"Efetuado","valor":788036.3},{"numero":"7130010424/2026","data":"2026-06-08","numeroEmpenho":"7130010334/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010423/2026","data":"2026-06-08","numeroEmpenho":"7130010331/2026","status":"Efetuado","valor":40000.0},{"numero":"7130010422/2026","data":"2026-06-08","numeroEmpenho":"7130010330/2026","status":"Efetuado","valor":40000.0},{"numero":"7130010421/2026","data":"2026-06-08","numeroEmpenho":"7130010329/2026","status":"Efetuado","valor":60000.0},{"numero":"7130010420/2026","data":"2026-06-08","numeroEmpenho":"7130010328/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010419/2026","data":"2026-06-08","numeroEmpenho":"7130010070/2026","status":"Efetuado","valor":29147.55},{"numero":"7130010418/2026","data":"2026-06-08","numeroEmpenho":"7130010069/2026","status":"Efetuado","valor":45910.2},{"numero":"7130010417/2026","data":"2026-06-08","numeroEmpenho":"7130010332/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010416/2026","data":"2026-06-08","numeroEmpenho":"7130010333/2026","status":"Efetuado","valor":755.0},{"numero":"7130010415/2026","data":"2026-06-03","numeroEmpenho":"7130010063/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010414/2026","data":"2026-06-03","numeroEmpenho":"7130010062/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010413/2026","data":"2026-06-03","numeroEmpenho":"7130010099/2026","status":"Efetuado","valor":2400.0},{"numero":"7130010412/2026","data":"2026-06-03","numeroEmpenho":"7130010098/2026","status":"Efetuado","valor":12000.0},{"numero":"7130010411/2026","data":"2026-06-03","numeroEmpenho":"7130010077/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010410/2026","data":"2026-06-03","numeroEmpenho":"7130010076/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010409/2026","data":"2026-06-03","numeroEmpenho":"7130010080/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010408/2026","data":"2026-06-03","numeroEmpenho":"7130010079/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010407/2026","data":"2026-06-03","numeroEmpenho":"7130010074/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010406/2026","data":"2026-06-03","numeroEmpenho":"7130010327/2026","status":"Efetuado","valor":3775.0},{"numero":"7130010405/2026","data":"2026-06-03","numeroEmpenho":"7130010073/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010404/2026","data":"2026-06-02","numeroEmpenho":"7130010324/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010403/2026","data":"2026-06-02","numeroEmpenho":"7130010323/2026","status":"Efetuado","valor":400000.0},{"numero":"7130010402/2026","data":"2026-06-02","numeroEmpenho":"7130010322/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010401/2026","data":"2026-06-02","numeroEmpenho":"7130010094/2026","status":"Efetuado","valor":69137.26},{"numero":"7130010400/2026","data":"2026-06-02","numeroEmpenho":"7130010091/2026","status":"Efetuado","valor":27400.0},{"numero":"7130010399/2026","data":"2026-06-01","numeroEmpenho":"7130010321/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010398/2026","data":"2026-05-29","numeroEmpenho":"7130010320/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010397/2026","data":"2026-05-29","numeroEmpenho":"7130010319/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010396/2026","data":"2026-05-29","numeroEmpenho":"7130010215/2026","status":"Efetuado","valor":613.49},{"numero":"7130010395/2026","data":"2026-05-29","numeroEmpenho":"7130010309/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010394/2026","data":"2026-05-29","numeroEmpenho":"7130010318/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010393/2026","data":"2026-05-29","numeroEmpenho":"7130010317/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010392/2026","data":"2026-05-29","numeroEmpenho":"7130010316/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010391/2026","data":"2026-05-29","numeroEmpenho":"7130010315/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010390/2026","data":"2026-05-29","numeroEmpenho":"7130010314/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010389/2026","data":"2026-05-29","numeroEmpenho":"7130010313/2026","status":"Efetuado","valor":70000.0},{"numero":"7130010388/2026","data":"2026-05-29","numeroEmpenho":"7130010312/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010387/2026","data":"2026-05-29","numeroEmpenho":"7130010311/2026","status":"Efetuado","valor":78036.3},{"numero":"7130010386/2026","data":"2026-05-29","numeroEmpenho":"7130010310/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010385/2026","data":"2026-05-28","numeroEmpenho":"7130010002/2026","status":"Efetuado","valor":237.3},{"numero":"7130010384/2026","data":"2026-05-28","numeroEmpenho":"7130010047/2026","status":"Efetuado","valor":19639.11},{"numero":"7130010383/2026","data":"2026-05-28","numeroEmpenho":"7130010021/2026","status":"Efetuado","valor":13047.2},{"numero":"7130010382/2026","data":"2026-05-28","numeroEmpenho":"7130010048/2026","status":"Efetuado","valor":6477.68},{"numero":"7130010381/2026","data":"2026-05-28","numeroEmpenho":"7130010060/2026","status":"Efetuado","valor":42000.0},{"numero":"7130010380/2026","data":"2026-05-28","numeroEmpenho":"7130010092/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010379/2026","data":"2026-05-28","numeroEmpenho":"7130010068/2026","status":"Efetuado","valor":35000.0},{"numero":"7130010378/2026","data":"2026-05-28","numeroEmpenho":"7130010023/2026","status":"Cancelado","valor":0.0},{"numero":"7130010377/2026","data":"2026-05-28","numeroEmpenho":"7130010004/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010376/2026","data":"2026-05-28","numeroEmpenho":"7130010023/2026","status":"Efetuado","valor":138187.34},{"numero":"7130010375/2026","data":"2026-05-28","numeroEmpenho":"7130010306/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010374/2026","data":"2026-05-28","numeroEmpenho":"7130010307/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010373/2026","data":"2026-05-28","numeroEmpenho":"7130010305/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010372/2026","data":"2026-05-28","numeroEmpenho":"7130010308/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010371/2026","data":"2026-05-28","numeroEmpenho":"7130010304/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010370/2026","data":"2026-05-27","numeroEmpenho":"7130010300/2026","status":"Efetuado","valor":20000.0},{"numero":"7130010369/2026","data":"2026-05-27","numeroEmpenho":"7130010299/2026","status":"Efetuado","valor":80000.0},{"numero":"7130010368/2026","data":"2026-05-27","numeroEmpenho":"7130010301/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010367/2026","data":"2026-05-27","numeroEmpenho":"7130010303/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010366/2026","data":"2026-05-27","numeroEmpenho":"7130010085/2026","status":"Efetuado","valor":42324.64},{"numero":"7130010365/2026","data":"2026-05-27","numeroEmpenho":"7130010084/2026","status":"Efetuado","valor":210318.92},{"numero":"7130010364/2026","data":"2026-05-27","numeroEmpenho":"7130010057/2026","status":"Efetuado","valor":504.63},{"numero":"7130010363/2026","data":"2026-05-27","numeroEmpenho":"7130010293/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010362/2026","data":"2026-05-27","numeroEmpenho":"7130010294/2026","status":"Efetuado","valor":420000.0},{"numero":"7130010361/2026","data":"2026-05-27","numeroEmpenho":"7130010295/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010360/2026","data":"2026-05-27","numeroEmpenho":"7130010296/2026","status":"Efetuado","valor":70000.0},{"numero":"7130010359/2026","data":"2026-05-27","numeroEmpenho":"7130010298/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010358/2026","data":"2026-05-27","numeroEmpenho":"7130010302/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010357/2026","data":"2026-05-27","numeroEmpenho":"7130010297/2026","status":"Efetuado","valor":70000.0},{"numero":"7130010356/2026","data":"2026-05-26","numeroEmpenho":"7130010260/2026","status":"Efetuado","valor":12400.0},{"numero":"7130010355/2026","data":"2026-05-25","numeroEmpenho":"7130010292/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010354/2026","data":"2026-05-25","numeroEmpenho":"7130010127/2026","status":"Efetuado","valor":4756.49},{"numero":"7130010353/2026","data":"2026-05-25","numeroEmpenho":"7130010130/2026","status":"Efetuado","valor":7678.5},{"numero":"7130010352/2026","data":"2026-05-25","numeroEmpenho":"7130010130/2026","status":"Efetuado","valor":8856.08},{"numero":"7130010351/2026","data":"2026-05-25","numeroEmpenho":"7130010130/2026","status":"Efetuado","valor":10878.92},{"numero":"7130010350/2026","data":"2026-05-25","numeroEmpenho":"7130010127/2026","status":"Cancelado","valor":0.0},{"numero":"7130010349/2026","data":"2026-05-22","numeroEmpenho":"7130010291/2026","status":"Efetuado","valor":30000.0},{"numero":"7130010348/2026","data":"2026-05-22","numeroEmpenho":"7130010290/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010347/2026","data":"2026-05-22","numeroEmpenho":"7130010287/2026","status":"Efetuado","valor":500000.0},{"numero":"7130010346/2026","data":"2026-05-22","numeroEmpenho":"7130010286/2026","status":"Efetuado","valor":500000.0},{"numero":"7130010345/2026","data":"2026-05-22","numeroEmpenho":"7130010285/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010344/2026","data":"2026-05-22","numeroEmpenho":"7130010284/2026","status":"Efetuado","valor":500000.0},{"numero":"7130010343/2026","data":"2026-05-22","numeroEmpenho":"7130010035/2026","status":"Efetuado","valor":2343.01},{"numero":"7130010342/2026","data":"2026-05-22","numeroEmpenho":"7130010264/2026","status":"Efetuado","valor":14713.71},{"numero":"7130010341/2026","data":"2026-05-21","numeroEmpenho":"7130010283/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010340/2026","data":"2026-05-21","numeroEmpenho":"7130010057/2026","status":"Efetuado","valor":1131.68},{"numero":"7130010339/2026","data":"2026-05-21","numeroEmpenho":"7130010176/2026","status":"Efetuado","valor":3036.19},{"numero":"7130010338/2026","data":"2026-05-21","numeroEmpenho":"7130010255/2026","status":"Efetuado","valor":21510.0},{"numero":"7130010337/2026","data":"2026-05-21","numeroEmpenho":"7130010151/2026","status":"Efetuado","valor":125.98},{"numero":"7130010336/2026","data":"2026-05-21","numeroEmpenho":"7130010056/2026","status":"Efetuado","valor":4256.05},{"numero":"7130010335/2026","data":"2026-05-20","numeroEmpenho":"7130010015/2026","status":"Efetuado","valor":8887.32},{"numero":"7130010334/2026","data":"2026-05-20","numeroEmpenho":"7130010014/2026","status":"Efetuado","valor":19560.15},{"numero":"7130010333/2026","data":"2026-05-20","numeroEmpenho":"7130010013/2026","status":"Efetuado","valor":9759.64},{"numero":"7130010332/2026","data":"2026-05-20","numeroEmpenho":"7130010011/2026","status":"Efetuado","valor":13052.14},{"numero":"7130010331/2026","data":"2026-05-20","numeroEmpenho":"7130010035/2026","status":"Efetuado","valor":2437.37},{"numero":"7130010330/2026","data":"2026-05-20","numeroEmpenho":"7130010176/2026","status":"Efetuado","valor":3494.26},{"numero":"7130010329/2026","data":"2026-05-20","numeroEmpenho":"7130010035/2026","status":"Cancelado","valor":0.0},{"numero":"7130010328/2026","data":"2026-05-20","numeroEmpenho":"7130010176/2026","status":"Cancelado","valor":0.0},{"numero":"7130010327/2026","data":"2026-05-20","numeroEmpenho":"7130010275/2026","status":"Efetuado","valor":3020.0},{"numero":"7130010326/2026","data":"2026-05-19","numeroEmpenho":"7130010280/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010325/2026","data":"2026-05-19","numeroEmpenho":"7130010279/2026","status":"Efetuado","valor":200000.0},{"numero":"7130010324/2026","data":"2026-05-19","numeroEmpenho":"7130010131/2026","status":"Efetuado","valor":22347.17},{"numero":"7130010323/2026","data":"2026-05-19","numeroEmpenho":"7130010067/2026","status":"Efetuado","valor":11875.0},{"numero":"7130010322/2026","data":"2026-05-19","numeroEmpenho":"7130010261/2026","status":"Efetuado","valor":749.0},{"numero":"7130010321/2026","data":"2026-05-19","numeroEmpenho":"7130010278/2026","status":"Efetuado","valor":150000.0},{"numero":"7130010320/2026","data":"2026-05-19","numeroEmpenho":"7130010276/2026","status":"Efetuado","valor":100000.0},{"numero":"7130010319/2026","data":"2026-05-19","numeroEmpenho":"7130010277/2026","status":"Efetuado","valor":64036.3},{"numero":"7130010318/2026","data":"2026-05-15","numeroEmpenho":"7130010102/2026","status":"Efetuado","valor":407913.6},{"numero":"7130010317/2026","data":"2026-05-15","numeroEmpenho":"7130010102/2026","status":"Cancelado","valor":0.0},{"numero":"7130010316/2026","data":"2026-05-15","numeroEmpenho":"7130010274/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010315/2026","data":"2026-05-15","numeroEmpenho":"7130010273/2026","status":"Efetuado","valor":4000.0},{"numero":"7130010314/2026","data":"2026-05-15","numeroEmpenho":"7130010272/2026","status":"Efetuado","valor":3000.0},{"numero":"7130010313/2026","data":"2026-05-15","numeroEmpenho":"7130010101/2026","status":"Efetuado","valor":679.43},{"numero":"7130010312/2026","data":"2026-05-14","numeroEmpenho":"7130010103/2026","status":"Efetuado","valor":142769.76},{"numero":"7130010311/2026","data":"2026-05-14","numeroEmpenho":"7130010177/2026","status":"Efetuado","valor":5753.25},{"numero":"7130010310/2026","data":"2026-05-12","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":560.0},{"numero":"7130010309/2026","data":"2026-05-12","numeroEmpenho":"7130010154/2026","status":"Efetuado","valor":2395.96},{"numero":"7130010308/2026","data":"2026-05-12","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":7150.0},{"numero":"7130010307/2026","data":"2026-05-12","numeroEmpenho":"7130010160/2026","status":"Efetuado","valor":449.99},{"numero":"7130010306/2026","data":"2026-05-12","numeroEmpenho":"7130010050/2026","status":"Efetuado","valor":1486.0},{"numero":"7130010305/2026","data":"2026-05-12","numeroEmpenho":"7130010160/2026","status":"Cancelado","valor":0.0},{"numero":"7130010304/2026","data":"2026-05-12","numeroEmpenho":"7130010271/2026","status":"Efetuado","valor":1145.0},{"numero":"7130010303/2026","data":"2026-05-12","numeroEmpenho":"7130010087/2026","status":"Efetuado","valor":1458.33},{"numero":"7130010302/2026","data":"2026-05-12","numeroEmpenho":"7130010087/2026","status":"Efetuado","valor":1458.33},{"numero":"7130010301/2026","data":"2026-05-12","numeroEmpenho":"7130010094/2026","status":"Efetuado","valor":68662.89},{"numero":"7130010300/2026","data":"2026-05-11","numeroEmpenho":"7130010270/2026","status":"Efetuado","valor":2505.12},{"numero":"7130010299/2026","data":"2026-05-11","numeroEmpenho":"7130010269/2026","status":"Efetuado","valor":2642.5},{"numero":"7130010298/2026","data":"2026-05-11","numeroEmpenho":"7130010071/2026","status":"Efetuado","valor":825.0},{"numero":"7130010297/2026","data":"2026-05-11","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":268.23},{"numero":"7130010296/2026","data":"2026-05-11","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":987.81},{"numero":"7130010295/2026","data":"2026-05-11","numeroEmpenho":"7130010101/2026","status":"Efetuado","valor":603.21},{"numero":"7130010294/2026","data":"2026-05-08","numeroEmpenho":"7130010200/2026","status":"Efetuado","valor":55500.0},{"numero":"7130010293/2026","data":"2026-05-08","numeroEmpenho":"7130010074/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010292/2026","data":"2026-05-08","numeroEmpenho":"7130010073/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010291/2026","data":"2026-05-08","numeroEmpenho":"7130010099/2026","status":"Efetuado","valor":2400.0},{"numero":"7130010290/2026","data":"2026-05-08","numeroEmpenho":"7130010066/2026","status":"Efetuado","valor":13820.0},{"numero":"7130010289/2026","data":"2026-05-08","numeroEmpenho":"7130010065/2026","status":"Efetuado","valor":69100.0},{"numero":"7130010288/2026","data":"2026-05-08","numeroEmpenho":"7130010098/2026","status":"Efetuado","valor":12000.0},{"numero":"7130010287/2026","data":"2026-05-08","numeroEmpenho":"7130010077/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010286/2026","data":"2026-05-08","numeroEmpenho":"7130010076/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010285/2026","data":"2026-05-08","numeroEmpenho":"7130010080/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010284/2026","data":"2026-05-08","numeroEmpenho":"7130010079/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010283/2026","data":"2026-05-08","numeroEmpenho":"7130010063/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010282/2026","data":"2026-05-08","numeroEmpenho":"7130010062/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010281/2026","data":"2026-05-08","numeroEmpenho":"7130010088/2026","status":"Efetuado","valor":38095.62},{"numero":"7130010280/2026","data":"2026-05-08","numeroEmpenho":"7130010265/2026","status":"Efetuado","valor":4294.5},{"numero":"7130010279/2026","data":"2026-05-08","numeroEmpenho":"7130010266/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010278/2026","data":"2026-05-08","numeroEmpenho":"7130010267/2026","status":"Efetuado","valor":1145.0},{"numero":"7130010277/2026","data":"2026-05-07","numeroEmpenho":"7130010100/2026","status":"Efetuado","valor":7323.85},{"numero":"7130010276/2026","data":"2026-05-05","numeroEmpenho":"7130010040/2026","status":"Efetuado","valor":59831.0},{"numero":"7130010275/2026","data":"2026-05-05","numeroEmpenho":"7130010023/2026","status":"Efetuado","valor":138062.05},{"numero":"7130010274/2026","data":"2026-05-04","numeroEmpenho":"7130010004/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010273/2026","data":"2026-05-04","numeroEmpenho":"7130010183/2026","status":"Efetuado","valor":18360.0},{"numero":"7130010272/2026","data":"2026-05-04","numeroEmpenho":"7130010119/2026","status":"Efetuado","valor":9980.0},{"numero":"7130010271/2026","data":"2026-04-30","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":1300.0},{"numero":"7130010270/2026","data":"2026-04-30","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":3900.0},{"numero":"7130010269/2026","data":"2026-04-30","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":1444.0},{"numero":"7130010268/2026","data":"2026-04-30","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":1300.0},{"numero":"7130010267/2026","data":"2026-04-30","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":1083.0},{"numero":"7130010266/2026","data":"2026-04-30","numeroEmpenho":"7130010070/2026","status":"Efetuado","valor":30674.26},{"numero":"7130010265/2026","data":"2026-04-30","numeroEmpenho":"7130010069/2026","status":"Efetuado","valor":44951.02},{"numero":"7130010264/2026","data":"2026-04-30","numeroEmpenho":"7130010081/2026","status":"Efetuado","valor":6935.88},{"numero":"7130010263/2026","data":"2026-04-30","numeroEmpenho":"7130010100/2026","status":"Efetuado","valor":5400.71},{"numero":"7130010262/2026","data":"2026-04-29","numeroEmpenho":"7130010245/2026","status":"Efetuado","valor":3220.88},{"numero":"7130010261/2026","data":"2026-04-29","numeroEmpenho":"7130010086/2026","status":"Efetuado","valor":3148.74},{"numero":"7130010260/2026","data":"2026-04-29","numeroEmpenho":"7130010085/2026","status":"Efetuado","valor":32566.61},{"numero":"7130010259/2026","data":"2026-04-29","numeroEmpenho":"7130010084/2026","status":"Efetuado","valor":201047.56},{"numero":"7130010258/2026","data":"2026-04-28","numeroEmpenho":"7130010233/2026","status":"Efetuado","valor":3020.0},{"numero":"7130010257/2026","data":"2026-04-28","numeroEmpenho":"7130010232/2026","status":"Efetuado","valor":3397.5},{"numero":"7130010256/2026","data":"2026-04-28","numeroEmpenho":"7130010231/2026","status":"Efetuado","valor":3220.87},{"numero":"7130010255/2026","data":"2026-04-28","numeroEmpenho":"7130010230/2026","status":"Efetuado","valor":3397.5},{"numero":"7130010254/2026","data":"2026-04-28","numeroEmpenho":"7130010229/2026","status":"Efetuado","valor":3220.87},{"numero":"7130010253/2026","data":"2026-04-28","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":1625.0},{"numero":"7130010252/2026","data":"2026-04-28","numeroEmpenho":"7130010040/2026","status":"Efetuado","valor":59831.0},{"numero":"7130010251/2026","data":"2026-04-28","numeroEmpenho":"7130010004/2026","status":"Cancelado","valor":0.0},{"numero":"7130010250/2026","data":"2026-04-28","numeroEmpenho":"7130010047/2026","status":"Efetuado","valor":19639.11},{"numero":"7130010249/2026","data":"2026-04-28","numeroEmpenho":"7130010048/2026","status":"Efetuado","valor":6477.68},{"numero":"7130010248/2026","data":"2026-04-28","numeroEmpenho":"7130010021/2026","status":"Efetuado","valor":13047.2},{"numero":"7130010247/2026","data":"2026-04-28","numeroEmpenho":"7130010023/2026","status":"Cancelado","valor":0.0},{"numero":"7130010246/2026","data":"2026-04-28","numeroEmpenho":"7130010201/2026","status":"Efetuado","valor":50000.0},{"numero":"7130010245/2026","data":"2026-04-28","numeroEmpenho":"7130010042/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010244/2026","data":"2026-04-28","numeroEmpenho":"7130010039/2026","status":"Efetuado","valor":3970.14},{"numero":"7130010243/2026","data":"2026-04-24","numeroEmpenho":"7130010109/2026","status":"Efetuado","valor":10694.0},{"numero":"7130010242/2026","data":"2026-04-24","numeroEmpenho":"7130010224/2026","status":"Efetuado","valor":143.13},{"numero":"7130010241/2026","data":"2026-04-23","numeroEmpenho":"7130010075/2026","status":"Efetuado","valor":8499.22},{"numero":"7130010240/2026","data":"2026-04-23","numeroEmpenho":"7130010091/2026","status":"Efetuado","valor":10960.0},{"numero":"7130010239/2026","data":"2026-04-22","numeroEmpenho":"7130010016/2026","status":"Efetuado","valor":9428.36},{"numero":"7130010238/2026","data":"2026-04-22","numeroEmpenho":"7130010015/2026","status":"Efetuado","valor":72498.16},{"numero":"7130010237/2026","data":"2026-04-22","numeroEmpenho":"7130010014/2026","status":"Efetuado","valor":21367.2},{"numero":"7130010236/2026","data":"2026-04-22","numeroEmpenho":"7130010012/2026","status":"Efetuado","valor":5940.47},{"numero":"7130010235/2026","data":"2026-04-17","numeroEmpenho":"7130010155/2026","status":"Efetuado","valor":7187.88},{"numero":"7130010234/2026","data":"2026-04-17","numeroEmpenho":"7130010209/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010233/2026","data":"2026-04-15","numeroEmpenho":"7130010208/2026","status":"Efetuado","valor":4066.2},{"numero":"7130010232/2026","data":"2026-04-15","numeroEmpenho":"7130010206/2026","status":"Efetuado","valor":755.0},{"numero":"7130010231/2026","data":"2026-04-14","numeroEmpenho":"7130010067/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010230/2026","data":"2026-04-13","numeroEmpenho":"7130010207/2026","status":"Efetuado","valor":2147.25},{"numero":"7130010229/2026","data":"2026-04-13","numeroEmpenho":"7130010169/2026","status":"Efetuado","valor":4995.0},{"numero":"7130010228/2026","data":"2026-04-13","numeroEmpenho":"7130010018/2026","status":"Efetuado","valor":439.3},{"numero":"7130010227/2026","data":"2026-04-13","numeroEmpenho":"7130010094/2026","status":"Efetuado","valor":70560.36},{"numero":"7130010226/2026","data":"2026-04-10","numeroEmpenho":"7130010002/2026","status":"Efetuado","valor":237.3},{"numero":"7130010225/2026","data":"2026-04-10","numeroEmpenho":"7130010131/2026","status":"Efetuado","valor":20527.02},{"numero":"7130010224/2026","data":"2026-04-10","numeroEmpenho":"7130010051/2026","status":"Efetuado","valor":4520.0},{"numero":"7130010223/2026","data":"2026-04-09","numeroEmpenho":"7130010094/2026","status":"Efetuado","valor":70560.36},{"numero":"7130010222/2026","data":"2026-04-09","numeroEmpenho":"7130010202/2026","status":"Efetuado","valor":3775.0},{"numero":"7130010221/2026","data":"2026-04-09","numeroEmpenho":"7130010088/2026","status":"Efetuado","valor":38095.62},{"numero":"7130010220/2026","data":"2026-04-09","numeroEmpenho":"7130010130/2026","status":"Efetuado","valor":13928.3},{"numero":"7130010219/2026","data":"2026-04-09","numeroEmpenho":"7130010127/2026","status":"Efetuado","valor":51460.23},{"numero":"7130010218/2026","data":"2026-04-09","numeroEmpenho":"7130010047/2026","status":"Efetuado","valor":19639.11},{"numero":"7130010217/2026","data":"2026-04-08","numeroEmpenho":"7130010197/2026","status":"Efetuado","valor":1510.0},{"numero":"7130010216/2026","data":"2026-04-08","numeroEmpenho":"7130010203/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010215/2026","data":"2026-04-08","numeroEmpenho":"7130010199/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010214/2026","data":"2026-04-08","numeroEmpenho":"7130010198/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010213/2026","data":"2026-04-08","numeroEmpenho":"7130010145/2026","status":"Efetuado","valor":56754.0},{"numero":"7130010212/2026","data":"2026-04-07","numeroEmpenho":"7130010082/2026","status":"Efetuado","valor":7394.0},{"numero":"7130010211/2026","data":"2026-04-07","numeroEmpenho":"7130010111/2026","status":"Efetuado","valor":9580.0},{"numero":"7130010210/2026","data":"2026-04-07","numeroEmpenho":"7130010110/2026","status":"Efetuado","valor":7994.0},{"numero":"7130010209/2026","data":"2026-04-07","numeroEmpenho":"7130010048/2026","status":"Efetuado","valor":6477.68},{"numero":"7130010208/2026","data":"2026-04-07","numeroEmpenho":"7130010196/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010207/2026","data":"2026-04-07","numeroEmpenho":"7130010044/2026","status":"Efetuado","valor":30674.26},{"numero":"7130010206/2026","data":"2026-04-06","numeroEmpenho":"7130010195/2026","status":"Efetuado","valor":4294.5},{"numero":"7130010205/2026","data":"2026-04-06","numeroEmpenho":"7130010194/2026","status":"Efetuado","valor":4294.5},{"numero":"7130010204/2026","data":"2026-04-06","numeroEmpenho":"7130010193/2026","status":"Efetuado","valor":4530.0},{"numero":"7130010203/2026","data":"2026-04-06","numeroEmpenho":"7130010034/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010202/2026","data":"2026-04-06","numeroEmpenho":"7130010033/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010201/2026","data":"2026-04-06","numeroEmpenho":"7130010066/2026","status":"Efetuado","valor":10365.0},{"numero":"7130010200/2026","data":"2026-04-06","numeroEmpenho":"7130010030/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010199/2026","data":"2026-04-06","numeroEmpenho":"7130010065/2026","status":"Efetuado","valor":51825.0},{"numero":"7130010198/2026","data":"2026-04-06","numeroEmpenho":"7130010032/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010197/2026","data":"2026-04-06","numeroEmpenho":"7130010029/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010196/2026","data":"2026-04-06","numeroEmpenho":"7130010031/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010195/2026","data":"2026-04-06","numeroEmpenho":"7130010028/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010194/2026","data":"2026-04-06","numeroEmpenho":"7130010027/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010193/2026","data":"2026-04-06","numeroEmpenho":"7130010026/2026","status":"Efetuado","valor":2400.0},{"numero":"7130010192/2026","data":"2026-04-06","numeroEmpenho":"7130010025/2026","status":"Efetuado","valor":12000.0},{"numero":"7130010191/2026","data":"2026-04-01","numeroEmpenho":"7130010176/2026","status":"Efetuado","valor":411.94},{"numero":"7130010190/2026","data":"2026-04-01","numeroEmpenho":"7130010176/2026","status":"Efetuado","valor":790.4},{"numero":"7130010189/2026","data":"2026-04-01","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":1.21},{"numero":"7130010188/2026","data":"2026-04-01","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":239.34},{"numero":"7130010187/2026","data":"2026-04-01","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":16.24},{"numero":"7130010186/2026","data":"2026-04-01","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":1357.41},{"numero":"7130010185/2026","data":"2026-04-01","numeroEmpenho":"7130010190/2026","status":"Efetuado","valor":2691.0},{"numero":"7130010184/2026","data":"2026-04-01","numeroEmpenho":"7130010189/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010183/2026","data":"2026-03-31","numeroEmpenho":"7130010002/2026","status":"Efetuado","valor":237.3},{"numero":"7130010182/2026","data":"2026-03-31","numeroEmpenho":"7130010188/2026","status":"Efetuado","valor":7550.0},{"numero":"7130010181/2026","data":"2026-03-30","numeroEmpenho":"7130010021/2026","status":"Efetuado","valor":13979.14},{"numero":"7130010180/2026","data":"2026-03-30","numeroEmpenho":"7130010187/2026","status":"Efetuado","valor":4294.5},{"numero":"7130010179/2026","data":"2026-03-30","numeroEmpenho":"7130010186/2026","status":"Efetuado","valor":4294.5},{"numero":"7130010178/2026","data":"2026-03-30","numeroEmpenho":"7130010101/2026","status":"Efetuado","valor":654.03},{"numero":"7130010177/2026","data":"2026-03-30","numeroEmpenho":"7130010185/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010176/2026","data":"2026-03-30","numeroEmpenho":"7130010184/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010175/2026","data":"2026-03-27","numeroEmpenho":"7130010003/2026","status":"Efetuado","valor":101.28},{"numero":"7130010174/2026","data":"2026-03-26","numeroEmpenho":"7130010075/2026","status":"Efetuado","valor":5612.0},{"numero":"7130010173/2026","data":"2026-03-26","numeroEmpenho":"7130010182/2026","status":"Efetuado","valor":7157.05},{"numero":"7130010172/2026","data":"2026-03-26","numeroEmpenho":"7130010179/2026","status":"Efetuado","valor":10463.54},{"numero":"7130010171/2026","data":"2026-03-26","numeroEmpenho":"7130010533/2025","status":"Efetuado","valor":60096.82},{"numero":"7130010170/2026","data":"2026-03-26","numeroEmpenho":"7130010179/2026","status":"Cancelado","valor":0.0},{"numero":"7130010169/2026","data":"2026-03-26","numeroEmpenho":"7130010533/2025","status":"Cancelado","valor":0.0},{"numero":"7130010168/2026","data":"2026-03-26","numeroEmpenho":"7130010181/2026","status":"Efetuado","valor":3220.87},{"numero":"7130010167/2026","data":"2026-03-25","numeroEmpenho":"7130010067/2026","status":"Efetuado","valor":18555.2},{"numero":"7130010166/2026","data":"2026-03-25","numeroEmpenho":"7130010067/2026","status":"Efetuado","valor":12769.76},{"numero":"7130010165/2026","data":"2026-03-24","numeroEmpenho":"7130010004/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010164/2026","data":"2026-03-24","numeroEmpenho":"7130010023/2026","status":"Efetuado","valor":138187.34},{"numero":"7130010163/2026","data":"2026-03-24","numeroEmpenho":"7130010048/2026","status":"Cancelado","valor":0.0},{"numero":"7130010162/2026","data":"2026-03-24","numeroEmpenho":"7130010047/2026","status":"Cancelado","valor":0.0},{"numero":"7130010161/2026","data":"2026-03-24","numeroEmpenho":"7130010042/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010160/2026","data":"2026-03-24","numeroEmpenho":"7130010039/2026","status":"Efetuado","valor":7940.27},{"numero":"7130010159/2026","data":"2026-03-24","numeroEmpenho":"7130010044/2026","status":"Cancelado","valor":0.0},{"numero":"7130010158/2026","data":"2026-03-24","numeroEmpenho":"7130010043/2026","status":"Efetuado","valor":47189.12},{"numero":"7130010157/2026","data":"2026-03-23","numeroEmpenho":"7130010180/2026","status":"Efetuado","valor":144.31},{"numero":"7130010156/2026","data":"2026-03-20","numeroEmpenho":"7130010100/2026","status":"Efetuado","valor":5528.58},{"numero":"7130010155/2026","data":"2026-03-20","numeroEmpenho":"7130010075/2026","status":"Cancelado","valor":0.0},{"numero":"7130010154/2026","data":"2026-03-20","numeroEmpenho":"7130010106/2026","status":"Efetuado","valor":3580.0},{"numero":"7130010153/2026","data":"2026-03-19","numeroEmpenho":"7130010178/2026","status":"Efetuado","valor":1887.5},{"numero":"7130010152/2026","data":"2026-03-18","numeroEmpenho":"7130010066/2026","status":"Efetuado","valor":6910.0},{"numero":"7130010151/2026","data":"2026-03-18","numeroEmpenho":"7130010065/2026","status":"Efetuado","valor":34550.0},{"numero":"7130010150/2026","data":"2026-03-18","numeroEmpenho":"7130010085/2026","status":"Efetuado","valor":29528.61},{"numero":"7130010149/2026","data":"2026-03-18","numeroEmpenho":"7130010084/2026","status":"Efetuado","valor":219988.79},{"numero":"7130010148/2026","data":"2026-03-17","numeroEmpenho":"7130010175/2026","status":"Efetuado","valor":1574.37},{"numero":"7130010147/2026","data":"2026-03-17","numeroEmpenho":"7130010174/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010146/2026","data":"2026-03-17","numeroEmpenho":"7130010173/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010145/2026","data":"2026-03-17","numeroEmpenho":"7130010172/2026","status":"Efetuado","valor":3020.0},{"numero":"7130010144/2026","data":"2026-03-17","numeroEmpenho":"7130010171/2026","status":"Efetuado","valor":1510.0},{"numero":"7130010143/2026","data":"2026-03-17","numeroEmpenho":"7130010082/2026","status":"Cancelado","valor":0.0},{"numero":"7130010142/2026","data":"2026-03-16","numeroEmpenho":"7130010170/2026","status":"Efetuado","valor":4294.5},{"numero":"7130010141/2026","data":"2026-03-16","numeroEmpenho":"7130010016/2026","status":"Efetuado","valor":15329.06},{"numero":"7130010140/2026","data":"2026-03-16","numeroEmpenho":"7130010015/2026","status":"Efetuado","valor":58165.63},{"numero":"7130010139/2026","data":"2026-03-16","numeroEmpenho":"7130010014/2026","status":"Efetuado","valor":13315.15},{"numero":"7130010138/2026","data":"2026-03-16","numeroEmpenho":"7130010013/2026","status":"Efetuado","valor":10688.62},{"numero":"7130010137/2026","data":"2026-03-16","numeroEmpenho":"7130010011/2026","status":"Efetuado","valor":12518.77},{"numero":"7130010136/2026","data":"2026-03-13","numeroEmpenho":"7130010002/2026","status":"Efetuado","valor":237.3},{"numero":"7130010135/2026","data":"2026-03-13","numeroEmpenho":"7130010165/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010134/2026","data":"2026-03-12","numeroEmpenho":"7130010056/2026","status":"Efetuado","valor":361.44},{"numero":"7130010133/2026","data":"2026-03-12","numeroEmpenho":"7130010035/2026","status":"Efetuado","valor":2270.93},{"numero":"7130010132/2026","data":"2026-03-11","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":980.0},{"numero":"7130010131/2026","data":"2026-03-11","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":361.0},{"numero":"7130010130/2026","data":"2026-03-11","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":1300.0},{"numero":"7130010129/2026","data":"2026-03-11","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":2600.0},{"numero":"7130010128/2026","data":"2026-03-10","numeroEmpenho":"7130010163/2026","status":"Efetuado","valor":2265.0},{"numero":"7130010127/2026","data":"2026-03-09","numeroEmpenho":"7130010161/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010126/2026","data":"2026-03-09","numeroEmpenho":"7130010159/2026","status":"Efetuado","valor":2147.25},{"numero":"7130010125/2026","data":"2026-03-09","numeroEmpenho":"7130010140/2026","status":"Efetuado","valor":3936.62},{"numero":"7130010124/2026","data":"2026-03-09","numeroEmpenho":"7130010139/2026","status":"Efetuado","valor":4152.5},{"numero":"7130010123/2026","data":"2026-03-09","numeroEmpenho":"7130010093/2026","status":"Efetuado","valor":38.4},{"numero":"7130010122/2026","data":"2026-03-06","numeroEmpenho":"7130010088/2026","status":"Efetuado","valor":38095.62},{"numero":"7130010121/2026","data":"2026-03-05","numeroEmpenho":"7130010004/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010120/2026","data":"2026-03-05","numeroEmpenho":"7130010023/2026","status":"Efetuado","valor":131162.6},{"numero":"7130010119/2026","data":"2026-03-05","numeroEmpenho":"7130010148/2026","status":"Efetuado","valor":3020.0},{"numero":"7130010118/2026","data":"2026-03-05","numeroEmpenho":"7130010101/2026","status":"Efetuado","valor":501.58},{"numero":"7130010117/2026","data":"2026-03-05","numeroEmpenho":"7130010101/2026","status":"Cancelado","valor":0.0},{"numero":"7130010116/2026","data":"2026-03-05","numeroEmpenho":"7130010048/2026","status":"Efetuado","valor":6477.68},{"numero":"7130010115/2026","data":"2026-03-05","numeroEmpenho":"7130010047/2026","status":"Efetuado","valor":19639.11},{"numero":"7130010114/2026","data":"2026-03-05","numeroEmpenho":"7130010042/2026","status":"Efetuado","valor":3238.84},{"numero":"7130010113/2026","data":"2026-03-05","numeroEmpenho":"7130010101/2026","status":"Efetuado","valor":476.17},{"numero":"7130010112/2026","data":"2026-03-05","numeroEmpenho":"7130010039/2026","status":"Cancelado","valor":0.0},{"numero":"7130010111/2026","data":"2026-03-05","numeroEmpenho":"7130010039/2026","status":"Efetuado","valor":7940.27},{"numero":"7130010110/2026","data":"2026-03-05","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":213.09},{"numero":"7130010109/2026","data":"2026-03-05","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":1320.64},{"numero":"7130010108/2026","data":"2026-03-05","numeroEmpenho":"7130010143/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010107/2026","data":"2026-03-05","numeroEmpenho":"7130010049/2026","status":"Efetuado","valor":13979.14},{"numero":"7130010106/2026","data":"2026-03-05","numeroEmpenho":"7130010142/2026","status":"Efetuado","valor":3775.0},{"numero":"7130010105/2026","data":"2026-03-05","numeroEmpenho":"7130010141/2026","status":"Efetuado","valor":5010.25},{"numero":"7130010104/2026","data":"2026-03-05","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":199.01},{"numero":"7130010103/2026","data":"2026-03-05","numeroEmpenho":"7130010090/2026","status":"Efetuado","valor":1028.39},{"numero":"7130010102/2026","data":"2026-03-05","numeroEmpenho":"7130010088/2026","status":"Efetuado","valor":38095.62},{"numero":"7130010101/2026","data":"2026-03-05","numeroEmpenho":"7130010133/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010100/2026","data":"2026-03-05","numeroEmpenho":"7130010138/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010099/2026","data":"2026-03-04","numeroEmpenho":"7130010121/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010098/2026","data":"2026-03-03","numeroEmpenho":"7130010125/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010097/2026","data":"2026-03-03","numeroEmpenho":"7130010124/2026","status":"Efetuado","valor":3775.0},{"numero":"7130010096/2026","data":"2026-03-03","numeroEmpenho":"7130010123/2026","status":"Cancelado","valor":0.0},{"numero":"7130010095/2026","data":"2026-03-03","numeroEmpenho":"7130010034/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010094/2026","data":"2026-03-03","numeroEmpenho":"7130010033/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010093/2026","data":"2026-03-03","numeroEmpenho":"7130010030/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010092/2026","data":"2026-03-03","numeroEmpenho":"7130010029/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010091/2026","data":"2026-03-03","numeroEmpenho":"7130010026/2026","status":"Efetuado","valor":2400.0},{"numero":"7130010090/2026","data":"2026-03-03","numeroEmpenho":"7130010025/2026","status":"Efetuado","valor":12000.0},{"numero":"7130010089/2026","data":"2026-03-03","numeroEmpenho":"7130010032/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010088/2026","data":"2026-03-03","numeroEmpenho":"7130010031/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010087/2026","data":"2026-03-03","numeroEmpenho":"7130010028/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010086/2026","data":"2026-03-03","numeroEmpenho":"7130010027/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010085/2026","data":"2026-03-03","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":2740.0},{"numero":"7130010084/2026","data":"2026-03-03","numeroEmpenho":"7130010036/2026","status":"Efetuado","valor":4068.0},{"numero":"7130010083/2026","data":"2026-03-03","numeroEmpenho":"7130010035/2026","status":"Cancelado","valor":0.0},{"numero":"7130010082/2026","data":"2026-02-27","numeroEmpenho":"7130010122/2026","status":"Efetuado","valor":2147.25},{"numero":"7130010081/2026","data":"2026-02-27","numeroEmpenho":"7130010040/2026","status":"Efetuado","valor":59831.0},{"numero":"7130010080/2026","data":"2026-02-26","numeroEmpenho":"7130010118/2026","status":"Efetuado","valor":2863.0},{"numero":"7130010079/2026","data":"2026-02-26","numeroEmpenho":"7130010117/2026","status":"Efetuado","valor":2505.13},{"numero":"7130010078/2026","data":"2026-02-26","numeroEmpenho":"7130010116/2026","status":"Efetuado","valor":2505.13},{"numero":"7130010077/2026","data":"2026-02-26","numeroEmpenho":"7130010046/2026","status":"Efetuado","valor":973.05},{"numero":"7130010076/2026","data":"2026-02-25","numeroEmpenho":"7130010055/2026","status":"Efetuado","valor":417.82},{"numero":"7130010075/2026","data":"2026-02-24","numeroEmpenho":"7130010014/2026","status":"Efetuado","valor":3581.7},{"numero":"7130010074/2026","data":"2026-02-24","numeroEmpenho":"7130010016/2026","status":"Efetuado","valor":7015.93},{"numero":"7130010073/2026","data":"2026-02-24","numeroEmpenho":"7130010011/2026","status":"Efetuado","valor":7057.86},{"numero":"7130010072/2026","data":"2026-02-24","numeroEmpenho":"7130010086/2026","status":"Efetuado","valor":250.74},{"numero":"7130010071/2026","data":"2026-02-24","numeroEmpenho":"7130010085/2026","status":"Efetuado","valor":43866.37},{"numero":"7130010070/2026","data":"2026-02-24","numeroEmpenho":"7130010084/2026","status":"Efetuado","valor":215359.04},{"numero":"7130010069/2026","data":"2026-02-23","numeroEmpenho":"7130010614/2025","status":"Efetuado","valor":59831.0},{"numero":"7130010068/2026","data":"2026-02-23","numeroEmpenho":"7130010108/2026","status":"Efetuado","valor":1887.5},{"numero":"7130010067/2026","data":"2026-02-23","numeroEmpenho":"7130010107/2026","status":"Efetuado","valor":1887.5},{"numero":"7130010066/2026","data":"2026-02-20","numeroEmpenho":"7130010097/2026","status":"Efetuado","valor":4000.0},{"numero":"7130010065/2026","data":"2026-02-20","numeroEmpenho":"7130010044/2026","status":"Efetuado","valor":30674.26},{"numero":"7130010064/2026","data":"2026-02-20","numeroEmpenho":"7130010043/2026","status":"Efetuado","valor":49746.95},{"numero":"7130010063/2026","data":"2026-02-20","numeroEmpenho":"7130010096/2026","status":"Efetuado","valor":2147.25},{"numero":"7130010062/2026","data":"2026-02-19","numeroEmpenho":"7130010533/2025","status":"Efetuado","valor":48460.69},{"numero":"7130010061/2026","data":"2026-02-19","numeroEmpenho":"7130010533/2025","status":"Efetuado","valor":1764.86},{"numero":"7130010060/2026","data":"2026-02-13","numeroEmpenho":"7130010533/2025","status":"Cancelado","valor":0.0},{"numero":"7130010059/2026","data":"2026-02-13","numeroEmpenho":"7130010533/2025","status":"Cancelado","valor":0.0},{"numero":"7130010058/2026","data":"2026-02-13","numeroEmpenho":"7130010083/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010057/2026","data":"2026-02-13","numeroEmpenho":"7130010061/2026","status":"Efetuado","valor":3578.75},{"numero":"7130010056/2026","data":"2026-02-12","numeroEmpenho":"7130010028/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010055/2026","data":"2026-02-12","numeroEmpenho":"7130010027/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010054/2026","data":"2026-02-10","numeroEmpenho":"7130010061/2026","status":"Cancelado","valor":0.0},{"numero":"7130010053/2026","data":"2026-02-10","numeroEmpenho":"7130010346/2025","status":"Efetuado","valor":16496.7},{"numero":"7130010052/2026","data":"2026-02-09","numeroEmpenho":"7130010345/2025","status":"Efetuado","valor":1367.31},{"numero":"7130010051/2026","data":"2026-02-06","numeroEmpenho":"7130010584/2025","status":"Efetuado","valor":55896.75},{"numero":"7130010050/2026","data":"2026-02-04","numeroEmpenho":"7130010054/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010049/2026","data":"2026-02-04","numeroEmpenho":"7130010053/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010048/2026","data":"2026-02-04","numeroEmpenho":"7130010052/2026","status":"Efetuado","valor":1431.25},{"numero":"7130010047/2026","data":"2026-02-03","numeroEmpenho":"7130010338/2025","status":"Efetuado","valor":47307.43},{"numero":"7130010046/2026","data":"2026-02-03","numeroEmpenho":"7130010539/2025","status":"Efetuado","valor":212337.54},{"numero":"7130010045/2026","data":"2026-02-03","numeroEmpenho":"7130010032/2026","status":"Efetuado","valor":1900.0},{"numero":"7130010044/2026","data":"2026-02-03","numeroEmpenho":"7130010031/2026","status":"Efetuado","valor":9500.0},{"numero":"7130010043/2026","data":"2026-02-03","numeroEmpenho":"7130010026/2026","status":"Efetuado","valor":2400.0},{"numero":"7130010042/2026","data":"2026-02-03","numeroEmpenho":"7130010025/2026","status":"Efetuado","valor":12000.0},{"numero":"7130010041/2026","data":"2026-02-03","numeroEmpenho":"7130010034/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010040/2026","data":"2026-02-03","numeroEmpenho":"7130010033/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010039/2026","data":"2026-02-03","numeroEmpenho":"7130010030/2026","status":"Efetuado","valor":2900.0},{"numero":"7130010038/2026","data":"2026-02-03","numeroEmpenho":"7130010029/2026","status":"Efetuado","valor":14500.0},{"numero":"7130010037/2026","data":"2026-02-02","numeroEmpenho":"7130010319/2025","status":"Efetuado","valor":6369.72},{"numero":"7130010036/2026","data":"2026-02-02","numeroEmpenho":"7130010541/2025","status":"Efetuado","valor":19639.11},{"numero":"7130010035/2026","data":"2026-01-30","numeroEmpenho":"7130010038/2026","status":"Efetuado","valor":2000.0},{"numero":"7130010034/2026","data":"2026-01-30","numeroEmpenho":"7130010037/2026","status":"Efetuado","valor":2000.0},{"numero":"7130010033/2026","data":"2026-01-29","numeroEmpenho":"7130010077/2025","status":"Efetuado","valor":675.0},{"numero":"7130010032/2026","data":"2026-01-28","numeroEmpenho":"7130010007/2025","status":"Efetuado","valor":3238.84},{"numero":"7130010031/2026","data":"2026-01-28","numeroEmpenho":"7130010540/2025","status":"Efetuado","valor":138187.34},{"numero":"7130010030/2026","data":"2026-01-28","numeroEmpenho":"7130010618/2025","status":"Efetuado","valor":135.36},{"numero":"7130010029/2026","data":"2026-01-27","numeroEmpenho":"7130010024/2026","status":"Efetuado","valor":1431.5},{"numero":"7130010028/2026","data":"2026-01-27","numeroEmpenho":"7130010523/2025","status":"Efetuado","valor":7940.27},{"numero":"7130010027/2026","data":"2026-01-21","numeroEmpenho":"7130010010/2026","status":"Efetuado","valor":143.12},{"numero":"7130010026/2026","data":"2026-01-21","numeroEmpenho":"7130010076/2025","status":"Efetuado","valor":30674.26},{"numero":"7130010025/2026","data":"2026-01-21","numeroEmpenho":"7130010543/2025","status":"Efetuado","valor":49260.72},{"numero":"7130010024/2026","data":"2026-01-21","numeroEmpenho":"7130010522/2025","status":"Efetuado","valor":13979.14},{"numero":"7130010023/2026","data":"2026-01-21","numeroEmpenho":"7130010135/2025","status":"Efetuado","valor":3238.84},{"numero":"7130010022/2026","data":"2026-01-20","numeroEmpenho":"7130010458/2025","status":"Efetuado","valor":237.3},{"numero":"7130010021/2026","data":"2026-01-20","numeroEmpenho":"7130010133/2025","status":"Efetuado","valor":1423.22},{"numero":"7130010020/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Efetuado","valor":1.1},{"numero":"7130010019/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Efetuado","valor":197.79},{"numero":"7130010018/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Efetuado","valor":13.6},{"numero":"7130010017/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Efetuado","valor":1194.75},{"numero":"7130010016/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Cancelado","valor":0.0},{"numero":"7130010015/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Cancelado","valor":0.0},{"numero":"7130010014/2026","data":"2026-01-20","numeroEmpenho":"7130010078/2025","status":"Cancelado","valor":0.0},{"numero":"7130010013/2026","data":"2026-01-19","numeroEmpenho":"7130010037/2025","status":"Efetuado","valor":3772.06},{"numero":"7130010012/2026","data":"2026-01-19","numeroEmpenho":"7130010001/2026","status":"Efetuado","valor":1510.0},{"numero":"7130010011/2026","data":"2026-01-19","numeroEmpenho":"7130010531/2025","status":"Efetuado","valor":1200.0},{"numero":"7130010010/2026","data":"2026-01-19","numeroEmpenho":"7130010528/2025","status":"Efetuado","valor":6000.0},{"numero":"7130010009/2026","data":"2026-01-19","numeroEmpenho":"7130010056/2025","status":"Efetuado","valor":950.0},{"numero":"7130010008/2026","data":"2026-01-19","numeroEmpenho":"7130010055/2025","status":"Efetuado","valor":4750.0},{"numero":"7130010007/2026","data":"2026-01-19","numeroEmpenho":"7130010062/2025","status":"Efetuado","valor":1450.0},{"numero":"7130010006/2026","data":"2026-01-19","numeroEmpenho":"7130010061/2025","status":"Efetuado","valor":7250.0},{"numero":"7130010005/2026","data":"2026-01-19","numeroEmpenho":"7130010054/2025","status":"Efetuado","valor":1450.0},{"numero":"7130010004/2026","data":"2026-01-19","numeroEmpenho":"7130010053/2025","status":"Efetuado","valor":7250.0},{"numero":"7130010003/2026","data":"2026-01-19","numeroEmpenho":"7130010071/2025","status":"Efetuado","valor":38095.62},{"numero":"7130010002/2026","data":"2026-01-19","numeroEmpenho":"7130010058/2025","status":"Efetuado","valor":1900.0},{"numero":"7130010001/2026","data":"2026-01-19","numeroEmpenho":"7130010057/2025","status":"Efetuado","valor":9500.0}]
+[
+  {
+    "numero": "7130010542/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010094/2026",
+    "status": "Efetuado",
+    "valor": 65342.32
+  },
+  {
+    "numero": "7130010541/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010070/2026",
+    "status": "Aguardando Liberação",
+    "valor": 30153.35
+  },
+  {
+    "numero": "7130010540/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010069/2026",
+    "status": "Aguardando Liberação",
+    "valor": 48468.03
+  },
+  {
+    "numero": "7130010539/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010131/2026",
+    "status": "Efetuado",
+    "valor": 953.87
+  },
+  {
+    "numero": "7130010538/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010088/2026",
+    "status": "Efetuado",
+    "valor": 38095.62
+  },
+  {
+    "numero": "7130010537/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010072/2026",
+    "status": "Aguardando Liberação",
+    "valor": 7940.27
+  },
+  {
+    "numero": "7130010536/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010066/2026",
+    "status": "Efetuado",
+    "valor": 13820
+  },
+  {
+    "numero": "7130010535/2026",
+    "data": "2026-07-07",
+    "numeroEmpenho": "7130010065/2026",
+    "status": "Efetuado",
+    "valor": 69100
+  },
+  {
+    "numero": "7130010534/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010289/2026",
+    "status": "Aguardando Liberação",
+    "valor": 3379.18
+  },
+  {
+    "numero": "7130010533/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010067/2026",
+    "status": "Efetuado",
+    "valor": 11875
+  },
+  {
+    "numero": "7130010532/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010080/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010531/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010079/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010530/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010099/2026",
+    "status": "Efetuado",
+    "valor": 2400
+  },
+  {
+    "numero": "7130010529/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010098/2026",
+    "status": "Efetuado",
+    "valor": 12000
+  },
+  {
+    "numero": "7130010528/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010074/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010527/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010073/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010526/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010077/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010525/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010076/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010524/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010063/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010523/2026",
+    "data": "2026-07-06",
+    "numeroEmpenho": "7130010062/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010522/2026",
+    "data": "2026-07-03",
+    "numeroEmpenho": "7130010406/2026",
+    "status": "Efetuado",
+    "valor": 1430
+  },
+  {
+    "numero": "7130010521/2026",
+    "data": "2026-07-03",
+    "numeroEmpenho": "7130010405/2026",
+    "status": "Efetuado",
+    "valor": 143.12
+  },
+  {
+    "numero": "7130010520/2026",
+    "data": "2026-07-02",
+    "numeroEmpenho": "7130010168/2026",
+    "status": "Aguardando Liberação",
+    "valor": 1169.8
+  },
+  {
+    "numero": "7130010519/2026",
+    "data": "2026-07-02",
+    "numeroEmpenho": "7130010262/2026",
+    "status": "Aguardando Liberação",
+    "valor": 1175
+  },
+  {
+    "numero": "7130010518/2026",
+    "data": "2026-07-02",
+    "numeroEmpenho": "7130010288/2026",
+    "status": "Aguardando Liberação",
+    "valor": 775.5
+  },
+  {
+    "numero": "7130010517/2026",
+    "data": "2026-07-02",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Efetuado",
+    "valor": 377.15
+  },
+  {
+    "numero": "7130010516/2026",
+    "data": "2026-07-01",
+    "numeroEmpenho": "7130010404/2026",
+    "status": "Efetuado",
+    "valor": 250000
+  },
+  {
+    "numero": "7130010515/2026",
+    "data": "2026-07-01",
+    "numeroEmpenho": "7130010403/2026",
+    "status": "Efetuado",
+    "valor": 478000
+  },
+  {
+    "numero": "7130010514/2026",
+    "data": "2026-07-01",
+    "numeroEmpenho": "7130010402/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010513/2026",
+    "data": "2026-07-01",
+    "numeroEmpenho": "7130010401/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010512/2026",
+    "data": "2026-07-01",
+    "numeroEmpenho": "7130010400/2026",
+    "status": "Efetuado",
+    "valor": 113963.7
+  },
+  {
+    "numero": "7130010511/2026",
+    "data": "2026-07-01",
+    "numeroEmpenho": "7130010394/2026",
+    "status": "Efetuado",
+    "valor": 2000000
+  },
+  {
+    "numero": "7130010510/2026",
+    "data": "2026-06-30",
+    "numeroEmpenho": "7130010395/2026",
+    "status": "Efetuado",
+    "valor": 540000
+  },
+  {
+    "numero": "7130010509/2026",
+    "data": "2026-06-29",
+    "numeroEmpenho": "7130010399/2026",
+    "status": "Efetuado",
+    "valor": 1145
+  },
+  {
+    "numero": "7130010508/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010398/2026",
+    "status": "Efetuado",
+    "valor": 2505.12
+  },
+  {
+    "numero": "7130010507/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010397/2026",
+    "status": "Efetuado",
+    "valor": 2505.12
+  },
+  {
+    "numero": "7130010506/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010396/2026",
+    "status": "Efetuado",
+    "valor": 2505.12
+  },
+  {
+    "numero": "7130010505/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010086/2026",
+    "status": "Efetuado",
+    "valor": 1577.74
+  },
+  {
+    "numero": "7130010504/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010085/2026",
+    "status": "Efetuado",
+    "valor": 48478.19
+  },
+  {
+    "numero": "7130010503/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010084/2026",
+    "status": "Efetuado",
+    "valor": 221804.89
+  },
+  {
+    "numero": "7130010502/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010393/2026",
+    "status": "Efetuado",
+    "valor": 9662.62
+  },
+  {
+    "numero": "7130010501/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010392/2026",
+    "status": "Efetuado",
+    "valor": 858.75
+  },
+  {
+    "numero": "7130010500/2026",
+    "data": "2026-06-26",
+    "numeroEmpenho": "7130010391/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010499/2026",
+    "data": "2026-06-25",
+    "numeroEmpenho": "7130010071/2026",
+    "status": "Aguardando Liberação",
+    "valor": 675
+  },
+  {
+    "numero": "7130010498/2026",
+    "data": "2026-06-25",
+    "numeroEmpenho": "7130010011/2026",
+    "status": "Aguardando Liberação",
+    "valor": 5592.49
+  },
+  {
+    "numero": "7130010497/2026",
+    "data": "2026-06-25",
+    "numeroEmpenho": "7130010014/2026",
+    "status": "Aguardando Liberação",
+    "valor": 20198.16
+  },
+  {
+    "numero": "7130010496/2026",
+    "data": "2026-06-25",
+    "numeroEmpenho": "7130010015/2026",
+    "status": "Aguardando Liberação",
+    "valor": 7108.06
+  },
+  {
+    "numero": "7130010495/2026",
+    "data": "2026-06-25",
+    "numeroEmpenho": "7130010011/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010494/2026",
+    "data": "2026-06-25",
+    "numeroEmpenho": "7130010016/2026",
+    "status": "Aguardando Liberação",
+    "valor": 4994.54
+  },
+  {
+    "numero": "7130010493/2026",
+    "data": "2026-06-24",
+    "numeroEmpenho": "7130010390/2026",
+    "status": "Efetuado",
+    "valor": 3020
+  },
+  {
+    "numero": "7130010492/2026",
+    "data": "2026-06-23",
+    "numeroEmpenho": "7130010056/2026",
+    "status": "Aguardando Liberação",
+    "valor": 1120.61
+  },
+  {
+    "numero": "7130010491/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010368/2026",
+    "status": "Efetuado",
+    "valor": 170000
+  },
+  {
+    "numero": "7130010490/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010367/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010489/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010366/2026",
+    "status": "Efetuado",
+    "valor": 395981.85
+  },
+  {
+    "numero": "7130010488/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010365/2026",
+    "status": "Efetuado",
+    "valor": 70000
+  },
+  {
+    "numero": "7130010487/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010364/2026",
+    "status": "Efetuado",
+    "valor": 75000
+  },
+  {
+    "numero": "7130010486/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010363/2026",
+    "status": "Efetuado",
+    "valor": 25000
+  },
+  {
+    "numero": "7130010485/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010362/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010484/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010361/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010483/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010386/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010482/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010385/2026",
+    "status": "Efetuado",
+    "valor": 3020
+  },
+  {
+    "numero": "7130010481/2026",
+    "data": "2026-06-22",
+    "numeroEmpenho": "7130010384/2026",
+    "status": "Efetuado",
+    "valor": 1510
+  },
+  {
+    "numero": "7130010480/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010383/2026",
+    "status": "Efetuado",
+    "valor": 1431.5
+  },
+  {
+    "numero": "7130010479/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010382/2026",
+    "status": "Efetuado",
+    "valor": 1717.75
+  },
+  {
+    "numero": "7130010478/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010381/2026",
+    "status": "Efetuado",
+    "valor": 572.5
+  },
+  {
+    "numero": "7130010477/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010380/2026",
+    "status": "Efetuado",
+    "valor": 1431.5
+  },
+  {
+    "numero": "7130010476/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010379/2026",
+    "status": "Efetuado",
+    "valor": 1431.5
+  },
+  {
+    "numero": "7130010475/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010378/2026",
+    "status": "Efetuado",
+    "valor": 572.5
+  },
+  {
+    "numero": "7130010474/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010377/2026",
+    "status": "Efetuado",
+    "valor": 288.62
+  },
+  {
+    "numero": "7130010473/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010288/2026",
+    "status": "Efetuado",
+    "valor": 3138.64
+  },
+  {
+    "numero": "7130010472/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010371/2026",
+    "status": "Efetuado",
+    "valor": 286.25
+  },
+  {
+    "numero": "7130010471/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010370/2026",
+    "status": "Efetuado",
+    "valor": 286.25
+  },
+  {
+    "numero": "7130010470/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010369/2026",
+    "status": "Efetuado",
+    "valor": 286.25
+  },
+  {
+    "numero": "7130010469/2026",
+    "data": "2026-06-19",
+    "numeroEmpenho": "7130010071/2026",
+    "status": "Efetuado",
+    "valor": 750
+  },
+  {
+    "numero": "7130010468/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010360/2026",
+    "status": "Efetuado",
+    "valor": 572.5
+  },
+  {
+    "numero": "7130010467/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010359/2026",
+    "status": "Efetuado",
+    "valor": 572.5
+  },
+  {
+    "numero": "7130010466/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010131/2026",
+    "status": "Efetuado",
+    "valor": 6106.41
+  },
+  {
+    "numero": "7130010465/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010237/2026",
+    "status": "Efetuado",
+    "valor": 2740
+  },
+  {
+    "numero": "7130010464/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010009/2026",
+    "status": "Efetuado",
+    "valor": 11896.97
+  },
+  {
+    "numero": "7130010463/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010210/2026",
+    "status": "Efetuado",
+    "valor": 5920
+  },
+  {
+    "numero": "7130010462/2026",
+    "data": "2026-06-18",
+    "numeroEmpenho": "7130010135/2026",
+    "status": "Efetuado",
+    "valor": 1372
+  },
+  {
+    "numero": "7130010461/2026",
+    "data": "2026-06-17",
+    "numeroEmpenho": "7130010358/2026",
+    "status": "Efetuado",
+    "valor": 2290
+  },
+  {
+    "numero": "7130010460/2026",
+    "data": "2026-06-17",
+    "numeroEmpenho": "7130010357/2026",
+    "status": "Efetuado",
+    "valor": 144.31
+  },
+  {
+    "numero": "7130010459/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010162/2026",
+    "status": "Efetuado",
+    "valor": 1598
+  },
+  {
+    "numero": "7130010458/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010164/2026",
+    "status": "Efetuado",
+    "valor": 3196
+  },
+  {
+    "numero": "7130010457/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010057/2026",
+    "status": "Efetuado",
+    "valor": 230.4
+  },
+  {
+    "numero": "7130010456/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Efetuado",
+    "valor": 943.87
+  },
+  {
+    "numero": "7130010455/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010238/2026",
+    "status": "Efetuado",
+    "valor": 3371.49
+  },
+  {
+    "numero": "7130010454/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010238/2026",
+    "status": "Efetuado",
+    "valor": 125
+  },
+  {
+    "numero": "7130010453/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010238/2026",
+    "status": "Efetuado",
+    "valor": 254
+  },
+  {
+    "numero": "7130010452/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 472
+  },
+  {
+    "numero": "7130010451/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 3900
+  },
+  {
+    "numero": "7130010450/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 442
+  },
+  {
+    "numero": "7130010449/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Efetuado",
+    "valor": 336.59
+  },
+  {
+    "numero": "7130010448/2026",
+    "data": "2026-06-16",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Efetuado",
+    "valor": 3831.24
+  },
+  {
+    "numero": "7130010447/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010058/2026",
+    "status": "Efetuado",
+    "valor": 30972.35
+  },
+  {
+    "numero": "7130010446/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010241/2026",
+    "status": "Efetuado",
+    "valor": 7340.36
+  },
+  {
+    "numero": "7130010445/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010240/2026",
+    "status": "Efetuado",
+    "valor": 227
+  },
+  {
+    "numero": "7130010444/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010351/2026",
+    "status": "Efetuado",
+    "valor": 320000
+  },
+  {
+    "numero": "7130010443/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010067/2026",
+    "status": "Efetuado",
+    "valor": 11875
+  },
+  {
+    "numero": "7130010442/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 1214.58
+  },
+  {
+    "numero": "7130010441/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 162.15
+  },
+  {
+    "numero": "7130010440/2026",
+    "data": "2026-06-12",
+    "numeroEmpenho": "7130010242/2026",
+    "status": "Efetuado",
+    "valor": 1165
+  },
+  {
+    "numero": "7130010439/2026",
+    "data": "2026-06-11",
+    "numeroEmpenho": "7130010352/2026",
+    "status": "Efetuado",
+    "valor": 2265
+  },
+  {
+    "numero": "7130010438/2026",
+    "data": "2026-06-11",
+    "numeroEmpenho": "7130010072/2026",
+    "status": "Efetuado",
+    "valor": 6616.89
+  },
+  {
+    "numero": "7130010437/2026",
+    "data": "2026-06-11",
+    "numeroEmpenho": "7130010343/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010436/2026",
+    "data": "2026-06-11",
+    "numeroEmpenho": "7130010350/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010435/2026",
+    "data": "2026-06-11",
+    "numeroEmpenho": "7130010349/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010434/2026",
+    "data": "2026-06-11",
+    "numeroEmpenho": "7130010341/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010433/2026",
+    "data": "2026-06-10",
+    "numeroEmpenho": "7130010088/2026",
+    "status": "Efetuado",
+    "valor": 38095.62
+  },
+  {
+    "numero": "7130010432/2026",
+    "data": "2026-06-09",
+    "numeroEmpenho": "7130010342/2026",
+    "status": "Efetuado",
+    "valor": 865.86
+  },
+  {
+    "numero": "7130010431/2026",
+    "data": "2026-06-09",
+    "numeroEmpenho": "7130010340/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010430/2026",
+    "data": "2026-06-09",
+    "numeroEmpenho": "7130010339/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010429/2026",
+    "data": "2026-06-09",
+    "numeroEmpenho": "7130010002/2026",
+    "status": "Efetuado",
+    "valor": 237.3
+  },
+  {
+    "numero": "7130010428/2026",
+    "data": "2026-06-09",
+    "numeroEmpenho": "7130010040/2026",
+    "status": "Efetuado",
+    "valor": 59831
+  },
+  {
+    "numero": "7130010427/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010337/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010426/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010336/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010425/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010335/2026",
+    "status": "Efetuado",
+    "valor": 788036.3
+  },
+  {
+    "numero": "7130010424/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010334/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010423/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010331/2026",
+    "status": "Efetuado",
+    "valor": 40000
+  },
+  {
+    "numero": "7130010422/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010330/2026",
+    "status": "Efetuado",
+    "valor": 40000
+  },
+  {
+    "numero": "7130010421/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010329/2026",
+    "status": "Efetuado",
+    "valor": 60000
+  },
+  {
+    "numero": "7130010420/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010328/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010419/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010070/2026",
+    "status": "Efetuado",
+    "valor": 29147.55
+  },
+  {
+    "numero": "7130010418/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010069/2026",
+    "status": "Efetuado",
+    "valor": 45910.2
+  },
+  {
+    "numero": "7130010417/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010332/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010416/2026",
+    "data": "2026-06-08",
+    "numeroEmpenho": "7130010333/2026",
+    "status": "Efetuado",
+    "valor": 755
+  },
+  {
+    "numero": "7130010415/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010063/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010414/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010062/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010413/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010099/2026",
+    "status": "Efetuado",
+    "valor": 2400
+  },
+  {
+    "numero": "7130010412/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010098/2026",
+    "status": "Efetuado",
+    "valor": 12000
+  },
+  {
+    "numero": "7130010411/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010077/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010410/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010076/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010409/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010080/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010408/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010079/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010407/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010074/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010406/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010327/2026",
+    "status": "Efetuado",
+    "valor": 3775
+  },
+  {
+    "numero": "7130010405/2026",
+    "data": "2026-06-03",
+    "numeroEmpenho": "7130010073/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010404/2026",
+    "data": "2026-06-02",
+    "numeroEmpenho": "7130010324/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010403/2026",
+    "data": "2026-06-02",
+    "numeroEmpenho": "7130010323/2026",
+    "status": "Efetuado",
+    "valor": 400000
+  },
+  {
+    "numero": "7130010402/2026",
+    "data": "2026-06-02",
+    "numeroEmpenho": "7130010322/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010401/2026",
+    "data": "2026-06-02",
+    "numeroEmpenho": "7130010094/2026",
+    "status": "Efetuado",
+    "valor": 69137.26
+  },
+  {
+    "numero": "7130010400/2026",
+    "data": "2026-06-02",
+    "numeroEmpenho": "7130010091/2026",
+    "status": "Efetuado",
+    "valor": 27400
+  },
+  {
+    "numero": "7130010399/2026",
+    "data": "2026-06-01",
+    "numeroEmpenho": "7130010321/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010398/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010320/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010397/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010319/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010396/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010215/2026",
+    "status": "Efetuado",
+    "valor": 613.49
+  },
+  {
+    "numero": "7130010395/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010309/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010394/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010318/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010393/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010317/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010392/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010316/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010391/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010315/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010390/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010314/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010389/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010313/2026",
+    "status": "Efetuado",
+    "valor": 70000
+  },
+  {
+    "numero": "7130010388/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010312/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010387/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010311/2026",
+    "status": "Efetuado",
+    "valor": 78036.3
+  },
+  {
+    "numero": "7130010386/2026",
+    "data": "2026-05-29",
+    "numeroEmpenho": "7130010310/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010385/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010002/2026",
+    "status": "Efetuado",
+    "valor": 237.3
+  },
+  {
+    "numero": "7130010384/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010047/2026",
+    "status": "Efetuado",
+    "valor": 19639.11
+  },
+  {
+    "numero": "7130010383/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010021/2026",
+    "status": "Efetuado",
+    "valor": 13047.2
+  },
+  {
+    "numero": "7130010382/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010048/2026",
+    "status": "Efetuado",
+    "valor": 6477.68
+  },
+  {
+    "numero": "7130010381/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010060/2026",
+    "status": "Efetuado",
+    "valor": 42000
+  },
+  {
+    "numero": "7130010380/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010092/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010379/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010068/2026",
+    "status": "Efetuado",
+    "valor": 35000
+  },
+  {
+    "numero": "7130010378/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010023/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010377/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010004/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010376/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010023/2026",
+    "status": "Efetuado",
+    "valor": 138187.34
+  },
+  {
+    "numero": "7130010375/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010306/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010374/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010307/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010373/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010305/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010372/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010308/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010371/2026",
+    "data": "2026-05-28",
+    "numeroEmpenho": "7130010304/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010370/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010300/2026",
+    "status": "Efetuado",
+    "valor": 20000
+  },
+  {
+    "numero": "7130010369/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010299/2026",
+    "status": "Efetuado",
+    "valor": 80000
+  },
+  {
+    "numero": "7130010368/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010301/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010367/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010303/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010366/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010085/2026",
+    "status": "Efetuado",
+    "valor": 42324.64
+  },
+  {
+    "numero": "7130010365/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010084/2026",
+    "status": "Efetuado",
+    "valor": 210318.92
+  },
+  {
+    "numero": "7130010364/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010057/2026",
+    "status": "Efetuado",
+    "valor": 504.63
+  },
+  {
+    "numero": "7130010363/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010293/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010362/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010294/2026",
+    "status": "Efetuado",
+    "valor": 420000
+  },
+  {
+    "numero": "7130010361/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010295/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010360/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010296/2026",
+    "status": "Efetuado",
+    "valor": 70000
+  },
+  {
+    "numero": "7130010359/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010298/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010358/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010302/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010357/2026",
+    "data": "2026-05-27",
+    "numeroEmpenho": "7130010297/2026",
+    "status": "Efetuado",
+    "valor": 70000
+  },
+  {
+    "numero": "7130010356/2026",
+    "data": "2026-05-26",
+    "numeroEmpenho": "7130010260/2026",
+    "status": "Efetuado",
+    "valor": 12400
+  },
+  {
+    "numero": "7130010355/2026",
+    "data": "2026-05-25",
+    "numeroEmpenho": "7130010292/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010354/2026",
+    "data": "2026-05-25",
+    "numeroEmpenho": "7130010127/2026",
+    "status": "Efetuado",
+    "valor": 4756.49
+  },
+  {
+    "numero": "7130010353/2026",
+    "data": "2026-05-25",
+    "numeroEmpenho": "7130010130/2026",
+    "status": "Efetuado",
+    "valor": 7678.5
+  },
+  {
+    "numero": "7130010352/2026",
+    "data": "2026-05-25",
+    "numeroEmpenho": "7130010130/2026",
+    "status": "Efetuado",
+    "valor": 8856.08
+  },
+  {
+    "numero": "7130010351/2026",
+    "data": "2026-05-25",
+    "numeroEmpenho": "7130010130/2026",
+    "status": "Efetuado",
+    "valor": 10878.92
+  },
+  {
+    "numero": "7130010350/2026",
+    "data": "2026-05-25",
+    "numeroEmpenho": "7130010127/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010349/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010291/2026",
+    "status": "Efetuado",
+    "valor": 30000
+  },
+  {
+    "numero": "7130010348/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010290/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010347/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010287/2026",
+    "status": "Efetuado",
+    "valor": 500000
+  },
+  {
+    "numero": "7130010346/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010286/2026",
+    "status": "Efetuado",
+    "valor": 500000
+  },
+  {
+    "numero": "7130010345/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010285/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010344/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010284/2026",
+    "status": "Efetuado",
+    "valor": 500000
+  },
+  {
+    "numero": "7130010343/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Efetuado",
+    "valor": 2343.01
+  },
+  {
+    "numero": "7130010342/2026",
+    "data": "2026-05-22",
+    "numeroEmpenho": "7130010264/2026",
+    "status": "Efetuado",
+    "valor": 14713.71
+  },
+  {
+    "numero": "7130010341/2026",
+    "data": "2026-05-21",
+    "numeroEmpenho": "7130010283/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010340/2026",
+    "data": "2026-05-21",
+    "numeroEmpenho": "7130010057/2026",
+    "status": "Efetuado",
+    "valor": 1131.68
+  },
+  {
+    "numero": "7130010339/2026",
+    "data": "2026-05-21",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Efetuado",
+    "valor": 3036.19
+  },
+  {
+    "numero": "7130010338/2026",
+    "data": "2026-05-21",
+    "numeroEmpenho": "7130010255/2026",
+    "status": "Efetuado",
+    "valor": 21510
+  },
+  {
+    "numero": "7130010337/2026",
+    "data": "2026-05-21",
+    "numeroEmpenho": "7130010151/2026",
+    "status": "Efetuado",
+    "valor": 125.98
+  },
+  {
+    "numero": "7130010336/2026",
+    "data": "2026-05-21",
+    "numeroEmpenho": "7130010056/2026",
+    "status": "Efetuado",
+    "valor": 4256.05
+  },
+  {
+    "numero": "7130010335/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010015/2026",
+    "status": "Efetuado",
+    "valor": 8887.32
+  },
+  {
+    "numero": "7130010334/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010014/2026",
+    "status": "Efetuado",
+    "valor": 19560.15
+  },
+  {
+    "numero": "7130010333/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010013/2026",
+    "status": "Efetuado",
+    "valor": 9759.64
+  },
+  {
+    "numero": "7130010332/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010011/2026",
+    "status": "Efetuado",
+    "valor": 13052.14
+  },
+  {
+    "numero": "7130010331/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Efetuado",
+    "valor": 2437.37
+  },
+  {
+    "numero": "7130010330/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Efetuado",
+    "valor": 3494.26
+  },
+  {
+    "numero": "7130010329/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010328/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010327/2026",
+    "data": "2026-05-20",
+    "numeroEmpenho": "7130010275/2026",
+    "status": "Efetuado",
+    "valor": 3020
+  },
+  {
+    "numero": "7130010326/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010280/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010325/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010279/2026",
+    "status": "Efetuado",
+    "valor": 200000
+  },
+  {
+    "numero": "7130010324/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010131/2026",
+    "status": "Efetuado",
+    "valor": 22347.17
+  },
+  {
+    "numero": "7130010323/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010067/2026",
+    "status": "Efetuado",
+    "valor": 11875
+  },
+  {
+    "numero": "7130010322/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010261/2026",
+    "status": "Efetuado",
+    "valor": 749
+  },
+  {
+    "numero": "7130010321/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010278/2026",
+    "status": "Efetuado",
+    "valor": 150000
+  },
+  {
+    "numero": "7130010320/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010276/2026",
+    "status": "Efetuado",
+    "valor": 100000
+  },
+  {
+    "numero": "7130010319/2026",
+    "data": "2026-05-19",
+    "numeroEmpenho": "7130010277/2026",
+    "status": "Efetuado",
+    "valor": 64036.3
+  },
+  {
+    "numero": "7130010318/2026",
+    "data": "2026-05-15",
+    "numeroEmpenho": "7130010102/2026",
+    "status": "Efetuado",
+    "valor": 407913.6
+  },
+  {
+    "numero": "7130010317/2026",
+    "data": "2026-05-15",
+    "numeroEmpenho": "7130010102/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010316/2026",
+    "data": "2026-05-15",
+    "numeroEmpenho": "7130010274/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010315/2026",
+    "data": "2026-05-15",
+    "numeroEmpenho": "7130010273/2026",
+    "status": "Efetuado",
+    "valor": 4000
+  },
+  {
+    "numero": "7130010314/2026",
+    "data": "2026-05-15",
+    "numeroEmpenho": "7130010272/2026",
+    "status": "Efetuado",
+    "valor": 3000
+  },
+  {
+    "numero": "7130010313/2026",
+    "data": "2026-05-15",
+    "numeroEmpenho": "7130010101/2026",
+    "status": "Efetuado",
+    "valor": 679.43
+  },
+  {
+    "numero": "7130010312/2026",
+    "data": "2026-05-14",
+    "numeroEmpenho": "7130010103/2026",
+    "status": "Efetuado",
+    "valor": 142769.76
+  },
+  {
+    "numero": "7130010311/2026",
+    "data": "2026-05-14",
+    "numeroEmpenho": "7130010177/2026",
+    "status": "Efetuado",
+    "valor": 5753.25
+  },
+  {
+    "numero": "7130010310/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 560
+  },
+  {
+    "numero": "7130010309/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010154/2026",
+    "status": "Efetuado",
+    "valor": 2395.96
+  },
+  {
+    "numero": "7130010308/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 7150
+  },
+  {
+    "numero": "7130010307/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010160/2026",
+    "status": "Efetuado",
+    "valor": 449.99
+  },
+  {
+    "numero": "7130010306/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010050/2026",
+    "status": "Efetuado",
+    "valor": 1486
+  },
+  {
+    "numero": "7130010305/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010160/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010304/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010271/2026",
+    "status": "Efetuado",
+    "valor": 1145
+  },
+  {
+    "numero": "7130010303/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010087/2026",
+    "status": "Efetuado",
+    "valor": 1458.33
+  },
+  {
+    "numero": "7130010302/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010087/2026",
+    "status": "Efetuado",
+    "valor": 1458.33
+  },
+  {
+    "numero": "7130010301/2026",
+    "data": "2026-05-12",
+    "numeroEmpenho": "7130010094/2026",
+    "status": "Efetuado",
+    "valor": 68662.89
+  },
+  {
+    "numero": "7130010300/2026",
+    "data": "2026-05-11",
+    "numeroEmpenho": "7130010270/2026",
+    "status": "Efetuado",
+    "valor": 2505.12
+  },
+  {
+    "numero": "7130010299/2026",
+    "data": "2026-05-11",
+    "numeroEmpenho": "7130010269/2026",
+    "status": "Efetuado",
+    "valor": 2642.5
+  },
+  {
+    "numero": "7130010298/2026",
+    "data": "2026-05-11",
+    "numeroEmpenho": "7130010071/2026",
+    "status": "Efetuado",
+    "valor": 825
+  },
+  {
+    "numero": "7130010297/2026",
+    "data": "2026-05-11",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 268.23
+  },
+  {
+    "numero": "7130010296/2026",
+    "data": "2026-05-11",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 987.81
+  },
+  {
+    "numero": "7130010295/2026",
+    "data": "2026-05-11",
+    "numeroEmpenho": "7130010101/2026",
+    "status": "Efetuado",
+    "valor": 603.21
+  },
+  {
+    "numero": "7130010294/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010200/2026",
+    "status": "Efetuado",
+    "valor": 55500
+  },
+  {
+    "numero": "7130010293/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010074/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010292/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010073/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010291/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010099/2026",
+    "status": "Efetuado",
+    "valor": 2400
+  },
+  {
+    "numero": "7130010290/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010066/2026",
+    "status": "Efetuado",
+    "valor": 13820
+  },
+  {
+    "numero": "7130010289/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010065/2026",
+    "status": "Efetuado",
+    "valor": 69100
+  },
+  {
+    "numero": "7130010288/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010098/2026",
+    "status": "Efetuado",
+    "valor": 12000
+  },
+  {
+    "numero": "7130010287/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010077/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010286/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010076/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010285/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010080/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010284/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010079/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010283/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010063/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010282/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010062/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010281/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010088/2026",
+    "status": "Efetuado",
+    "valor": 38095.62
+  },
+  {
+    "numero": "7130010280/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010265/2026",
+    "status": "Efetuado",
+    "valor": 4294.5
+  },
+  {
+    "numero": "7130010279/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010266/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010278/2026",
+    "data": "2026-05-08",
+    "numeroEmpenho": "7130010267/2026",
+    "status": "Efetuado",
+    "valor": 1145
+  },
+  {
+    "numero": "7130010277/2026",
+    "data": "2026-05-07",
+    "numeroEmpenho": "7130010100/2026",
+    "status": "Efetuado",
+    "valor": 7323.85
+  },
+  {
+    "numero": "7130010276/2026",
+    "data": "2026-05-05",
+    "numeroEmpenho": "7130010040/2026",
+    "status": "Efetuado",
+    "valor": 59831
+  },
+  {
+    "numero": "7130010275/2026",
+    "data": "2026-05-05",
+    "numeroEmpenho": "7130010023/2026",
+    "status": "Efetuado",
+    "valor": 138062.05
+  },
+  {
+    "numero": "7130010274/2026",
+    "data": "2026-05-04",
+    "numeroEmpenho": "7130010004/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010273/2026",
+    "data": "2026-05-04",
+    "numeroEmpenho": "7130010183/2026",
+    "status": "Efetuado",
+    "valor": 18360
+  },
+  {
+    "numero": "7130010272/2026",
+    "data": "2026-05-04",
+    "numeroEmpenho": "7130010119/2026",
+    "status": "Efetuado",
+    "valor": 9980
+  },
+  {
+    "numero": "7130010271/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 1300
+  },
+  {
+    "numero": "7130010270/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 3900
+  },
+  {
+    "numero": "7130010269/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 1444
+  },
+  {
+    "numero": "7130010268/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 1300
+  },
+  {
+    "numero": "7130010267/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 1083
+  },
+  {
+    "numero": "7130010266/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010070/2026",
+    "status": "Efetuado",
+    "valor": 30674.26
+  },
+  {
+    "numero": "7130010265/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010069/2026",
+    "status": "Efetuado",
+    "valor": 44951.02
+  },
+  {
+    "numero": "7130010264/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010081/2026",
+    "status": "Efetuado",
+    "valor": 6935.88
+  },
+  {
+    "numero": "7130010263/2026",
+    "data": "2026-04-30",
+    "numeroEmpenho": "7130010100/2026",
+    "status": "Efetuado",
+    "valor": 5400.71
+  },
+  {
+    "numero": "7130010262/2026",
+    "data": "2026-04-29",
+    "numeroEmpenho": "7130010245/2026",
+    "status": "Efetuado",
+    "valor": 3220.88
+  },
+  {
+    "numero": "7130010261/2026",
+    "data": "2026-04-29",
+    "numeroEmpenho": "7130010086/2026",
+    "status": "Efetuado",
+    "valor": 3148.74
+  },
+  {
+    "numero": "7130010260/2026",
+    "data": "2026-04-29",
+    "numeroEmpenho": "7130010085/2026",
+    "status": "Efetuado",
+    "valor": 32566.61
+  },
+  {
+    "numero": "7130010259/2026",
+    "data": "2026-04-29",
+    "numeroEmpenho": "7130010084/2026",
+    "status": "Efetuado",
+    "valor": 201047.56
+  },
+  {
+    "numero": "7130010258/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010233/2026",
+    "status": "Efetuado",
+    "valor": 3020
+  },
+  {
+    "numero": "7130010257/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010232/2026",
+    "status": "Efetuado",
+    "valor": 3397.5
+  },
+  {
+    "numero": "7130010256/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010231/2026",
+    "status": "Efetuado",
+    "valor": 3220.87
+  },
+  {
+    "numero": "7130010255/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010230/2026",
+    "status": "Efetuado",
+    "valor": 3397.5
+  },
+  {
+    "numero": "7130010254/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010229/2026",
+    "status": "Efetuado",
+    "valor": 3220.87
+  },
+  {
+    "numero": "7130010253/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 1625
+  },
+  {
+    "numero": "7130010252/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010040/2026",
+    "status": "Efetuado",
+    "valor": 59831
+  },
+  {
+    "numero": "7130010251/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010004/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010250/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010047/2026",
+    "status": "Efetuado",
+    "valor": 19639.11
+  },
+  {
+    "numero": "7130010249/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010048/2026",
+    "status": "Efetuado",
+    "valor": 6477.68
+  },
+  {
+    "numero": "7130010248/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010021/2026",
+    "status": "Efetuado",
+    "valor": 13047.2
+  },
+  {
+    "numero": "7130010247/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010023/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010246/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010201/2026",
+    "status": "Efetuado",
+    "valor": 50000
+  },
+  {
+    "numero": "7130010245/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010042/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010244/2026",
+    "data": "2026-04-28",
+    "numeroEmpenho": "7130010039/2026",
+    "status": "Efetuado",
+    "valor": 3970.14
+  },
+  {
+    "numero": "7130010243/2026",
+    "data": "2026-04-24",
+    "numeroEmpenho": "7130010109/2026",
+    "status": "Efetuado",
+    "valor": 10694
+  },
+  {
+    "numero": "7130010242/2026",
+    "data": "2026-04-24",
+    "numeroEmpenho": "7130010224/2026",
+    "status": "Efetuado",
+    "valor": 143.13
+  },
+  {
+    "numero": "7130010241/2026",
+    "data": "2026-04-23",
+    "numeroEmpenho": "7130010075/2026",
+    "status": "Efetuado",
+    "valor": 8499.22
+  },
+  {
+    "numero": "7130010240/2026",
+    "data": "2026-04-23",
+    "numeroEmpenho": "7130010091/2026",
+    "status": "Efetuado",
+    "valor": 10960
+  },
+  {
+    "numero": "7130010239/2026",
+    "data": "2026-04-22",
+    "numeroEmpenho": "7130010016/2026",
+    "status": "Efetuado",
+    "valor": 9428.36
+  },
+  {
+    "numero": "7130010238/2026",
+    "data": "2026-04-22",
+    "numeroEmpenho": "7130010015/2026",
+    "status": "Efetuado",
+    "valor": 72498.16
+  },
+  {
+    "numero": "7130010237/2026",
+    "data": "2026-04-22",
+    "numeroEmpenho": "7130010014/2026",
+    "status": "Efetuado",
+    "valor": 21367.2
+  },
+  {
+    "numero": "7130010236/2026",
+    "data": "2026-04-22",
+    "numeroEmpenho": "7130010012/2026",
+    "status": "Efetuado",
+    "valor": 5940.47
+  },
+  {
+    "numero": "7130010235/2026",
+    "data": "2026-04-17",
+    "numeroEmpenho": "7130010155/2026",
+    "status": "Efetuado",
+    "valor": 7187.88
+  },
+  {
+    "numero": "7130010234/2026",
+    "data": "2026-04-17",
+    "numeroEmpenho": "7130010209/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010233/2026",
+    "data": "2026-04-15",
+    "numeroEmpenho": "7130010208/2026",
+    "status": "Efetuado",
+    "valor": 4066.2
+  },
+  {
+    "numero": "7130010232/2026",
+    "data": "2026-04-15",
+    "numeroEmpenho": "7130010206/2026",
+    "status": "Efetuado",
+    "valor": 755
+  },
+  {
+    "numero": "7130010231/2026",
+    "data": "2026-04-14",
+    "numeroEmpenho": "7130010067/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010230/2026",
+    "data": "2026-04-13",
+    "numeroEmpenho": "7130010207/2026",
+    "status": "Efetuado",
+    "valor": 2147.25
+  },
+  {
+    "numero": "7130010229/2026",
+    "data": "2026-04-13",
+    "numeroEmpenho": "7130010169/2026",
+    "status": "Efetuado",
+    "valor": 4995
+  },
+  {
+    "numero": "7130010228/2026",
+    "data": "2026-04-13",
+    "numeroEmpenho": "7130010018/2026",
+    "status": "Efetuado",
+    "valor": 439.3
+  },
+  {
+    "numero": "7130010227/2026",
+    "data": "2026-04-13",
+    "numeroEmpenho": "7130010094/2026",
+    "status": "Efetuado",
+    "valor": 70560.36
+  },
+  {
+    "numero": "7130010226/2026",
+    "data": "2026-04-10",
+    "numeroEmpenho": "7130010002/2026",
+    "status": "Efetuado",
+    "valor": 237.3
+  },
+  {
+    "numero": "7130010225/2026",
+    "data": "2026-04-10",
+    "numeroEmpenho": "7130010131/2026",
+    "status": "Efetuado",
+    "valor": 20527.02
+  },
+  {
+    "numero": "7130010224/2026",
+    "data": "2026-04-10",
+    "numeroEmpenho": "7130010051/2026",
+    "status": "Efetuado",
+    "valor": 4520
+  },
+  {
+    "numero": "7130010223/2026",
+    "data": "2026-04-09",
+    "numeroEmpenho": "7130010094/2026",
+    "status": "Efetuado",
+    "valor": 70560.36
+  },
+  {
+    "numero": "7130010222/2026",
+    "data": "2026-04-09",
+    "numeroEmpenho": "7130010202/2026",
+    "status": "Efetuado",
+    "valor": 3775
+  },
+  {
+    "numero": "7130010221/2026",
+    "data": "2026-04-09",
+    "numeroEmpenho": "7130010088/2026",
+    "status": "Efetuado",
+    "valor": 38095.62
+  },
+  {
+    "numero": "7130010220/2026",
+    "data": "2026-04-09",
+    "numeroEmpenho": "7130010130/2026",
+    "status": "Efetuado",
+    "valor": 13928.3
+  },
+  {
+    "numero": "7130010219/2026",
+    "data": "2026-04-09",
+    "numeroEmpenho": "7130010127/2026",
+    "status": "Efetuado",
+    "valor": 51460.23
+  },
+  {
+    "numero": "7130010218/2026",
+    "data": "2026-04-09",
+    "numeroEmpenho": "7130010047/2026",
+    "status": "Efetuado",
+    "valor": 19639.11
+  },
+  {
+    "numero": "7130010217/2026",
+    "data": "2026-04-08",
+    "numeroEmpenho": "7130010197/2026",
+    "status": "Efetuado",
+    "valor": 1510
+  },
+  {
+    "numero": "7130010216/2026",
+    "data": "2026-04-08",
+    "numeroEmpenho": "7130010203/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010215/2026",
+    "data": "2026-04-08",
+    "numeroEmpenho": "7130010199/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010214/2026",
+    "data": "2026-04-08",
+    "numeroEmpenho": "7130010198/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010213/2026",
+    "data": "2026-04-08",
+    "numeroEmpenho": "7130010145/2026",
+    "status": "Efetuado",
+    "valor": 56754
+  },
+  {
+    "numero": "7130010212/2026",
+    "data": "2026-04-07",
+    "numeroEmpenho": "7130010082/2026",
+    "status": "Efetuado",
+    "valor": 7394
+  },
+  {
+    "numero": "7130010211/2026",
+    "data": "2026-04-07",
+    "numeroEmpenho": "7130010111/2026",
+    "status": "Efetuado",
+    "valor": 9580
+  },
+  {
+    "numero": "7130010210/2026",
+    "data": "2026-04-07",
+    "numeroEmpenho": "7130010110/2026",
+    "status": "Efetuado",
+    "valor": 7994
+  },
+  {
+    "numero": "7130010209/2026",
+    "data": "2026-04-07",
+    "numeroEmpenho": "7130010048/2026",
+    "status": "Efetuado",
+    "valor": 6477.68
+  },
+  {
+    "numero": "7130010208/2026",
+    "data": "2026-04-07",
+    "numeroEmpenho": "7130010196/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010207/2026",
+    "data": "2026-04-07",
+    "numeroEmpenho": "7130010044/2026",
+    "status": "Efetuado",
+    "valor": 30674.26
+  },
+  {
+    "numero": "7130010206/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010195/2026",
+    "status": "Efetuado",
+    "valor": 4294.5
+  },
+  {
+    "numero": "7130010205/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010194/2026",
+    "status": "Efetuado",
+    "valor": 4294.5
+  },
+  {
+    "numero": "7130010204/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010193/2026",
+    "status": "Efetuado",
+    "valor": 4530
+  },
+  {
+    "numero": "7130010203/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010034/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010202/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010033/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010201/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010066/2026",
+    "status": "Efetuado",
+    "valor": 10365
+  },
+  {
+    "numero": "7130010200/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010030/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010199/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010065/2026",
+    "status": "Efetuado",
+    "valor": 51825
+  },
+  {
+    "numero": "7130010198/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010032/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010197/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010029/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010196/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010031/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010195/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010028/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010194/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010027/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010193/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010026/2026",
+    "status": "Efetuado",
+    "valor": 2400
+  },
+  {
+    "numero": "7130010192/2026",
+    "data": "2026-04-06",
+    "numeroEmpenho": "7130010025/2026",
+    "status": "Efetuado",
+    "valor": 12000
+  },
+  {
+    "numero": "7130010191/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Efetuado",
+    "valor": 411.94
+  },
+  {
+    "numero": "7130010190/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010176/2026",
+    "status": "Efetuado",
+    "valor": 790.4
+  },
+  {
+    "numero": "7130010189/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 1.21
+  },
+  {
+    "numero": "7130010188/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 239.34
+  },
+  {
+    "numero": "7130010187/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 16.24
+  },
+  {
+    "numero": "7130010186/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 1357.41
+  },
+  {
+    "numero": "7130010185/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010190/2026",
+    "status": "Efetuado",
+    "valor": 2691
+  },
+  {
+    "numero": "7130010184/2026",
+    "data": "2026-04-01",
+    "numeroEmpenho": "7130010189/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010183/2026",
+    "data": "2026-03-31",
+    "numeroEmpenho": "7130010002/2026",
+    "status": "Efetuado",
+    "valor": 237.3
+  },
+  {
+    "numero": "7130010182/2026",
+    "data": "2026-03-31",
+    "numeroEmpenho": "7130010188/2026",
+    "status": "Efetuado",
+    "valor": 7550
+  },
+  {
+    "numero": "7130010181/2026",
+    "data": "2026-03-30",
+    "numeroEmpenho": "7130010021/2026",
+    "status": "Efetuado",
+    "valor": 13979.14
+  },
+  {
+    "numero": "7130010180/2026",
+    "data": "2026-03-30",
+    "numeroEmpenho": "7130010187/2026",
+    "status": "Efetuado",
+    "valor": 4294.5
+  },
+  {
+    "numero": "7130010179/2026",
+    "data": "2026-03-30",
+    "numeroEmpenho": "7130010186/2026",
+    "status": "Efetuado",
+    "valor": 4294.5
+  },
+  {
+    "numero": "7130010178/2026",
+    "data": "2026-03-30",
+    "numeroEmpenho": "7130010101/2026",
+    "status": "Efetuado",
+    "valor": 654.03
+  },
+  {
+    "numero": "7130010177/2026",
+    "data": "2026-03-30",
+    "numeroEmpenho": "7130010185/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010176/2026",
+    "data": "2026-03-30",
+    "numeroEmpenho": "7130010184/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010175/2026",
+    "data": "2026-03-27",
+    "numeroEmpenho": "7130010003/2026",
+    "status": "Efetuado",
+    "valor": 101.28
+  },
+  {
+    "numero": "7130010174/2026",
+    "data": "2026-03-26",
+    "numeroEmpenho": "7130010075/2026",
+    "status": "Efetuado",
+    "valor": 5612
+  },
+  {
+    "numero": "7130010173/2026",
+    "data": "2026-03-26",
+    "numeroEmpenho": "7130010182/2026",
+    "status": "Efetuado",
+    "valor": 7157.05
+  },
+  {
+    "numero": "7130010172/2026",
+    "data": "2026-03-26",
+    "numeroEmpenho": "7130010179/2026",
+    "status": "Efetuado",
+    "valor": 10463.54
+  },
+  {
+    "numero": "7130010170/2026",
+    "data": "2026-03-26",
+    "numeroEmpenho": "7130010179/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010168/2026",
+    "data": "2026-03-26",
+    "numeroEmpenho": "7130010181/2026",
+    "status": "Efetuado",
+    "valor": 3220.87
+  },
+  {
+    "numero": "7130010167/2026",
+    "data": "2026-03-25",
+    "numeroEmpenho": "7130010067/2026",
+    "status": "Efetuado",
+    "valor": 18555.2
+  },
+  {
+    "numero": "7130010166/2026",
+    "data": "2026-03-25",
+    "numeroEmpenho": "7130010067/2026",
+    "status": "Efetuado",
+    "valor": 12769.76
+  },
+  {
+    "numero": "7130010165/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010004/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010164/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010023/2026",
+    "status": "Efetuado",
+    "valor": 138187.34
+  },
+  {
+    "numero": "7130010163/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010048/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010162/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010047/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010161/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010042/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010160/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010039/2026",
+    "status": "Efetuado",
+    "valor": 7940.27
+  },
+  {
+    "numero": "7130010159/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010044/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010158/2026",
+    "data": "2026-03-24",
+    "numeroEmpenho": "7130010043/2026",
+    "status": "Efetuado",
+    "valor": 47189.12
+  },
+  {
+    "numero": "7130010157/2026",
+    "data": "2026-03-23",
+    "numeroEmpenho": "7130010180/2026",
+    "status": "Efetuado",
+    "valor": 144.31
+  },
+  {
+    "numero": "7130010156/2026",
+    "data": "2026-03-20",
+    "numeroEmpenho": "7130010100/2026",
+    "status": "Efetuado",
+    "valor": 5528.58
+  },
+  {
+    "numero": "7130010155/2026",
+    "data": "2026-03-20",
+    "numeroEmpenho": "7130010075/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010154/2026",
+    "data": "2026-03-20",
+    "numeroEmpenho": "7130010106/2026",
+    "status": "Efetuado",
+    "valor": 3580
+  },
+  {
+    "numero": "7130010153/2026",
+    "data": "2026-03-19",
+    "numeroEmpenho": "7130010178/2026",
+    "status": "Efetuado",
+    "valor": 1887.5
+  },
+  {
+    "numero": "7130010152/2026",
+    "data": "2026-03-18",
+    "numeroEmpenho": "7130010066/2026",
+    "status": "Efetuado",
+    "valor": 6910
+  },
+  {
+    "numero": "7130010151/2026",
+    "data": "2026-03-18",
+    "numeroEmpenho": "7130010065/2026",
+    "status": "Efetuado",
+    "valor": 34550
+  },
+  {
+    "numero": "7130010150/2026",
+    "data": "2026-03-18",
+    "numeroEmpenho": "7130010085/2026",
+    "status": "Efetuado",
+    "valor": 29528.61
+  },
+  {
+    "numero": "7130010149/2026",
+    "data": "2026-03-18",
+    "numeroEmpenho": "7130010084/2026",
+    "status": "Efetuado",
+    "valor": 219988.79
+  },
+  {
+    "numero": "7130010148/2026",
+    "data": "2026-03-17",
+    "numeroEmpenho": "7130010175/2026",
+    "status": "Efetuado",
+    "valor": 1574.37
+  },
+  {
+    "numero": "7130010147/2026",
+    "data": "2026-03-17",
+    "numeroEmpenho": "7130010174/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010146/2026",
+    "data": "2026-03-17",
+    "numeroEmpenho": "7130010173/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010145/2026",
+    "data": "2026-03-17",
+    "numeroEmpenho": "7130010172/2026",
+    "status": "Efetuado",
+    "valor": 3020
+  },
+  {
+    "numero": "7130010144/2026",
+    "data": "2026-03-17",
+    "numeroEmpenho": "7130010171/2026",
+    "status": "Efetuado",
+    "valor": 1510
+  },
+  {
+    "numero": "7130010143/2026",
+    "data": "2026-03-17",
+    "numeroEmpenho": "7130010082/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010142/2026",
+    "data": "2026-03-16",
+    "numeroEmpenho": "7130010170/2026",
+    "status": "Efetuado",
+    "valor": 4294.5
+  },
+  {
+    "numero": "7130010141/2026",
+    "data": "2026-03-16",
+    "numeroEmpenho": "7130010016/2026",
+    "status": "Efetuado",
+    "valor": 15329.06
+  },
+  {
+    "numero": "7130010140/2026",
+    "data": "2026-03-16",
+    "numeroEmpenho": "7130010015/2026",
+    "status": "Efetuado",
+    "valor": 58165.63
+  },
+  {
+    "numero": "7130010139/2026",
+    "data": "2026-03-16",
+    "numeroEmpenho": "7130010014/2026",
+    "status": "Efetuado",
+    "valor": 13315.15
+  },
+  {
+    "numero": "7130010138/2026",
+    "data": "2026-03-16",
+    "numeroEmpenho": "7130010013/2026",
+    "status": "Efetuado",
+    "valor": 10688.62
+  },
+  {
+    "numero": "7130010137/2026",
+    "data": "2026-03-16",
+    "numeroEmpenho": "7130010011/2026",
+    "status": "Efetuado",
+    "valor": 12518.77
+  },
+  {
+    "numero": "7130010136/2026",
+    "data": "2026-03-13",
+    "numeroEmpenho": "7130010002/2026",
+    "status": "Efetuado",
+    "valor": 237.3
+  },
+  {
+    "numero": "7130010135/2026",
+    "data": "2026-03-13",
+    "numeroEmpenho": "7130010165/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010134/2026",
+    "data": "2026-03-12",
+    "numeroEmpenho": "7130010056/2026",
+    "status": "Efetuado",
+    "valor": 361.44
+  },
+  {
+    "numero": "7130010133/2026",
+    "data": "2026-03-12",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Efetuado",
+    "valor": 2270.93
+  },
+  {
+    "numero": "7130010132/2026",
+    "data": "2026-03-11",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 980
+  },
+  {
+    "numero": "7130010131/2026",
+    "data": "2026-03-11",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 361
+  },
+  {
+    "numero": "7130010130/2026",
+    "data": "2026-03-11",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 1300
+  },
+  {
+    "numero": "7130010129/2026",
+    "data": "2026-03-11",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 2600
+  },
+  {
+    "numero": "7130010128/2026",
+    "data": "2026-03-10",
+    "numeroEmpenho": "7130010163/2026",
+    "status": "Efetuado",
+    "valor": 2265
+  },
+  {
+    "numero": "7130010127/2026",
+    "data": "2026-03-09",
+    "numeroEmpenho": "7130010161/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010126/2026",
+    "data": "2026-03-09",
+    "numeroEmpenho": "7130010159/2026",
+    "status": "Efetuado",
+    "valor": 2147.25
+  },
+  {
+    "numero": "7130010125/2026",
+    "data": "2026-03-09",
+    "numeroEmpenho": "7130010140/2026",
+    "status": "Efetuado",
+    "valor": 3936.62
+  },
+  {
+    "numero": "7130010124/2026",
+    "data": "2026-03-09",
+    "numeroEmpenho": "7130010139/2026",
+    "status": "Efetuado",
+    "valor": 4152.5
+  },
+  {
+    "numero": "7130010123/2026",
+    "data": "2026-03-09",
+    "numeroEmpenho": "7130010093/2026",
+    "status": "Efetuado",
+    "valor": 38.4
+  },
+  {
+    "numero": "7130010122/2026",
+    "data": "2026-03-06",
+    "numeroEmpenho": "7130010088/2026",
+    "status": "Efetuado",
+    "valor": 38095.62
+  },
+  {
+    "numero": "7130010121/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010004/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010120/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010023/2026",
+    "status": "Efetuado",
+    "valor": 131162.6
+  },
+  {
+    "numero": "7130010119/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010148/2026",
+    "status": "Efetuado",
+    "valor": 3020
+  },
+  {
+    "numero": "7130010118/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010101/2026",
+    "status": "Efetuado",
+    "valor": 501.58
+  },
+  {
+    "numero": "7130010117/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010101/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010116/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010048/2026",
+    "status": "Efetuado",
+    "valor": 6477.68
+  },
+  {
+    "numero": "7130010115/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010047/2026",
+    "status": "Efetuado",
+    "valor": 19639.11
+  },
+  {
+    "numero": "7130010114/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010042/2026",
+    "status": "Efetuado",
+    "valor": 3238.84
+  },
+  {
+    "numero": "7130010113/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010101/2026",
+    "status": "Efetuado",
+    "valor": 476.17
+  },
+  {
+    "numero": "7130010112/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010039/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010111/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010039/2026",
+    "status": "Efetuado",
+    "valor": 7940.27
+  },
+  {
+    "numero": "7130010110/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 213.09
+  },
+  {
+    "numero": "7130010109/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 1320.64
+  },
+  {
+    "numero": "7130010108/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010143/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010107/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010049/2026",
+    "status": "Efetuado",
+    "valor": 13979.14
+  },
+  {
+    "numero": "7130010106/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010142/2026",
+    "status": "Efetuado",
+    "valor": 3775
+  },
+  {
+    "numero": "7130010105/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010141/2026",
+    "status": "Efetuado",
+    "valor": 5010.25
+  },
+  {
+    "numero": "7130010104/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 199.01
+  },
+  {
+    "numero": "7130010103/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010090/2026",
+    "status": "Efetuado",
+    "valor": 1028.39
+  },
+  {
+    "numero": "7130010102/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010088/2026",
+    "status": "Efetuado",
+    "valor": 38095.62
+  },
+  {
+    "numero": "7130010101/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010133/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010100/2026",
+    "data": "2026-03-05",
+    "numeroEmpenho": "7130010138/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010099/2026",
+    "data": "2026-03-04",
+    "numeroEmpenho": "7130010121/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010098/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010125/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010097/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010124/2026",
+    "status": "Efetuado",
+    "valor": 3775
+  },
+  {
+    "numero": "7130010096/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010123/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010095/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010034/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010094/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010033/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010093/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010030/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010092/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010029/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010091/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010026/2026",
+    "status": "Efetuado",
+    "valor": 2400
+  },
+  {
+    "numero": "7130010090/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010025/2026",
+    "status": "Efetuado",
+    "valor": 12000
+  },
+  {
+    "numero": "7130010089/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010032/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010088/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010031/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010087/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010028/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010086/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010027/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010085/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 2740
+  },
+  {
+    "numero": "7130010084/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010036/2026",
+    "status": "Efetuado",
+    "valor": 4068
+  },
+  {
+    "numero": "7130010083/2026",
+    "data": "2026-03-03",
+    "numeroEmpenho": "7130010035/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010082/2026",
+    "data": "2026-02-27",
+    "numeroEmpenho": "7130010122/2026",
+    "status": "Efetuado",
+    "valor": 2147.25
+  },
+  {
+    "numero": "7130010081/2026",
+    "data": "2026-02-27",
+    "numeroEmpenho": "7130010040/2026",
+    "status": "Efetuado",
+    "valor": 59831
+  },
+  {
+    "numero": "7130010080/2026",
+    "data": "2026-02-26",
+    "numeroEmpenho": "7130010118/2026",
+    "status": "Efetuado",
+    "valor": 2863
+  },
+  {
+    "numero": "7130010079/2026",
+    "data": "2026-02-26",
+    "numeroEmpenho": "7130010117/2026",
+    "status": "Efetuado",
+    "valor": 2505.13
+  },
+  {
+    "numero": "7130010078/2026",
+    "data": "2026-02-26",
+    "numeroEmpenho": "7130010116/2026",
+    "status": "Efetuado",
+    "valor": 2505.13
+  },
+  {
+    "numero": "7130010077/2026",
+    "data": "2026-02-26",
+    "numeroEmpenho": "7130010046/2026",
+    "status": "Efetuado",
+    "valor": 973.05
+  },
+  {
+    "numero": "7130010076/2026",
+    "data": "2026-02-25",
+    "numeroEmpenho": "7130010055/2026",
+    "status": "Efetuado",
+    "valor": 417.82
+  },
+  {
+    "numero": "7130010075/2026",
+    "data": "2026-02-24",
+    "numeroEmpenho": "7130010014/2026",
+    "status": "Efetuado",
+    "valor": 3581.7
+  },
+  {
+    "numero": "7130010074/2026",
+    "data": "2026-02-24",
+    "numeroEmpenho": "7130010016/2026",
+    "status": "Efetuado",
+    "valor": 7015.93
+  },
+  {
+    "numero": "7130010073/2026",
+    "data": "2026-02-24",
+    "numeroEmpenho": "7130010011/2026",
+    "status": "Efetuado",
+    "valor": 7057.86
+  },
+  {
+    "numero": "7130010072/2026",
+    "data": "2026-02-24",
+    "numeroEmpenho": "7130010086/2026",
+    "status": "Efetuado",
+    "valor": 250.74
+  },
+  {
+    "numero": "7130010071/2026",
+    "data": "2026-02-24",
+    "numeroEmpenho": "7130010085/2026",
+    "status": "Efetuado",
+    "valor": 43866.37
+  },
+  {
+    "numero": "7130010070/2026",
+    "data": "2026-02-24",
+    "numeroEmpenho": "7130010084/2026",
+    "status": "Efetuado",
+    "valor": 215359.04
+  },
+  {
+    "numero": "7130010068/2026",
+    "data": "2026-02-23",
+    "numeroEmpenho": "7130010108/2026",
+    "status": "Efetuado",
+    "valor": 1887.5
+  },
+  {
+    "numero": "7130010067/2026",
+    "data": "2026-02-23",
+    "numeroEmpenho": "7130010107/2026",
+    "status": "Efetuado",
+    "valor": 1887.5
+  },
+  {
+    "numero": "7130010066/2026",
+    "data": "2026-02-20",
+    "numeroEmpenho": "7130010097/2026",
+    "status": "Efetuado",
+    "valor": 4000
+  },
+  {
+    "numero": "7130010065/2026",
+    "data": "2026-02-20",
+    "numeroEmpenho": "7130010044/2026",
+    "status": "Efetuado",
+    "valor": 30674.26
+  },
+  {
+    "numero": "7130010064/2026",
+    "data": "2026-02-20",
+    "numeroEmpenho": "7130010043/2026",
+    "status": "Efetuado",
+    "valor": 49746.95
+  },
+  {
+    "numero": "7130010063/2026",
+    "data": "2026-02-20",
+    "numeroEmpenho": "7130010096/2026",
+    "status": "Efetuado",
+    "valor": 2147.25
+  },
+  {
+    "numero": "7130010058/2026",
+    "data": "2026-02-13",
+    "numeroEmpenho": "7130010083/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010057/2026",
+    "data": "2026-02-13",
+    "numeroEmpenho": "7130010061/2026",
+    "status": "Efetuado",
+    "valor": 3578.75
+  },
+  {
+    "numero": "7130010056/2026",
+    "data": "2026-02-12",
+    "numeroEmpenho": "7130010028/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010055/2026",
+    "data": "2026-02-12",
+    "numeroEmpenho": "7130010027/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010054/2026",
+    "data": "2026-02-10",
+    "numeroEmpenho": "7130010061/2026",
+    "status": "Cancelado",
+    "valor": 0
+  },
+  {
+    "numero": "7130010050/2026",
+    "data": "2026-02-04",
+    "numeroEmpenho": "7130010054/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010049/2026",
+    "data": "2026-02-04",
+    "numeroEmpenho": "7130010053/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010048/2026",
+    "data": "2026-02-04",
+    "numeroEmpenho": "7130010052/2026",
+    "status": "Efetuado",
+    "valor": 1431.25
+  },
+  {
+    "numero": "7130010045/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010032/2026",
+    "status": "Efetuado",
+    "valor": 1900
+  },
+  {
+    "numero": "7130010044/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010031/2026",
+    "status": "Efetuado",
+    "valor": 9500
+  },
+  {
+    "numero": "7130010043/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010026/2026",
+    "status": "Efetuado",
+    "valor": 2400
+  },
+  {
+    "numero": "7130010042/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010025/2026",
+    "status": "Efetuado",
+    "valor": 12000
+  },
+  {
+    "numero": "7130010041/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010034/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010040/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010033/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010039/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010030/2026",
+    "status": "Efetuado",
+    "valor": 2900
+  },
+  {
+    "numero": "7130010038/2026",
+    "data": "2026-02-03",
+    "numeroEmpenho": "7130010029/2026",
+    "status": "Efetuado",
+    "valor": 14500
+  },
+  {
+    "numero": "7130010035/2026",
+    "data": "2026-01-30",
+    "numeroEmpenho": "7130010038/2026",
+    "status": "Efetuado",
+    "valor": 2000
+  },
+  {
+    "numero": "7130010034/2026",
+    "data": "2026-01-30",
+    "numeroEmpenho": "7130010037/2026",
+    "status": "Efetuado",
+    "valor": 2000
+  },
+  {
+    "numero": "7130010029/2026",
+    "data": "2026-01-27",
+    "numeroEmpenho": "7130010024/2026",
+    "status": "Efetuado",
+    "valor": 1431.5
+  },
+  {
+    "numero": "7130010027/2026",
+    "data": "2026-01-21",
+    "numeroEmpenho": "7130010010/2026",
+    "status": "Efetuado",
+    "valor": 143.12
+  },
+  {
+    "numero": "7130010012/2026",
+    "data": "2026-01-19",
+    "numeroEmpenho": "7130010001/2026",
+    "status": "Efetuado",
+    "valor": 1510
+  }
+]
