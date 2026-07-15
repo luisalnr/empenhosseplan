@@ -17,6 +17,13 @@ import { KpiCard } from "../kpi-card";
 import { ChartCard } from "../chart-card";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import {
@@ -93,6 +100,7 @@ function truncar(s: string, n = 30) {
 
 export function ResumoCredorPage() {
   const { empenhos, opcoes } = useDashboard();
+  const [exercicio, setExercicio] = React.useState("");
   const [credor, setCredor] = React.useState("");
   const [liqMap, setLiqMap] = React.useState<Map<string, FaseDespesa[]>>(new Map());
   const [pagMap, setPagMap] = React.useState<Map<string, FaseDespesa[]>>(new Map());
@@ -110,8 +118,29 @@ export function ResumoCredorPage() {
     return () => { active = false; };
   }, []);
 
+  // O exercício é seleção única e sempre preenchida: por padrão, o mais recente.
+  React.useEffect(() => {
+    if (exercicio || opcoes.exercicios.length === 0) return;
+    setExercicio(opcoes.exercicios[0]);
+  }, [exercicio, opcoes.exercicios]);
+
+  // Só os empenhos do exercício selecionado — os credores e KPIs derivam daqui.
+  const empenhosDoExercicio = React.useMemo(
+    () => empenhos.filter((e) => e.exercicio === exercicio),
+    [empenhos, exercicio]
+  );
+
   // estado de paginação simples para alternar entre credores
-  const credores = opcoes.credores;
+  const credores = React.useMemo(
+    () => [...new Set(empenhosDoExercicio.map((e) => e.credor))].sort((a, b) => a.localeCompare(b, "pt-BR")),
+    [empenhosDoExercicio]
+  );
+
+  // Ao trocar de exercício, o credor selecionado pode não existir mais.
+  React.useEffect(() => {
+    if (credor && !credores.includes(credor)) setCredor("");
+  }, [credor, credores]);
+
   const pageIdx = credor ? credores.indexOf(credor) : -1;
 
   const irCredor = (delta: number) => {
@@ -121,8 +150,8 @@ export function ResumoCredorPage() {
   };
 
   const empenhosDoCredor = React.useMemo(
-    () => empenhos.filter((e) => e.credor === credor),
-    [empenhos, credor]
+    () => empenhosDoExercicio.filter((e) => e.credor === credor),
+    [empenhosDoExercicio, credor]
   );
 
   const totais = React.useMemo(() => calcularTotais(empenhosDoCredor), [empenhosDoCredor]);
@@ -161,10 +190,30 @@ export function ResumoCredorPage() {
     });
   }, [empenhosDoCredor, liqMap, pagMap]);
 
+  const exercicioSelect = (
+    <Select value={exercicio} onValueChange={setExercicio}>
+      <SelectTrigger className="h-11 w-full min-w-[7rem] sm:w-[9rem]">
+        <SelectValue placeholder="Exercício" />
+      </SelectTrigger>
+      <SelectContent>
+        {opcoes.exercicios.map((ex) => (
+          <SelectItem key={ex} value={ex}>
+            {ex}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+
   if (!credor) {
     return (
       <div className="space-y-3">
-        <CredorSelector value={credor} onChange={setCredor} credores={credores} />
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          {exercicioSelect}
+          <div className="flex-1">
+            <CredorSelector value={credor} onChange={setCredor} credores={credores} />
+          </div>
+        </div>
         <Card className="flex h-[50vh] flex-col items-center justify-center gap-3 text-center">
           <FileX className="h-8 w-8 text-muted-foreground" />
           <div>
@@ -193,8 +242,9 @@ function StatusBadge({ status }: { status: string }) {
 
   return (
     <div className="space-y-3">
-      {/* Seletor de credor com navegação */}
+      {/* Seletor de exercício e de credor com navegação */}
       <div className="flex items-center gap-2">
+        <div className="shrink-0">{exercicioSelect}</div>
         <Button variant="outline" size="icon" className="h-11 w-11 shrink-0" onClick={() => irCredor(-1)} disabled={pageIdx <= 0}>
           <ChevronLeft className="h-4 w-4" />
         </Button>
