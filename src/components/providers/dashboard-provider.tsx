@@ -39,11 +39,13 @@ import { calcularRiscos, agregarRisco } from "@/lib/risco";
 import { exercicioMaisRecente, exerciciosDe } from "@/lib/exercicio";
 import {
   loadPeriodoSeed,
+  loadPeriodosServer,
   loadPeriodosStored,
   periodoDosExercicios,
   periodoFromEmpenhos,
   periodosFromEmpenhos,
   savePeriodoStored,
+  savePeriodosServer,
   type PeriodosPorExercicio,
 } from "@/lib/periodo";
 import type { FiltrosForm } from "@/lib/filters";
@@ -121,7 +123,8 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     try {
       const m = await loadMto();
       setMto(m);
-      setPersistindoNoBanco(await usandoNeon());
+      const neon = await usandoNeon();
+      setPersistindoNoBanco(neon);
       await seedIfEmpty();
       await seedFasesIfEmpty();
       const [dados, liq, pag] = await Promise.all([
@@ -133,12 +136,15 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       setLiquidacoes(liq);
       setPagamentos(pag);
       setUltima(new Date().toLocaleString("pt-BR"));
-      // Período de emissão por exercício, do menos para o mais confiável: emissões dos
-      // empenhos → relatório que gerou o seed → relatórios já importados neste navegador.
+      // Período do exercício, do menos para o mais confiável: emissões dos empenhos
+      // → relatório que gerou o seed → período declarado gravado no import. Este último
+      // vive no servidor (Neon) quando há banco — igual em toda máquina — ou no cache
+      // local só no modo demo.
       const mapa = periodosFromEmpenhos(dados);
       const seed = await loadPeriodoSeed();
       if (seed) mapa[seed.inicio.slice(0, 4)] = seed;
-      setPeriodos({ ...mapa, ...loadPeriodosStored() });
+      const declarados = neon ? await loadPeriodosServer() : loadPeriodosStored();
+      setPeriodos({ ...mapa, ...declarados });
     } catch (e) {
       setError(e instanceof Error ? e.message : "Erro ao carregar dados");
     } finally {
@@ -185,11 +191,18 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
           declarado ?? periodoFromEmpenhos(records.filter((r) => r.exercicio === ex));
         if (!p) continue;
         novos[ex] = p;
-        savePeriodoStored(ex, p);
+      }
+      if (!Object.keys(novos).length) return;
+      // Persiste onde os dados vivem: no banco (mesmo período para todos) ou, no modo
+      // demo, no cache local deste navegador.
+      if (persistindoNoBanco) {
+        void savePeriodosServer(novos);
+      } else {
+        for (const [ex, p] of Object.entries(novos)) savePeriodoStored(ex, p);
       }
       setPeriodos((prev) => ({ ...prev, ...novos }));
     },
-    []
+    [persistindoNoBanco]
   );
 
   const importar = React.useCallback(

@@ -85,6 +85,40 @@ export async function loadPeriodoSeed(): Promise<PeriodoAnalise | null> {
   }
 }
 
+/**
+ * Períodos declarados gravados no servidor (tabela periodos_analise), autoridade
+ * quando os dados vivem no Neon. Igual para todas as máquinas. {} em qualquer falha.
+ */
+export async function loadPeriodosServer(): Promise<PeriodosPorExercicio> {
+  try {
+    const res = await fetch("/api/periodos", { cache: "no-store" });
+    if (!res.ok) return {};
+    const mapa = (await res.json()) as PeriodosPorExercicio;
+    return Object.fromEntries(
+      Object.entries(mapa ?? {}).filter(([, p]) => isPeriodo(p))
+    );
+  } catch {
+    return {};
+  }
+}
+
+/** Persiste no servidor o período declarado de um ou mais exercícios (best-effort). */
+export async function savePeriodosServer(mapa: PeriodosPorExercicio): Promise<void> {
+  const periodos = Object.entries(mapa)
+    .filter(([, p]) => isPeriodo(p))
+    .map(([exercicio, p]) => ({ exercicio, inicio: p.inicio, fim: p.fim }));
+  if (!periodos.length) return;
+  try {
+    await fetch("/api/periodos", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ periodos }),
+    });
+  } catch {
+    /* ignore — o período volta a ser gravado no próximo import */
+  }
+}
+
 /** Último recurso: min/max das datas de emissão dos empenhos carregados. */
 export function periodoFromEmpenhos(empenhos: Empenho[]): PeriodoAnalise | null {
   const datas = empenhos.map((e) => e.dataEmissao).filter(Boolean).sort();

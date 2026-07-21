@@ -4,7 +4,6 @@ import {
   date,
   numeric,
   index,
-  primaryKey,
   boolean,
   timestamp,
   uniqueIndex,
@@ -18,7 +17,7 @@ import {
 export const empenhos = pgTable(
   "empenhos",
   {
-    numero: text("numero").notNull(),
+    numero: text("numero").primaryKey().notNull(),
     exercicio: text("exercicio").notNull().default(""),
     dataEmissao: date("data_emissao").notNull(),
     motivo: text("motivo").notNull().default(""),
@@ -56,7 +55,6 @@ export const empenhos = pgTable(
     aLiquidar: numeric("a_liquidar", { precision: 14, scale: 2 }).notNull().default("0"),
   },
   (t) => ({
-    pk: primaryKey({ columns: [t.numero] }),
     exercicioIdx: index("idx_empenhos_exercicio").on(t.exercicio),
     credorIdx: index("idx_empenhos_credor").on(t.credor),
     dataIdx: index("idx_empenhos_data").on(t.dataEmissao),
@@ -77,14 +75,13 @@ export type EmpenhoInsert = typeof empenhos.$inferInsert;
 export const liquidacoes = pgTable(
   "liquidacoes",
   {
-    numero: text("numero").notNull(),
+    numero: text("numero").primaryKey().notNull(),
     data: date("data"),
     numeroEmpenho: text("numero_empenho").notNull().default(""),
     status: text("status").notNull().default(""),
     valor: numeric("valor", { precision: 14, scale: 2 }).notNull().default("0"),
   },
   (t) => ({
-    pk: primaryKey({ columns: [t.numero] }),
     empenhoIdx: index("idx_liquidacoes_empenho").on(t.numeroEmpenho),
     dataIdx: index("idx_liquidacoes_data").on(t.data),
   })
@@ -93,14 +90,13 @@ export const liquidacoes = pgTable(
 export const pagamentos = pgTable(
   "pagamentos",
   {
-    numero: text("numero").notNull(),
+    numero: text("numero").primaryKey().notNull(),
     data: date("data"),
     numeroEmpenho: text("numero_empenho").notNull().default(""),
     status: text("status").notNull().default(""),
     valor: numeric("valor", { precision: 14, scale: 2 }).notNull().default("0"),
   },
   (t) => ({
-    pk: primaryKey({ columns: [t.numero] }),
     empenhoIdx: index("idx_pagamentos_empenho").on(t.numeroEmpenho),
     dataIdx: index("idx_pagamentos_data").on(t.data),
   })
@@ -119,7 +115,7 @@ export type PagamentoInsert = typeof pagamentos.$inferInsert;
 export const usuarios = pgTable(
   "usuarios",
   {
-    id: text("id").notNull(),
+    id: text("id").primaryKey().notNull(),
     email: text("email").notNull(),
     nome: text("nome").notNull().default(""),
     senhaHash: text("senha_hash").notNull(),
@@ -129,10 +125,28 @@ export const usuarios = pgTable(
     atualizadoEm: timestamp("atualizado_em", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => ({
-    pk: primaryKey({ columns: [t.id] }),
     emailUq: uniqueIndex("idx_usuarios_email").on(t.email),
   })
 );
+
+/**
+ * Tabela `periodos_analise` — período declarado no cabeçalho dos relatórios WW
+ * (janela de emissão do relatório, não das datas de emissão dos empenhos), por
+ * exercício. Gravada no momento do import para que o período mostrado no
+ * cabeçalho do dashboard seja o mesmo em qualquer máquina.
+ */
+export const periodosAnalise = pgTable(
+  "periodos_analise",
+  {
+    exercicio: text("exercicio").primaryKey().notNull(),
+    inicio: date("inicio").notNull(),
+    fim: date("fim").notNull(),
+    atualizadoEm: timestamp("atualizado_em", { withTimezone: true }).notNull().defaultNow(),
+  }
+);
+
+export type PeriodoAnaliseRow = typeof periodosAnalise.$inferSelect;
+export type PeriodoAnaliseInsert = typeof periodosAnalise.$inferInsert;
 
 /**
  * Tabela `login_auditoria` — registro de tentativas de login (sucesso/falha).
@@ -140,7 +154,7 @@ export const usuarios = pgTable(
 export const loginAuditoria = pgTable(
   "login_auditoria",
   {
-    id: text("id").notNull(),
+    id: text("id").primaryKey().notNull(),
     usuarioId: text("usuario_id"),
     email: text("email").notNull().default(""),
     sucesso: boolean("sucesso").notNull().default(false),
@@ -150,7 +164,6 @@ export const loginAuditoria = pgTable(
     criadoEm: timestamp("criado_em", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => ({
-    pk: primaryKey({ columns: [t.id] }),
     emailIdx: index("idx_login_auditoria_email").on(t.email),
     dataIdx: index("idx_login_auditoria_data").on(t.criadoEm),
   })

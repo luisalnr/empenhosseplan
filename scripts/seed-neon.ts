@@ -13,10 +13,10 @@ import path from "node:path";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { count } from "drizzle-orm";
-import { empenhos, liquidacoes, pagamentos } from "../src/lib/db/schema";
+import { empenhos, liquidacoes, pagamentos, periodosAnalise } from "../src/lib/db/schema";
 import * as schema from "../src/lib/db/schema";
 import { empenhosToInserts, fasesToInserts } from "../src/lib/db/mappers";
-import type { Empenho, FaseDespesa } from "../src/lib/types";
+import type { Empenho, FaseDespesa, PeriodoAnalise } from "../src/lib/types";
 
 function loadEnvLocal() {
   const envPath = path.resolve(process.cwd(), ".env.local");
@@ -132,6 +132,23 @@ async function main() {
       inserts,
       "pagamentos"
     );
+  }
+
+  // ── Período declarado (cabeçalho do relatório) ──
+  const perPath = path.join(dataDir, "seed-periodo.json");
+  if (fs.existsSync(perPath)) {
+    const periodo = JSON.parse(fs.readFileSync(perPath, "utf-8")) as PeriodoAnalise | null;
+    if (periodo?.inicio && periodo?.fim) {
+      const exercicio = periodo.inicio.slice(0, 4);
+      console.log(`📖 Período ${exercicio}: ${periodo.inicio} a ${periodo.fim}`);
+      await db
+        .insert(periodosAnalise)
+        .values({ exercicio, inicio: periodo.inicio, fim: periodo.fim })
+        .onConflictDoUpdate({
+          target: periodosAnalise.exercicio,
+          set: { inicio: periodo.inicio, fim: periodo.fim },
+        });
+    }
   }
 
   const [ce] = await db.select({ value: count() }).from(empenhos);
